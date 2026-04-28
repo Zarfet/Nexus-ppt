@@ -1,0 +1,915 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<title>NEXUS — Defense</title>
+<template id="__bundler_thumbnail" data-bg-color="#F5F5F2">
+  <svg viewBox="0 0 1200 800" xmlns="http://www.w3.org/2000/svg">
+    <rect width="1200" height="800" fill="#F5F5F2"/>
+    <text x="240" y="420" font-family="Inter, Helvetica, sans-serif" font-weight="800" font-size="180" fill="#14151A" letter-spacing="-8">NE</text>
+    <text x="240" y="580" font-family="Inter, Helvetica, sans-serif" font-weight="800" font-size="180" fill="#3563FF" letter-spacing="-8">XUS</text>
+    <rect x="240" y="640" width="80" height="8" fill="#3563FF"/>
+  </svg>
+</template>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&family=JetBrains+Mono:wght@400;500;600&display=swap" rel="stylesheet">
+<script src="deck-stage.js"></script>
+
+<script type="application/json" id="speaker-notes">
+[
+"Good morning. Quick question: has your design recommendation ever been overruled? You do the research, you bring a recommendation, and the most senior person in the room disagrees — and the decision flips. That pattern has a name: McAfee and Brynjolfsson call it the HiPPO effect. The problem isn't that senior people have opinions. It's that designers often lack a structured argument to hold their ground. That's what NEXUS addresses.",
+
+"I'm [name], and over the next ten minutes I'll walk you through NEXUS — a framework and tool for one specific decision: what kind of interface should we build. Screen, voice, wearable, AI, spatial? Two minutes on the problem, three on the framework, three on results, a quick look at the tool.",
+
+"When you look at design methodology, there are strong frameworks for almost everything. Design Thinking for how to improve a product. User-Centered Design for fitting users. HCD and UX for testing. All assume you already know what kind of interface you're building. None help you decide. That's the gap.",
+
+"And the cost is not hypothetical. These five products didn't fail because the tech broke. The engineering worked. What failed was the interface-type choice. Publicly documented losses across just these five add up to nearly a billion euros. Wrong interface, right technology.",
+
+"Zoom out and the pattern holds. MIT: 95% of GenAI pilots fail. RAND: 80% of AI projects never reach real use, and 84% of those failures come from leadership decisions, not engineering. The bottleneck is the decision.",
+
+"So what does the framework do. Four stages. Values first — the organisation ranks what it stands for. Then context — eleven questions. Then pattern-matching against the five failures. Then a report — not a verdict. The designer reads and decides.",
+
+"Three phases of research. Construction: literature plus fifteen practitioner interviews. Retrospective: applied to the five cases using only pre-launch information, targeting 70% failure-factor detection. Proof of concept: a browser tool tested with real designers.",
+
+"The headline numbers. 82% of documented failure factors detected, above the 70% target. 70% agreement with practitioner judgment. Ease of use 4.3 out of 5. The point at the bottom matters most: the information existed before launch. What was missing was a structured way to ask.",
+
+"That's NEXUS the tool. Fifteen minutes in a browser. A report, not an answer. Open source under MIT. Let me switch over and show it. [Switch to browser: values ranking, two context questions, report. 90 seconds.]",
+
+"To close: four contributions. For the field — first DIKW application to interface-type selection. For practice — evidence to defend good decisions. For the community — open-source infrastructure. And a position: it informs, it does not decide. Structure in service of human judgment.",
+
+"Thank you. Happy to take your questions."
+]
+</script>
+
+<style>
+  :root{
+    --bg:#F4F4F6;
+    --ink:#18181F;
+    --ink-2:#4B5563;
+    --ink-3:#6B7280;
+    --surface:#FFFFFF;
+    --surface-2:#F9F9FB;
+    --accent:#2563EB;
+    --accent-soft:rgba(37,99,235,0.08);
+    --accent-bd:rgba(37,99,235,0.22);
+    --border:#E4E4EA;
+    --border-2:#D1D1DB;
+    --success:#16A34A;
+    --success-soft:#EAF3DE;
+  }
+
+  html,body{margin:0;padding:0;background:#0a0a0c;}
+  body{font-family:'Inter',system-ui,sans-serif;color:var(--ink);-webkit-font-smoothing:antialiased;}
+
+  deck-stage section{
+    background:var(--bg);
+    display:flex;
+    flex-direction:column;
+    padding:90px 120px 120px;
+    position:relative;
+  }
+
+  /* ── Typography primitives ── */
+  .mono{font-family:'JetBrains Mono',monospace;}
+  .eyebrow{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;
+    letter-spacing:0.22em;
+    text-transform:uppercase;
+    color:var(--accent);
+    display:flex;align-items:center;gap:18px;
+    font-weight:500;
+  }
+  .eyebrow::before{
+    content:'';display:inline-block;
+    width:44px;height:1.5px;background:var(--accent);
+  }
+  .eyebrow.on-dark{color:#8AB4FF;}
+  .eyebrow.on-dark::before{background:#8AB4FF;}
+
+  h1.display{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:128px;
+    line-height:0.94;
+    letter-spacing:-0.045em;
+    color:var(--ink);
+    margin:0;
+  }
+  h1.display em{color:var(--accent);font-style:normal;}
+
+  h2.title{
+    font-family:'Inter',sans-serif;
+    font-weight:700;
+    font-size:84px;
+    line-height:1.02;
+    letter-spacing:-0.035em;
+    color:var(--ink);
+    margin:0;
+  }
+  h2.title em{color:var(--accent);font-style:normal;}
+
+  .body-lg{
+    font-size:34px;
+    line-height:1.45;
+    color:var(--ink-2);
+    font-weight:400;
+    letter-spacing:-0.005em;
+  }
+  .body{
+    font-size:28px;
+    line-height:1.5;
+    color:var(--ink-2);
+    font-weight:400;
+  }
+  .small{
+    font-size:24px;
+    line-height:1.5;
+    color:var(--ink-3);
+    font-family:'JetBrains Mono',monospace;
+    letter-spacing:0.02em;
+  }
+
+  .kicker{
+    font-family:'JetBrains Mono',monospace;
+    font-size:20px;
+    letter-spacing:0.18em;
+    text-transform:uppercase;
+    color:var(--ink-3);
+    font-weight:500;
+  }
+
+  /* ── Slide 1 — Title ── */
+  .slide-title{
+    justify-content:space-between;
+  }
+  .slide-title .brand{
+    display:flex;align-items:baseline;gap:20px;
+    flex-wrap:wrap;
+    margin-bottom:24px;
+  }
+  .slide-title .wordmark{
+    font-family:'Inter',sans-serif;
+    font-size:36px;font-weight:700;letter-spacing:0.08em;
+    color:var(--ink);
+  }
+  .slide-title .wordmark-sub{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--ink-3);letter-spacing:0.18em;text-transform:uppercase;
+    white-space:nowrap;
+  }
+  .title-hero h1{
+    font-size:184px;
+    line-height:0.9;
+    letter-spacing:-0.05em;
+    font-weight:700;
+  }
+  .title-tag{
+    font-size:44px;line-height:1.3;
+    color:var(--ink-2);
+    max-width:1200px;
+    margin-top:56px;
+    font-weight:400;
+    letter-spacing:-0.01em;
+  }
+  .title-tag em{color:var(--accent);font-style:normal;font-weight:500;}
+  .title-meta{
+    display:flex;
+    justify-content:space-between;
+    align-items:flex-end;
+    font-family:'JetBrains Mono',monospace;
+    color:var(--ink-3);
+    font-size:24px;
+    letter-spacing:0.06em;
+  }
+  .title-meta .block{display:flex;flex-direction:column;gap:6px;}
+  .title-meta .block b{color:var(--ink);font-weight:600;}
+
+  /* ── Slide framework ── */
+  .slide-head{
+    display:flex;flex-direction:column;gap:32px;margin-bottom:64px;
+  }
+  .two-col{
+    display:grid;grid-template-columns:1fr 1fr;gap:80px;flex:1;min-height:0;
+  }
+  .two-col.narrow-left{grid-template-columns:0.85fr 1.15fr;}
+  .col{display:flex;flex-direction:column;}
+
+  /* ── The Gap slide (checklist) ── */
+  .fw-list{
+    display:flex;flex-direction:column;gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;overflow:hidden;
+  }
+  .fw-row{
+    background:var(--surface);
+    padding:32px 40px;
+    display:grid;grid-template-columns:1fr auto;gap:32px;align-items:center;
+  }
+  .fw-row.missing{background:var(--accent-soft);border-left:5px solid var(--accent);}
+  .fw-name{font-size:30px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;}
+  .fw-desc{font-size:24px;color:var(--ink-2);margin-top:6px;line-height:1.45;}
+  .fw-status{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;font-weight:500;
+    padding:8px 18px;border-radius:9999px;
+    letter-spacing:0.06em;
+    white-space:nowrap;
+  }
+  .fw-status.has{background:var(--success-soft);color:var(--success);}
+  .fw-status.missing{background:#fff;color:var(--accent);border:1px solid var(--accent-bd);}
+
+  /* ── Cases strip ── */
+  .cases-strip{
+    display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;overflow:hidden;
+    flex:1;min-height:0;
+  }
+  .case-card{
+    background:var(--surface);
+    padding:44px 32px;
+    display:flex;flex-direction:column;
+  }
+  .case-name{font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-0.015em;}
+  .case-year{font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);margin-top:6px;letter-spacing:0.08em;}
+  .case-fail{
+    margin-top:28px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;font-weight:500;color:var(--accent);
+    letter-spacing:0.06em;text-transform:uppercase;
+    padding-bottom:16px;border-bottom:1px solid var(--border);
+  }
+  .case-desc{font-size:24px;color:var(--ink-2);margin-top:20px;line-height:1.5;flex:1;}
+
+  .big-fig{
+    font-family:'JetBrains Mono',monospace;
+    font-size:160px;
+    font-weight:700;
+    line-height:0.9;
+    color:var(--accent);
+    letter-spacing:-0.04em;
+  }
+  .big-fig-label{
+    font-size:28px;color:var(--ink-2);line-height:1.45;max-width:520px;margin-top:8px;
+  }
+
+  /* ── Numbers (dark) ── */
+  .dark{background:var(--ink)!important;color:#fff;}
+  .dark h2.title,.dark h1.display{color:#fff;}
+  .dark h2.title em,.dark h1.display em{color:#8AB4FF;}
+  .dark .body-lg,.dark .body{color:#B5B7C2;}
+  .dark .small{color:#858896;}
+  .dark .kicker{color:#858896;}
+
+  .stats-row{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:56px;flex:1;align-items:end;
+  }
+  .stat{display:flex;flex-direction:column;gap:16px;}
+  .stat-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:192px;font-weight:700;line-height:0.9;letter-spacing:-0.045em;
+    color:var(--ink);
+  }
+  .stat-desc{
+    font-size:26px;line-height:1.45;color:#B5B7C2;max-width:440px;
+  }
+  .stat-source{
+    margin-top:16px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:#858896;letter-spacing:0.08em;
+  }
+
+  /* ── Framework steps ── */
+  .steps{
+    display:flex;flex-direction:column;gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);
+    border-radius:14px;overflow:hidden;
+  }
+  .step{
+    background:var(--surface);
+    padding:22px 36px;
+    display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:baseline;
+  }
+  .step.first{background:var(--accent-soft);border-left:5px solid var(--accent);}
+  .step-n{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--accent);letter-spacing:0.1em;
+    font-weight:500;min-width:80px;
+  }
+  .step-t{font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;margin-bottom:4px;}
+  .step-d{font-size:22px;line-height:1.45;color:var(--ink-2);}
+
+  /* ── Validation ── */
+  .metrics-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px;
+  }
+  .metric{
+    background:var(--surface);
+    border:1px solid var(--border);border-radius:14px;
+    padding:40px 36px;
+    display:flex;flex-direction:column;gap:16px;
+  }
+  .metric-num{
+    font-family:'JetBrains Mono',monospace;
+    font-size:92px;font-weight:700;color:var(--accent);line-height:1;letter-spacing:-0.035em;
+  }
+  .metric-desc{font-size:24px;color:var(--ink-2);line-height:1.45;}
+  .metric-target{font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);letter-spacing:0.08em;margin-top:4px;}
+
+  table.validate{
+    width:100%;border-collapse:collapse;
+    background:var(--surface);
+    border:1px solid var(--border);border-radius:14px;
+    overflow:hidden;
+    font-size:22px;
+    margin-top:8px;
+  }
+  table.validate th{
+    background:var(--ink);color:#fff;
+    text-align:left;padding:18px 24px;
+    font-weight:500;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;letter-spacing:0.1em;text-transform:uppercase;
+  }
+  table.validate td{padding:20px 24px;border-top:1px solid var(--border);color:var(--ink);font-size:24px;}
+  table.validate td.small-c{font-size:24px;color:var(--ink-2);}
+  .yes{
+    display:inline-block;
+    background:var(--success-soft);color:var(--success);
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;font-weight:600;letter-spacing:0.08em;
+    padding:6px 14px;border-radius:9999px;
+  }
+
+  /* ── Demo slide ── */
+  .demo-wrap{
+    flex:1;display:grid;grid-template-columns:1fr 1fr;gap:80px;align-items:center;
+  }
+  .demo-cue{
+    background:var(--surface);
+    border:1px solid var(--border);
+    border-radius:20px;
+    padding:56px;
+    display:flex;flex-direction:column;gap:32px;
+  }
+  .cue-row{
+    display:grid;grid-template-columns:auto 1fr;gap:28px;align-items:baseline;
+    padding-bottom:28px;border-bottom:1px solid var(--border);
+  }
+  .cue-row:last-child{border-bottom:none;padding-bottom:0;}
+  .cue-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;
+    font-weight:600;min-width:150px;
+  }
+  .cue-text{font-size:28px;color:var(--ink);line-height:1.4;font-weight:500;letter-spacing:-0.005em;}
+  .cue-text .sub{display:block;font-size:24px;color:var(--ink-2);font-weight:400;margin-top:6px;font-family:'JetBrains Mono',monospace;}
+
+  .url-card{
+    display:inline-flex;align-items:center;gap:18px;
+    background:var(--ink);color:#fff;
+    padding:22px 32px;border-radius:12px;
+    font-family:'JetBrains Mono',monospace;font-size:24px;font-weight:500;
+    letter-spacing:0.02em;
+  }
+  .url-card .dot{width:10px;height:10px;background:#8AB4FF;border-radius:50%;}
+
+  /* ── Contributions ── */
+  .contrib-grid{
+    display:grid;grid-template-columns:repeat(2,1fr);gap:1px;
+    background:var(--border);
+    border:1px solid var(--border);border-radius:14px;overflow:hidden;
+    flex:1;
+  }
+  .contrib-card{
+    background:var(--surface);
+    padding:52px 56px;
+    display:flex;flex-direction:column;gap:20px;
+  }
+  .contrib-card.position{background:var(--accent-soft);}
+  .contrib-label{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--accent);letter-spacing:0.16em;text-transform:uppercase;font-weight:500;
+  }
+  .contrib-t{font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1.15;}
+  .contrib-card.position .contrib-t{color:var(--accent);font-size:40px;}
+  .contrib-d{font-size:24px;color:var(--ink-2);line-height:1.5;}
+  .contrib-card.position .contrib-d{color:var(--ink);font-weight:500;font-size:26px;}
+
+  /* ── Thank you ── */
+  .slide-thanks{align-items:flex-start;}
+  .thanks-stack{display:flex;flex-direction:column;gap:36px;flex:1;justify-content:center;}
+  .thanks-big{
+    font-size:200px;font-weight:700;letter-spacing:-0.05em;line-height:0.92;color:#fff;
+  }
+  .thanks-big em{color:#8AB4FF;font-style:normal;}
+  .thanks-line{
+    font-size:36px;color:#B5B7C2;line-height:1.4;max-width:1200px;letter-spacing:-0.005em;
+  }
+  .thanks-foot{
+    display:flex;gap:56px;flex-wrap:wrap;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:#858896;letter-spacing:0.06em;
+    margin-top:24px;
+    margin-bottom:20px;
+  }
+  .thanks-foot .k{color:#8AB4FF;margin-right:12px;}
+
+  /* ── Methodology phases ── */
+  .phase-grid{
+    display:grid;grid-template-columns:repeat(3,1fr);gap:24px;flex:1;
+  }
+  .phase{
+    background:var(--surface);
+    border:1px solid var(--border);border-radius:16px;
+    padding:44px 40px;
+    display:flex;flex-direction:column;gap:24px;
+    position:relative;
+  }
+  .phase-top{display:flex;justify-content:space-between;align-items:baseline;}
+  .phase-n{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--accent);letter-spacing:0.14em;font-weight:600;
+  }
+  .phase-tag{
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--ink-3);letter-spacing:0.08em;text-transform:uppercase;
+  }
+  .phase-t{font-size:36px;font-weight:700;color:var(--ink);letter-spacing:-0.02em;line-height:1.15;}
+  .phase-d{font-size:24px;color:var(--ink-2);line-height:1.55;flex:1;}
+  .phase-foot{
+    padding-top:24px;border-top:1px solid var(--border);
+    display:flex;align-items:baseline;gap:14px;
+  }
+  .phase-metric{
+    font-family:'JetBrains Mono',monospace;
+    font-size:42px;font-weight:700;color:var(--accent);line-height:1;letter-spacing:-0.02em;
+  }
+  .phase-metric-l{font-size:24px;color:var(--ink-2);font-family:'JetBrains Mono',monospace;letter-spacing:0.06em;}
+
+  /* ── Footer slug on all slides ── */
+  .slide-slug{
+    position:absolute;
+    bottom:36px;left:120px;right:120px;
+    display:flex;justify-content:space-between;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--ink-3);letter-spacing:0.15em;text-transform:uppercase;
+  }
+  .dark .slide-slug{color:#858896;}
+  .slide-slug .brandlet{color:var(--ink);font-weight:600;letter-spacing:0.15em;}
+  .dark .slide-slug .brandlet{color:#fff;}
+
+  /* callout */
+  .pull-quote{
+    background:var(--surface);
+    border-left:5px solid var(--accent);
+    border-radius:0 14px 14px 0;
+    padding:36px 44px;
+    margin-top:8px;
+    font-size:30px;color:var(--ink);
+    line-height:1.4;
+    font-weight:500;
+    letter-spacing:-0.01em;
+  }
+  .dark .pull-quote{background:#1E1E26;color:#fff;border-left-color:#8AB4FF;}
+
+  /* Title slide accent */
+  .brand-stripe{
+    display:flex;gap:12px;align-items:center;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;
+    font-weight:600;
+  }
+  .brand-stripe .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
+  @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
+
+  /* framework two-col image */
+  .fig-note{
+    margin-top:24px;
+    font-family:'JetBrains Mono',monospace;
+    font-size:24px;color:var(--ink-3);letter-spacing:0.04em;line-height:1.5;
+  }
+</style>
+</head>
+<body>
+
+<deck-stage width="1920" height="1080">
+
+  <!-- ─────────────── 01 THE HOOK ─────────────── -->
+  <section data-label="01 Opening question">
+    <div class="slide-head">
+      <div class="eyebrow">Opening question</div>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:48px;">
+      <h1 class="display" style="font-size:112px;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
+      <p class="body-lg" style="max-width:1400px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name: the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
+      <p class="body-lg" style="max-width:1400px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>01 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 02 TITLE ─────────────── -->
+  <section data-label="02 Title" class="slide-title">
+    <div class="brand">
+      <span class="wordmark">NEXUS</span>
+      <span class="wordmark-sub">Interface selection, by evidence</span>
+    </div>
+
+    <div class="title-hero">
+      <div class="brand-stripe" style="margin-bottom:36px;">
+        <span class="dot"></span> Master's Thesis Defense · 2026
+      </div>
+      <h1 class="display">A framework for<br>choosing the<br><em>interface type.</em></h1>
+      <p class="title-tag">Before the first mockup. Before the engineering estimate.<br>The decision <em>every</em> design methodology leaves unanswered.</p>
+    </div>
+
+    <div class="title-meta">
+      <div class="block">
+        <span>Author</span>
+        <b>ZARATE Ilverzon</b>
+      </div>
+      <div class="block">
+        <span>Director</span>
+        <b>MONGUET, JM</b>
+      </div>
+      <div class="block">
+        <span>Programme</span>
+        <b>Master in Advanced Studies in Design - Barcelona (UPC / UB)</b>
+      </div>
+      <div class="block" style="text-align:right;">
+        <span>Document</span>
+        <b>TFM · Oral defense</b>
+      </div>
+    </div>
+  </section>
+
+
+  <!-- ─────────────── 03 THE GAP ─────────────── -->
+  <section data-label="03 The gap">
+    <div class="slide-head">
+      <div class="eyebrow">01 · The gap</div>
+      <h2 class="title">Good tools for <em>how</em> to design.<br>Nothing for <em>what</em> to design.</h2>
+    </div>
+    <div class="two-col narrow-left">
+      <div class="col" style="justify-content:center;gap:28px;">
+        <p class="body-lg">Every design methodology assumes you have already chosen what kind of interface to build.</p>
+        <p class="body-lg" style="color:var(--ink);font-weight:500;">None of them help you make that choice.</p>
+        <p class="small">Literature review · design methodology corpus</p>
+      </div>
+      <div class="col">
+        <div class="fw-list">
+          <div class="fw-row">
+            <div>
+              <div class="fw-name">Design Thinking</div>
+              <div class="fw-desc">How to improve a product once you know what it is</div>
+            </div>
+            <span class="fw-status has">Exists</span>
+          </div>
+          <div class="fw-row">
+            <div>
+              <div class="fw-name">User-Centered Design</div>
+              <div class="fw-desc">How to make a product fit its users</div>
+            </div>
+            <span class="fw-status has">Exists</span>
+          </div>
+          <div class="fw-row">
+            <div>
+              <div class="fw-name">HCD / UX methods</div>
+              <div class="fw-desc">How to test and refine an interface</div>
+            </div>
+            <span class="fw-status has">Exists</span>
+          </div>
+          <div class="fw-row missing">
+            <div>
+              <div class="fw-name">Choosing the interface type</div>
+              <div class="fw-desc">Screen · voice · wearable · AI · spatial — which one?</div>
+            </div>
+            <span class="fw-status missing">Missing</span>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>03 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 04 THE COST ─────────────── -->
+  <section data-label="04 The cost">
+    <div class="slide-head">
+      <div style="display:flex;justify-content:space-between;align-items:flex-end;gap:60px;">
+        <div style="flex:1;">
+          <div class="eyebrow" style="margin-bottom:28px;">02 · What happens without a framework</div>
+          <h2 class="title">Right technology.<br><em>Wrong interface type.</em></h2>
+        </div>
+        <div style="text-align:right;">
+          <div class="big-fig">€988M</div>
+          <div class="big-fig-label" style="margin-left:auto;text-align:right;">Combined documented losses across just five cases. Only the numbers companies disclosed.</div>
+        </div>
+      </div>
+    </div>
+    <div class="cases-strip">
+      <div class="case-card">
+        <div class="case-name">Google Glass</div>
+        <div class="case-year">2013</div>
+        <div class="case-fail">Values mismatch</div>
+        <div class="case-desc">Spatial interface forced onto everyday social contexts. Rejected on privacy, not technology.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-name">Humane AI Pin</div>
+        <div class="case-year">2024</div>
+        <div class="case-fail">Latency + redundancy</div>
+        <div class="case-desc">Screenless wearable with 5–10s delays. Smartphones already solved this.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-name">Rabbit R1</div>
+        <div class="case-year">2024</div>
+        <div class="case-fail">Value proposition</div>
+        <div class="case-desc">Dedicated AI hardware with no answer to: "why not just use my phone?"</div>
+      </div>
+      <div class="case-card">
+        <div class="case-name">Fire Phone</div>
+        <div class="case-year">2014</div>
+        <div class="case-fail">Task mismatch</div>
+        <div class="case-desc">3D spatial UI on a phone where no daily task required it. $170M writedown.</div>
+      </div>
+      <div class="case-card">
+        <div class="case-name">Clippy</div>
+        <div class="case-year">2001</div>
+        <div class="case-fail">Interaction initiation</div>
+        <div class="case-desc">System interrupted users who needed full control. Users demanded removal.</div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>04 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 05 THE BOTTLENECK ─────────────── -->
+  <section data-label="05 The bottleneck">
+    <div class="slide-head">
+      <div class="eyebrow">03 · It is not an isolated pattern</div>
+      <h2 class="title">The failure is not technical.<br><em>It is structural.</em></h2>
+    </div>
+    <div class="stats-row">
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent);">95<span style="font-size:120px;">%</span></div>
+        <div class="stat-desc" style="color:var(--ink-2);">of generative AI pilots fail to deliver measurable impact.</div>
+        <div class="stat-source" style="color:var(--ink-3);">MIT NANDA · 2025</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent);">80<span style="font-size:120px;">%</span></div>
+        <div class="stat-desc" style="color:var(--ink-2);">of AI projects never reach real use — twice conventional IT.</div>
+        <div class="stat-source" style="color:var(--ink-3);">RAND Corporation · 2024</div>
+      </div>
+      <div class="stat">
+        <div class="stat-num" style="color:var(--accent);">84<span style="font-size:120px;">%</span></div>
+        <div class="stat-desc" style="color:var(--ink-2);">of those failures trace to leadership decisions, not engineering.</div>
+        <div class="stat-source" style="color:var(--ink-3);">RAND Corporation · 2024</div>
+      </div>
+    </div>
+    <div class="pull-quote" style="margin-top:56px;">The bottleneck is the decision. Not the technology.</div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>05 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 05 THE FRAMEWORK ─────────────── -->
+  <section data-label="05 The framework">
+    <div class="slide-head" style="margin-bottom:44px;">
+      <div class="eyebrow">04 · The framework</div>
+      <h2 class="title">A structured conversation,<br>in <em>four stages.</em></h2>
+    </div>
+    <div class="two-col" style="flex:1;min-height:0;">
+      <div class="col" style="justify-content:center;gap:28px;">
+        <p class="body-lg">Designed to make the interface type decision explicit, documented, and impossible to override by opinion alone.</p>
+        <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:28px 36px;">
+          <div class="mono" style="font-size:24px;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:10px;">Principle</div>
+          <div style="font-size:28px;color:var(--ink);line-height:1.35;font-weight:500;letter-spacing:-0.01em;">Values come first.<br>Before any technical question.</div>
+          <div class="mono" style="font-size:24px;color:var(--ink-3);margin-top:18px;letter-spacing:0.08em;">Based on Ackoff (1989) · DIKW</div>
+        </div>
+      </div>
+      <div class="col">
+        <div class="steps">
+          <div class="step first">
+            <div class="step-n">01 —</div>
+            <div>
+              <div class="step-t">Values</div>
+              <div class="step-d">Rank what the organisation stands for. That ranking is the primary filter.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">02 —</div>
+            <div>
+              <div class="step-t">Context</div>
+              <div class="step-d">Eleven structured questions: users, frequency, environment, consequence of failure.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">03 —</div>
+            <div>
+              <div class="step-t">Patterns</div>
+              <div class="step-d">Does this context resemble any of the five documented failures? The framework flags the match.</div>
+            </div>
+          </div>
+          <div class="step">
+            <div class="step-n">04 —</div>
+            <div>
+              <div class="step-t">Report</div>
+              <div class="step-d">Not a verdict. Alignments, tensions, precedents. The designer reads it and decides.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>06 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 07 THE METHOD ─────────────── -->
+  <section data-label="07 The method">
+    <div class="slide-head">
+      <div class="eyebrow">05 · Research method</div>
+      <h2 class="title">Three phases.<br><em>Three kinds of evidence.</em></h2>
+    </div>
+    <div class="phase-grid">
+      <div class="phase">
+        <div class="phase-top">
+          <span class="phase-n">PHASE 01</span>
+          <span class="phase-tag">Construction</span>
+        </div>
+        <div class="phase-t">Built from the literature</div>
+        <div class="phase-d">Literature review confirms no established framework addresses interface type selection as a standalone decision. Expert interviews with practitioners produce the values taxonomy and assessment structure.</div>
+        <div class="phase-foot">
+          <span class="phase-metric">15</span>
+          <span class="phase-metric-l">designers & PMs interviewed</span>
+        </div>
+      </div>
+      <div class="phase">
+        <div class="phase-top">
+          <span class="phase-n">PHASE 02</span>
+          <span class="phase-tag">Retrospective</span>
+        </div>
+        <div class="phase-t">Tested against history</div>
+        <div class="phase-d">Framework applied to the five documented failures using only information publicly available before each product launched. Target: identify 70 % of documented failure factors (Landis & Koch, 1977).</div>
+        <div class="phase-foot">
+          <span class="phase-metric">5</span>
+          <span class="phase-metric-l">cases · pre-launch data only</span>
+        </div>
+      </div>
+      <div class="phase" style="background:var(--accent-soft);border-color:var(--accent-bd);">
+        <div class="phase-top">
+          <span class="phase-n">PHASE 03</span>
+          <span class="phase-tag">Proof of concept</span>
+        </div>
+        <div class="phase-t">Validated with practitioners</div>
+        <div class="phase-d">NEXUS built as a browser-based tool and tested with designers and product managers. Works in practice, not only on paper — and produced the usability data on the next slide.</div>
+        <div class="phase-foot">
+          <span class="phase-metric">15</span>
+          <span class="phase-metric-l">participants · tool session</span>
+        </div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>07 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 08 VALIDATION ─────────────── -->
+  <section data-label="08 Validation">
+    <div class="slide-head">
+      <div class="eyebrow">06 · Validation</div>
+      <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;">
+        <h2 class="title" style="margin:0;">Did it see<br>what went <em>wrong?</em></h2>
+        <p class="body-lg">Applied to each product using only pre-launch public information.</p>
+      </div>
+    </div>
+    <div class="two-col" style="gap:56px;">
+      <div class="col" style="gap:20px;">
+        <div class="metric">
+          <div class="metric-num">82<span style="font-size:56px;">%</span></div>
+          <div>
+            <div class="metric-desc">of documented failure factors identified across all five cases.</div>
+            <div class="metric-target">Target 70 % · Landis & Koch (1977)</div>
+          </div>
+        </div>
+        <div style="display:grid;grid-template-columns:1fr 1fr;gap:20px;">
+          <div class="metric">
+            <div class="metric-num" style="font-size:72px;">70<span style="font-size:40px;">%</span></div>
+            <div class="metric-desc">agreement with designer judgment</div>
+          </div>
+          <div class="metric">
+            <div class="metric-num" style="font-size:72px;">4.3<span style="font-size:40px;">/5</span></div>
+            <div class="metric-desc">ease of use · 12 of 15 rated 4 or 5</div>
+          </div>
+        </div>
+      </div>
+      <div class="col" style="gap:20px;">
+        <table class="validate">
+          <thead>
+            <tr><th>Product</th><th>What went wrong</th><th style="text-align:right;">Caught?</th></tr>
+          </thead>
+          <tbody>
+            <tr><td>Google Glass</td><td class="small-c">Privacy violation in public spaces</td><td style="text-align:right;"><span class="yes">Yes</span></td></tr>
+            <tr><td>Humane AI Pin</td><td class="small-c">Privacy + tech not ready for context</td><td style="text-align:right;"><span class="yes">Yes</span></td></tr>
+            <tr><td>Rabbit R1</td><td class="small-c">Problem users had already solved</td><td style="text-align:right;"><span class="yes">Yes</span></td></tr>
+            <tr><td>Fire Phone</td><td class="small-c">Innovation mismatched with phone use</td><td style="text-align:right;"><span class="yes">Yes</span></td></tr>
+            <tr><td>Clippy</td><td class="small-c">Automation that removed user control</td><td style="text-align:right;"><span class="yes">Yes</span></td></tr>
+          </tbody>
+        </table>
+        <p class="small" style="margin-top:8px;">The information needed to detect these problems existed before each product launched.</p>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>08 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 09 THE TOOL / DEMO ─────────────── -->
+  <section data-label="09 The tool — demo">
+    <div class="slide-head">
+      <div class="eyebrow">07 · The tool</div>
+      <h2 class="title">NEXUS in the browser.<br><em>Live demo.</em></h2>
+    </div>
+    <div class="demo-wrap">
+      <div class="col" style="gap:32px;">
+        <p class="body-lg">Fifteen minutes, no installation. A guided conversation about values, context, and constraints — ending in a report, not an answer.</p>
+        <a class="url-card" href="https://nexus-flame-delta.vercel.app" target="_blank" rel="noopener">
+          <span class="dot"></span>nexus-flame-delta.vercel.app
+        </a>
+        <p class="small" style="margin-top:12px;">Open source · MIT License · github.com/Zarfet/reason-road</p>
+      </div>
+      <div class="demo-cue">
+        <div class="cue-row">
+          <div class="cue-label">Input</div>
+          <div class="cue-text">Rank five values.<span class="sub">Control · accessibility · sustainability · efficiency · joy.</span></div>
+        </div>
+        <div class="cue-row">
+          <div class="cue-label">Then</div>
+          <div class="cue-text">Answer 11 context questions.<span class="sub">Users · frequency · environment · consequence of failure.</span></div>
+        </div>
+        <div class="cue-row">
+          <div class="cue-label">Output</div>
+          <div class="cue-text">A structured report.<span class="sub">Type alignment · tensions · relevant historical precedents.</span></div>
+        </div>
+        <div class="cue-row">
+          <div class="cue-label">Position</div>
+          <div class="cue-text" style="color:var(--accent);">It informs. <em style="font-style:normal;">You</em> decide.</div>
+        </div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>09 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 10 CONTRIBUTIONS ─────────────── -->
+  <section data-label="10 Contributions">
+    <div class="slide-head">
+      <div class="eyebrow">08 · Contributions</div>
+      <h2 class="title">Four contributions.<br><em>One open platform.</em></h2>
+    </div>
+    <div class="contrib-grid">
+      <div class="contrib-card">
+        <div class="contrib-label">For the field</div>
+        <div class="contrib-t">A replicable method</div>
+        <div class="contrib-d">First application of DIKW methodology (Ackoff, 1989) to interface type selection. Extensible to new types, cultural contexts, and failures we have not yet seen.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-label">For practice</div>
+        <div class="contrib-t">Evidence to defend good decisions</div>
+        <div class="contrib-d">A structured argument for designers. Makes judgment visible, documented, and harder to override by opinion alone — including the HiPPO's.</div>
+      </div>
+      <div class="contrib-card">
+        <div class="contrib-label">For the community</div>
+        <div class="contrib-t">Infrastructure that outlives the defense</div>
+        <div class="contrib-d">MIT-licensed tool accessible to a solo designer and a corporation equally. The research does not end when this session does.</div>
+      </div>
+      <div class="contrib-card position">
+        <div class="contrib-label">As a position</div>
+        <div class="contrib-t">"It informs. It does not decide."</div>
+        <div class="contrib-d">Structure in service of human judgment, not instead of it.</div>
+      </div>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>10 / 11</span></div>
+  </section>
+
+
+  <!-- ─────────────── 11 THANK YOU ─────────────── -->
+  <section data-label="11 Thank you" class="slide-thanks" style="padding:100px 120px 80px;">
+    <div class="eyebrow">End · Questions welcome</div>
+    <div class="thanks-stack">
+      <h1 class="thanks-big" style="color:var(--ink);">Thank<br>you.</h1>
+      <p class="thanks-line" style="color:var(--ink-2);">NEXUS · Evidence-based interface selection.<br><span style="color:var(--ink);">Open source, and yours to use.</span></p>
+    </div>
+    <div class="thanks-foot" style="color:var(--ink-3);">
+      <span><span class="k" style="color:var(--accent);margin-right:12px;">TOOL</span>nexus-flame-delta.vercel.app</span>
+      <span><span class="k" style="color:var(--accent);margin-right:12px;">CODE</span>github.com/Zarfet/reason-road</span>
+      <span><span class="k" style="color:var(--accent);margin-right:12px;">LICENSE</span>MIT</span>
+    </div>
+  </section>
+
+</deck-stage>
+
+</body>
+</html>
