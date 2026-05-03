@@ -62,7 +62,7 @@
       position: fixed;
       inset: 0;
       display: block;
-      background: #000;
+      background: var(--bg, #F5F5F2);
       color: #fff;
       font-family: -apple-system, BlinkMacSystemFont, "Helvetica Neue", Helvetica, Arial, sans-serif;
       overflow: hidden;
@@ -120,6 +120,18 @@
     /* Only activate tap zones on coarse pointers (touch devices). */
     @media (hover: hover) and (pointer: fine) {
       .tapzones { display: none; }
+    }
+
+    /* Invisible trigger strip at bottom-centre — hover it to reveal controls */
+    .overlay-trigger {
+      position: fixed;
+      left: 50%;
+      bottom: 0;
+      transform: translateX(-50%);
+      width: 220px;
+      height: 52px;
+      z-index: 2147482999;
+      pointer-events: auto;
     }
 
     .overlay {
@@ -210,8 +222,8 @@
       text-align: center;
       font-size: 12px;
     }
-    .count .sep { color: rgba(255,255,255,0.45); margin: 0 3px; font-weight: 400; }
-    .count .total { color: rgba(255,255,255,0.55); }
+    .count .sep { display: none; }
+    .count .total { display: none; }
 
     .divider {
       width: 1px;
@@ -377,7 +389,16 @@
       overlay.querySelector('.next').addEventListener('click', () => this._go(this._index + 1, 'click'));
       overlay.querySelector('.reset').addEventListener('click', () => this._go(0, 'click'));
 
-      this._root.append(style, stage, tapzones, overlay);
+      // Hover trigger zone — invisible strip at bottom-centre that reveals controls
+      const trigger = document.createElement('div');
+      trigger.className = 'overlay-trigger export-hidden';
+      trigger.setAttribute('aria-hidden', 'true');
+      trigger.addEventListener('mouseenter', () => this._showOverlay());
+      trigger.addEventListener('mouseleave', () => this._scheduleHide());
+      overlay.addEventListener('mouseenter', () => this._keepOverlay());
+      overlay.addEventListener('mouseleave', () => this._scheduleHide());
+
+      this._root.append(style, stage, tapzones, trigger, overlay);
       this._canvas = canvas;
       this._slot = slot;
       this._overlay = overlay;
@@ -518,12 +539,31 @@
     }
 
     _flashOverlay() {
+      // On keyboard nav: briefly show then auto-hide
       if (!this._overlay) return;
       this._overlay.setAttribute('data-visible', '');
       if (this._hideTimer) clearTimeout(this._hideTimer);
       this._hideTimer = setTimeout(() => {
         this._overlay.removeAttribute('data-visible');
       }, OVERLAY_HIDE_MS);
+    }
+
+    _showOverlay() {
+      if (!this._overlay) return;
+      if (this._hideTimer) { clearTimeout(this._hideTimer); this._hideTimer = null; }
+      this._overlay.setAttribute('data-visible', '');
+    }
+
+    _keepOverlay() {
+      if (!this._overlay) return;
+      if (this._hideTimer) { clearTimeout(this._hideTimer); this._hideTimer = null; }
+    }
+
+    _scheduleHide() {
+      if (this._hideTimer) clearTimeout(this._hideTimer);
+      this._hideTimer = setTimeout(() => {
+        if (this._overlay) this._overlay.removeAttribute('data-visible');
+      }, 300);
     }
 
     _fit() {
@@ -544,8 +584,8 @@
     _onResize() { this._fit(); }
 
     _onMouseMove() {
-      // Keep overlay visible while mouse moves; hide after idle.
-      this._flashOverlay();
+      // Mouse movement no longer auto-reveals controls.
+      // Controls appear only on keyboard nav or hovering the bottom-centre trigger zone.
     }
 
     _onTapBack(e) {
