@@ -478,6 +478,33 @@
   }
   .dark .pull-quote{background:#1E1E26;color:#fff;border-left-color:#8AB4FF;}
 
+  /* ── Slide 01 hippo layout ── */
+  .hook-layout{flex:1;display:grid;grid-template-columns:1fr auto;gap:80px;align-items:center;}
+  .hook-text{display:flex;flex-direction:column;justify-content:center;gap:48px;}
+  .hook-hippo{display:flex;align-items:flex-end;justify-content:flex-end;padding-bottom:0;}
+  .hook-hippo img{width:420px;height:auto;opacity:0.92;}
+
+  /* ── Video play icon button (slide 01, top-right) ── */
+  .play-icon-btn{
+    position:absolute;top:40px;right:120px;
+    width:64px;height:64px;
+    background:var(--ink);color:#fff;
+    border:none;cursor:pointer;border-radius:50%;
+    display:flex;align-items:center;justify-content:center;
+    transition:opacity 0.15s;z-index:10;
+  }
+  .play-icon-btn:hover{opacity:0.75;}
+  .play-icon-btn svg{margin-left:4px;}
+
+  /* ── Video modal ── */
+  .vmodal-overlay{position:fixed;inset:0;background:rgba(0,0,0,0.88);z-index:9999;display:none;align-items:center;justify-content:center;padding:32px;}
+  .vmodal-overlay.open{display:flex;}
+  .vmodal-box{position:relative;background:#000;border-radius:16px;overflow:hidden;width:100%;max-width:1100px;box-shadow:0 40px 100px rgba(0,0,0,0.7);}
+  .vmodal-bar{display:flex;align-items:center;justify-content:flex-end;gap:8px;padding:10px 12px;background:rgba(0,0,0,0.7);position:absolute;top:0;left:0;right:0;z-index:10;}
+  .vmodal-btn{display:flex;align-items:center;justify-content:center;width:34px;height:34px;border-radius:8px;background:rgba(255,255,255,0.12);border:none;color:#fff;cursor:pointer;transition:background 0.15s;}
+  .vmodal-btn:hover{background:rgba(255,255,255,0.25);}
+  .vmodal-video{width:100%;display:block;}
+
   /* Title slide accent */
   .brand-stripe{
     display:flex;gap:12px;align-items:center;
@@ -502,13 +529,21 @@
 
   <!-- ─────────────── 01 THE HOOK ─────────────── -->
   <section data-label="01 Opening question">
+    <button class="play-icon-btn" id="openVideoBtn" title="Watch demo video" aria-label="Watch demo video">
+      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </button>
     <div class="slide-head">
       <div class="eyebrow">Opening question</div>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:48px;">
-      <h1 class="display" style="font-size:112px;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
-      <p class="body-lg" style="max-width:1400px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name: the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
-      <p class="body-lg" style="max-width:1400px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
+    <div class="hook-layout">
+      <div class="hook-text">
+        <h1 class="display" style="font-size:112px;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
+        <p class="body-lg" style="max-width:900px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name: the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
+        <p class="body-lg" style="max-width:900px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
+      </div>
+      <div class="hook-hippo">
+        <img src="hippo.png" alt="HiPPO mascot" />
+      </div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>01 / 11</span></div>
   </section>
@@ -910,6 +945,58 @@
   </section>
 
 </deck-stage>
+
+<!-- VIDEO MODAL -->
+<div class="vmodal-overlay" id="videoModal" role="dialog" aria-modal="true" aria-label="Nexus demo video">
+  <div class="vmodal-box" id="videoBox">
+    <div class="vmodal-bar">
+      <button class="vmodal-btn" id="fullscreenBtn" title="Toggle fullscreen" aria-label="Toggle fullscreen">
+        <svg id="fsIconExpand" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><polyline points="15 3 21 3 21 9"/><polyline points="9 21 3 21 3 15"/><line x1="21" y1="3" x2="14" y2="10"/><line x1="3" y1="21" x2="10" y2="14"/></svg>
+        <svg id="fsIconCollapse" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" style="display:none"><polyline points="4 14 10 14 10 20"/><polyline points="20 10 14 10 14 4"/><line x1="10" y1="14" x2="3" y2="21"/><line x1="21" y1="3" x2="14" y2="10"/></svg>
+      </button>
+      <button class="vmodal-btn" id="closeVideoBtn" title="Close" aria-label="Close video">
+        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><line x1="18" y1="6" x2="6" y2="18"/><line x1="6" y1="6" x2="18" y2="18"/></svg>
+      </button>
+    </div>
+    <video class="vmodal-video" id="nexusVideo" controls preload="metadata" src="Nexus.m4v"></video>
+  </div>
+</div>
+
+<script>
+(function(){
+  var overlay  = document.getElementById('videoModal');
+  var video    = document.getElementById('nexusVideo');
+  var openBtn  = document.getElementById('openVideoBtn');
+  var closeBtn = document.getElementById('closeVideoBtn');
+  var fsBtn    = document.getElementById('fullscreenBtn');
+  var fsExp    = document.getElementById('fsIconExpand');
+  var fsCol    = document.getElementById('fsIconCollapse');
+  function openModal(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function closeModal(){
+    if(document.fullscreenElement) document.exitFullscreen();
+    overlay.classList.remove('open');
+    video.pause();
+    document.body.style.overflow='';
+  }
+  function toggleFs(){
+    if(!document.fullscreenElement){
+      (video.requestFullscreen||video.webkitRequestFullscreen||video.mozRequestFullScreen).call(video);
+    } else {
+      (document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen).call(document);
+    }
+  }
+  document.addEventListener('fullscreenchange', function(){
+    var inFs = !!document.fullscreenElement;
+    fsExp.style.display = inFs ? 'none' : '';
+    fsCol.style.display = inFs ? ''     : 'none';
+  });
+  if(openBtn) openBtn.addEventListener('click', openModal);
+  closeBtn.addEventListener('click', closeModal);
+  fsBtn.addEventListener('click', toggleFs);
+  overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
+  document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) closeModal(); });
+})();
+</script>
 
 </body>
 </html>
