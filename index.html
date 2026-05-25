@@ -304,6 +304,15 @@
   .step-t{font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;margin-bottom:4px;}
   .step-d{font-size:22px;line-height:1.45;color:var(--ink-2);}
 
+  /* B2 & B4 — centred card layout */
+  [data-label="B2 Case selection"] .step,
+  [data-label="B4 Scoring algorithm"] .step {
+    display:flex;flex-direction:column;align-items:center;justify-content:center;
+    text-align:center;gap:10px;
+  }
+  [data-label="B2 Case selection"] .step-n,
+  [data-label="B4 Scoring algorithm"] .step-n { min-width:unset; }
+
   /* ── Validation ── */
   .metrics-grid{
     display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:16px;
@@ -1027,30 +1036,30 @@
     </div>
     <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px;align-content:center;">
       <div class="step first">
-        <div class="step-n">01 —</div>
+        <div class="step-n">01</div>
         <div>
-          <div class="step-t">Commercial impact</div>
+          <div class="step-t" style="font-size:28px;">Commercial impact</div>
           <div class="step-d">Min. €100M investment or significant market withdrawal.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">02 —</div>
+        <div class="step-n">02</div>
         <div>
-          <div class="step-t">Documentation quality</div>
+          <div class="step-t" style="font-size:28px;">Documentation quality</div>
           <div class="step-d">Multiple independent sources: press, company comms, academic papers, user feedback.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">03 —</div>
+        <div class="step-n">03</div>
         <div>
-          <div class="step-t">Temporal coverage</div>
+          <div class="step-t" style="font-size:28px;">Temporal coverage</div>
           <div class="step-d">1997–2024 across five interface types: automation, spatial, AI, screen, voice.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">04 —</div>
+        <div class="step-n">04</div>
         <div>
-          <div class="step-t">Interface type diversity</div>
+          <div class="step-t" style="font-size:28px;">Interface type diversity</div>
           <div class="step-d">One case per category. Prevents skew from repeated failures in one type.</div>
         </div>
       </div>
@@ -1066,11 +1075,11 @@
       <h2 class="title">Are the patterns<br><em>actually generalizable?</em></h2>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;max-width:1600px;">
-      <p class="body-lg">Recurrent across the corpus — not universal. That distinction matters.</p>
+      <p class="body-lg">Recurrent across the corpus, not universal. That distinction matters.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
         <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:14px;">What the corpus supports</div>
-          <p class="body" style="color:var(--ink);">Five cases, 27 years, five interface types — all failures traceable to the same six pattern categories. Sufficient to structure a pre-selection checklist.</p>
+          <p class="body" style="color:var(--ink);">Five cases, 27 years, five interface types. All failures traceable to the same six pattern categories. Sufficient to structure a pre-selection checklist.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:14px;">What it does not claim</div>
@@ -1091,31 +1100,31 @@
     </div>
     <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px;align-content:center;">
       <div class="step first">
-        <div class="step-n">01 —</div>
+        <div class="step-n">01</div>
         <div>
-          <div class="step-t">Values filter first</div>
+          <div class="step-t" style="font-size:28px;">Values filter first</div>
           <div class="step-d">Types contradicting top-ranked values are flagged before scoring. Hard filter, not a weight.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">02 —</div>
+        <div class="step-n">02</div>
         <div>
-          <div class="step-t">Context scoring</div>
+          <div class="step-t" style="font-size:28px;">Context scoring</div>
           <div class="step-d">15 questions map to each type's strengths. Responses generate a compatibility profile per type.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">03 —</div>
+        <div class="step-n">03</div>
         <div>
-          <div class="step-t">Pattern matching</div>
+          <div class="step-t" style="font-size:28px;">Pattern matching</div>
           <div class="step-d">Failure triggers activate red flags with severity: blocking, critical, or warning.</div>
         </div>
       </div>
       <div class="step">
-        <div class="step-n">04 —</div>
+        <div class="step-n">04</div>
         <div>
-          <div class="step-t">Report generation</div>
-          <div class="step-d">Alignments and tensions — not scores. The designer sees the reasoning, not just the result.</div>
+          <div class="step-t" style="font-size:28px;">Report generation</div>
+          <div class="step-d">Alignments and tensions, not scores. The designer sees the reasoning, not just the result.</div>
         </div>
       </div>
     </div>
@@ -1138,7 +1147,7 @@
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:28px 32px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:12px;">What the report shows</div>
-          <p class="body" style="color:var(--ink-2);">Both types side by side — red flags and alignments compared directly. Tension profiles, not scores.</p>
+          <p class="body" style="color:var(--ink-2);">Both types side by side: red flags and alignments compared directly. Tension profiles, not scores.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:28px 32px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:12px;">What the designer does</div>
@@ -1181,7 +1190,7 @@
         </div>
       </div>
       <div style="flex:1;">
-        <div class="pull-quote" style="font-size:26px;">MIT license means anyone can use, modify, and extend it — without permission or payment.</div>
+        <div class="pull-quote" style="font-size:26px;">MIT license means anyone can use, modify, and extend it. No permission required, no payment needed.</div>
       </div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>B6</span></div>
@@ -1206,7 +1215,7 @@
           <p class="body" style="color:var(--ink-2);">Theoretical: first DIKW application. Practical: NEXUS as proof of concept. Infrastructural: open-source governance model.</p>
         </div>
       </div>
-      <div class="pull-quote" style="font-size:26px;">Field validation across organizations is the explicit next step — not a gap in this work.</div>
+      <div class="pull-quote" style="font-size:26px;">Field validation across organizations is the explicit next step, it is not a gap in this work.</div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>B7</span></div>
   </section>
