@@ -1025,35 +1025,33 @@
       <div class="eyebrow">Backup · Methodology</div>
       <h2 class="title">Why these five cases<br><em>and not others?</em></h2>
     </div>
-    <div style="flex:1;display:flex;align-items:center;gap:48px;">
-      <div style="flex:1;display:flex;flex-direction:column;gap:24px;">
-        <div class="step first">
-          <div class="step-n">01 —</div>
-          <div>
-            <div class="step-t">Commercial impact</div>
-            <div class="step-d">Minimum €100M investment or significant market withdrawal. Eliminates minor failures lacking substantial documentation.</div>
-          </div>
+    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px;align-content:center;">
+      <div class="step first">
+        <div class="step-n">01 —</div>
+        <div>
+          <div class="step-t">Commercial impact</div>
+          <div class="step-d">Min. €100M investment or significant market withdrawal.</div>
         </div>
-        <div class="step">
-          <div class="step-n">02 —</div>
-          <div>
-            <div class="step-t">Documentation quality</div>
-            <div class="step-d">Multiple independent source confirmation: company communications, technology journalism, market research, academic papers, and user feedback.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02 —</div>
+        <div>
+          <div class="step-t">Documentation quality</div>
+          <div class="step-d">Multiple independent sources: press, company comms, academic papers, user feedback.</div>
         </div>
-        <div class="step">
-          <div class="step-n">03 —</div>
-          <div>
-            <div class="step-t">Temporal coverage</div>
-            <div class="step-d">Cases spanning 1997 to 2024 across five distinct interface types: invisible automation, spatial computing, AI-driven, screen-based, and voice.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03 —</div>
+        <div>
+          <div class="step-t">Temporal coverage</div>
+          <div class="step-d">1997–2024 across five interface types: automation, spatial, AI, screen, voice.</div>
         </div>
-        <div class="step">
-          <div class="step-n">04 —</div>
-          <div>
-            <div class="step-t">Interface type diversity</div>
-            <div class="step-d">One case per interface type category. Prevents pattern detection from being skewed by repeated failures in a single category.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04 —</div>
+        <div>
+          <div class="step-t">Interface type diversity</div>
+          <div class="step-d">One case per category. Prevents skew from repeated failures in one type.</div>
         </div>
       </div>
     </div>
@@ -1067,19 +1065,19 @@
       <div class="eyebrow">Backup · Scope</div>
       <h2 class="title">Are the patterns<br><em>actually generalizable?</em></h2>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;max-width:1600px;">
-      <p class="body-lg">The six patterns are described as recurrent across the studied corpus, not universal. That distinction matters.</p>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;max-width:1600px;">
+      <p class="body-lg">Recurrent across the corpus — not universal. That distinction matters.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
         <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:14px;">What the corpus supports</div>
-          <p class="body" style="color:var(--ink);">Five cases across 27 years, five interface types, and multiple organizational contexts all produced failures traceable to the same six pattern categories. That consistency is sufficient to structure a pre-selection checklist.</p>
+          <p class="body" style="color:var(--ink);">Five cases, 27 years, five interface types — all failures traceable to the same six pattern categories. Sufficient to structure a pre-selection checklist.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:14px;">What it does not claim</div>
-          <p class="body" style="color:var(--ink-2);">All five cases are Western, high-budget, and high-documentation. Non-Western contexts, smaller-scale products, and internal tools may surface different patterns. The framework is designed to expand through community contribution.</p>
+          <p class="body" style="color:var(--ink-2);">All cases are Western and high-budget. Other contexts may surface different patterns. The framework is designed to expand through community contribution.</p>
         </div>
       </div>
-      <div class="pull-quote" style="font-size:28px;margin-top:8px;">The framework does not predict failure. It structures the questions that make failure less invisible.</div>
+      <div class="pull-quote" style="font-size:26px;">It structures the questions that make failure less invisible.</div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>B3</span></div>
   </section>
@@ -1091,35 +1089,33 @@
       <div class="eyebrow">Backup · Technical</div>
       <h2 class="title">How does the scoring<br><em>algorithm work?</em></h2>
     </div>
-    <div style="flex:1;display:flex;align-items:center;gap:48px;">
-      <div style="flex:1;display:flex;flex-direction:column;gap:24px;">
-        <div class="step first">
-          <div class="step-n">01 —</div>
-          <div>
-            <div class="step-t">Values filter first</div>
-            <div class="step-d">Interface types that contradict the top-ranked values are flagged before any scoring begins. This is a hard filter, not a weighted factor.</div>
-          </div>
+    <div style="flex:1;display:grid;grid-template-columns:1fr 1fr;grid-template-rows:1fr 1fr;gap:24px;align-content:center;">
+      <div class="step first">
+        <div class="step-n">01 —</div>
+        <div>
+          <div class="step-t">Values filter first</div>
+          <div class="step-d">Types contradicting top-ranked values are flagged before scoring. Hard filter, not a weight.</div>
         </div>
-        <div class="step">
-          <div class="step-n">02 —</div>
-          <div>
-            <div class="step-t">Context scoring</div>
-            <div class="step-d">The fifteen context questions map to each interface type's known strengths and constraints. Responses generate a compatibility profile per type.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">02 —</div>
+        <div>
+          <div class="step-t">Context scoring</div>
+          <div class="step-d">15 questions map to each type's strengths. Responses generate a compatibility profile per type.</div>
         </div>
-        <div class="step">
-          <div class="step-n">03 —</div>
-          <div>
-            <div class="step-t">Pattern matching</div>
-            <div class="step-d">Input combinations that match documented failure triggers activate red flags with severity levels: blocking, critical, or warning.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">03 —</div>
+        <div>
+          <div class="step-t">Pattern matching</div>
+          <div class="step-d">Failure triggers activate red flags with severity: blocking, critical, or warning.</div>
         </div>
-        <div class="step">
-          <div class="step-n">04 —</div>
-          <div>
-            <div class="step-t">Report generation</div>
-            <div class="step-d">Outputs are framed as alignments and tensions, not scores. The designer sees the reasoning, not just the result.</div>
-          </div>
+      </div>
+      <div class="step">
+        <div class="step-n">04 —</div>
+        <div>
+          <div class="step-t">Report generation</div>
+          <div class="step-d">Alignments and tensions — not scores. The designer sees the reasoning, not just the result.</div>
         </div>
       </div>
     </div>
@@ -1133,20 +1129,20 @@
       <div class="eyebrow">Backup · Technical</div>
       <h2 class="title">What if two interface types<br><em>score the same?</em></h2>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;max-width:1600px;">
-      <p class="body-lg">A tie is not a failure of the framework. It is meaningful information.</p>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;max-width:1600px;">
+      <p class="body-lg">A tie is not a failure. It is information.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
         <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:28px 32px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:12px;">What it means</div>
-          <p class="body" style="color:var(--ink);">The context does not strongly favour either type. Both are contextually viable given current inputs.</p>
+          <p class="body" style="color:var(--ink);">The context doesn't strongly favour either type. Both are viable given current inputs.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:28px 32px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:12px;">What the report shows</div>
-          <p class="body" style="color:var(--ink-2);">Both types are presented with their distinct red flags and alignments side by side. The designer compares the tension profiles, not the scores.</p>
+          <p class="body" style="color:var(--ink-2);">Both types side by side — red flags and alignments compared directly. Tension profiles, not scores.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:28px 32px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:12px;">What the designer does</div>
-          <p class="body" style="color:var(--ink-2);">Decides based on the specific risks each type carries in their context. This is the "informs, not decides" principle in practice.</p>
+          <p class="body" style="color:var(--ink-2);">Decides based on specific risks. The "informs, not decides" principle in practice.</p>
         </div>
       </div>
     </div>
@@ -1160,32 +1156,32 @@
       <div class="eyebrow">Backup · Future</div>
       <h2 class="title">How does NEXUS evolve<br><em>after this defense?</em></h2>
     </div>
-    <div style="flex:1;display:flex;align-items:center;gap:48px;">
+    <div style="flex:1;display:flex;align-items:center;gap:64px;">
       <div style="flex:1;display:flex;flex-direction:column;gap:24px;">
         <div class="step first">
           <div class="step-n">Year 1 —</div>
           <div>
             <div class="step-t">Single maintainer</div>
-            <div class="step-d">Framework author maintains coherence and quality. Community contributions accepted through structured pull request review.</div>
+            <div class="step-d">Author maintains quality. Community PRs accepted via structured review.</div>
           </div>
         </div>
         <div class="step">
           <div class="step-n">Year 2 —</div>
           <div>
             <div class="step-t">Community steering</div>
-            <div class="step-d">Governance transitions to a contributor council. Domain-specific forks enabled for healthcare, education, and non-Western contexts.</div>
+            <div class="step-d">Contributor council governs. Domain-specific forks enabled.</div>
           </div>
         </div>
         <div class="step">
           <div class="step-n">Year 3 —</div>
           <div>
             <div class="step-t">Distributed ownership</div>
-            <div class="step-d">Full community control. Plugin architecture enables swappable AI providers as underlying models evolve.</div>
+            <div class="step-d">Full community control. Plugin architecture for swappable AI providers.</div>
           </div>
         </div>
       </div>
       <div style="flex:1;">
-        <div class="pull-quote" style="font-size:28px;">The research does not end here. MIT license means anyone can use, modify, and extend it — without permission or payment.</div>
+        <div class="pull-quote" style="font-size:26px;">MIT license means anyone can use, modify, and extend it — without permission or payment.</div>
       </div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>B6</span></div>
@@ -1198,19 +1194,19 @@
       <div class="eyebrow">Backup · Scope</div>
       <h2 class="title">Is this a master's thesis<br><em>or a doctoral dissertation?</em></h2>
     </div>
-    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:36px;max-width:1600px;">
-      <p class="body-lg">The scope is deliberately bounded. One primary contribution, three that follow from it.</p>
+    <div style="flex:1;display:flex;flex-direction:column;justify-content:center;gap:32px;max-width:1600px;">
+      <p class="body-lg">Deliberately bounded. One primary contribution, three subordinate.</p>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:32px;">
         <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:14px;">Primary — Methodological</div>
-          <p class="body" style="color:var(--ink);">A replicable retrospective validation protocol and values-first filtering methodology. This is the contribution the field can build on independently of the platform.</p>
+          <p class="body" style="color:var(--ink);">Replicable retrospective validation and values-first filtering. The field can build on this independently of the platform.</p>
         </div>
         <div style="background:var(--bg);border:1px solid var(--rule);border-radius:14px;padding:32px 36px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.12em;color:var(--ink-3);text-transform:uppercase;font-weight:600;margin-bottom:14px;">Subordinate contributions</div>
-          <p class="body" style="color:var(--ink-2);">Theoretical: first DIKW application to this domain. Practical: NEXUS as proof of operationalization. Infrastructural: open-source governance model enabling community evolution.</p>
+          <p class="body" style="color:var(--ink-2);">Theoretical: first DIKW application. Practical: NEXUS as proof of concept. Infrastructural: open-source governance model.</p>
         </div>
       </div>
-      <div class="pull-quote" style="font-size:26px;margin-top:8px;">A doctoral thesis would require field validation across multiple organizations and cultural contexts. That is the explicit next step, not a gap in this work.</div>
+      <div class="pull-quote" style="font-size:26px;">Field validation across organizations is the explicit next step — not a gap in this work.</div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>B7</span></div>
   </section>
