@@ -247,15 +247,13 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
   </a>
   <div class="nav-links">
     <a href="#gap" class="nav-link">The gap</a>
-    <a href="#cases" class="nav-link">Cases</a>
+    <a href="#cases" class="nav-link">Evidence</a>
     <a href="#numbers" class="nav-link">Numbers</a>
     <a href="#framework" class="nav-link">Framework</a>
     <a href="#method" class="nav-link">Method</a>
-    <a href="#tool" class="nav-link">Tool</a>
-    <a href="#journey" class="nav-link">Journey</a>
-    <a href="#architecture" class="nav-link">Architecture</a>
-    <a href="#algorithm" class="nav-link">How it works</a>
-    <a href="#open" class="nav-link">Open</a>
+    <a href="#tool" class="nav-link">The tool</a>
+    <a href="#algorithm" class="nav-link">11 factors</a>
+    <a href="#open" class="nav-link">Contributions</a>
   </div>
   <div style="display:flex;align-items:center;gap:6px;margin-left:12px;">
     <button class="nav-video-btn" id="openVideoBtn" title="Watch Nexus video" aria-label="Watch Nexus video">
@@ -319,18 +317,6 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
   fsBtn.addEventListener('click', toggleFs);
   overlay.addEventListener('click', function(e){ if(e.target===overlay) closeModal(); });
   document.addEventListener('keydown', function(e){ if(e.key==='Escape' && overlay.classList.contains('open')) closeModal(); });
-
-  /* F key toggles page fullscreen */
-  document.addEventListener('keydown', function(e){
-    if(e.key === 'f' || e.key === 'F'){
-      if(!document.fullscreenElement){
-        document.documentElement.requestFullscreen();
-      } else {
-        document.exitFullscreen();
-      }
-    }
-  });
-
 })();
 </script>
 
@@ -347,32 +333,6 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
     </div>
     <div class="hero-img-wrap">
       <img src="hippo.png" alt="Hippo">
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     1b. THE REAL PROBLEM
-══════════════════════════════════════════ -->
-<section id="voices" style="background:var(--surface);">
-  <div class="container">
-    <div class="section-label">What practitioners actually said</div>
-    <h2 style="margin-bottom:2rem;">Fifteen professionals.<br><em>Zero systematic frameworks.</em></h2>
-    <p class="lead" style="margin-bottom:2.5rem;max-width:680px;">Across fifteen expert interviews conducted for this research, spanning UX designers, technical leads, quality engineers, and project managers, not one described a systematic process for choosing an interface type.</p>
-    <div style="display:grid;grid-template-columns:repeat(3,1fr);gap:1rem;">
-      <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <p style="font-size:1rem;line-height:1.65;color:var(--fg);font-style:italic;margin-bottom:1rem;">"Decisions here are not grounded in evidence. It is much more authoritarian than evidence-based."</p>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-3);letter-spacing:0.06em;">UX/Digital Designer · 15 years experience</p>
-      </div>
-      <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <p style="font-size:1rem;line-height:1.65;color:var(--fg);font-style:italic;margin-bottom:1rem;">"Basically, what prevents me from presenting a structured proposal to the client is the client themselves."</p>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-3);letter-spacing:0.06em;">Delivery Project Manager · 8 years experience</p>
-      </div>
-      <div style="background:var(--surface-2);border:0.5px solid var(--border);border-radius:var(--radius);padding:1.5rem;">
-        <p style="font-size:1rem;line-height:1.65;color:var(--fg);font-style:italic;margin-bottom:1rem;">"You grab the template you like the most. There is no way to say which interface type suits the project better."</p>
-        <p style="font-family:'JetBrains Mono',monospace;font-size:10px;color:var(--fg-3);letter-spacing:0.06em;">Senior Fullstack Developer · 10 years experience</p>
-      </div>
     </div>
   </div>
 </section>
@@ -686,73 +646,76 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
 
 
 <!-- ══════════════════════════════════════════
-     8. USER JOURNEY MAP
-══════════════════════════════════════════ -->
-<section id="journey">
-  <div class="container">
-    <div class="section-label">08 How a practitioner uses it</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2rem;">
-      <h2 style="margin-bottom:0;">From HiPPO pressure<br><em>to evidence-backed decision.</em></h2>
-      <p class="lead" style="font-size:0.95rem;">Ana, a product manager in healthtech, walks into a meeting where AR/VR is being pushed without evidence. This is what happens next.</p>
-    </div>
-    <div style="width:100%;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);overflow:hidden;padding:2rem;">
-      <img src="User_Journey_Map.svg" alt="NEXUS User Journey Map" style="width:100%;height:auto;display:block;">
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
-     9. INFORMATION ARCHITECTURE
-══════════════════════════════════════════ -->
-<section id="architecture">
-  <div class="container">
-    <div class="section-label">09 How the framework processes decisions</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2rem;">
-      <h2 style="margin-bottom:0;">Input to output.<br><em>Every step transparent.</em></h2>
-      <p class="lead" style="font-size:0.95rem;">From values ranking through scoring to recommendation. Each layer builds on the previous. The designer sees the reasoning behind every flag.</p>
-    </div>
-    <div style="width:100%;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);overflow:hidden;padding:2rem;">
-      <img src="Information_Architecture_Diagram.svg" alt="NEXUS Information Architecture Diagram" style="width:100%;height:auto;display:block;">
-    </div>
-  </div>
-</section>
-
-
-<!-- ══════════════════════════════════════════
      8. ALGORITHM — 11 FACTORS
 ══════════════════════════════════════════ -->
 <section id="algorithm">
   <div class="container">
-    <div class="section-label">10 How the framework weighs decisions</div>
-    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:2rem;">
-      <h2 style="margin-bottom:0;">15 questions.<br><em>Four DIKW layers.</em></h2>
-      <p class="lead" style="font-size:0.95rem;">Each question maps to a layer of the DIKW hierarchy. Values come first. Technical factors follow. The framework cannot be short-circuited.</p>
+    <div class="section-label">08 How the framework weighs decisions</div>
+    <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:0.5rem;">
+      <h2 style="margin-bottom:0;">11 factors.<br><em>One clear direction.</em></h2>
+      <p class="lead" style="font-size:0.95rem;">Built on DIKW methodology. Every weight is transparent. Each factor comes from real cases where ignoring it cost millions.</p>
     </div>
-    <div style="display:grid;grid-template-columns:repeat(4,1fr);gap:0.5px;background:var(--border);border-radius:var(--radius);overflow:hidden;">
-      <div style="background:var(--accent-light);border-left:3px solid var(--accent);padding:1.5rem 1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;color:var(--accent);letter-spacing:0.10em;text-transform:uppercase;margin-bottom:8px;">Wisdom</div>
-        <div style="font-size:14px;font-weight:500;color:var(--fg);margin-bottom:6px;">Values ranking</div>
-        <div style="font-size:12px;color:var(--fg-2);line-height:1.55;">What does your organisation actually stand for? Primary filter. Evaluated before any technical question.</div>
+    <div class="algo-grid">
+      <div class="algo-factor algo-highlight">
+        <div class="algo-factor-weight">28.6%</div>
+        <div class="algo-factor-name">Values ranking</div>
+        <div class="algo-factor-desc">Primary filter. Assessed before any technical question, prevents building against your own principles.</div>
       </div>
-      <div style="background:var(--surface);padding:1.5rem 1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;color:var(--fg-3);letter-spacing:0.10em;text-transform:uppercase;margin-bottom:8px;">Knowledge</div>
-        <div style="font-size:14px;font-weight:500;color:var(--fg);margin-bottom:6px;">Context factors</div>
-        <div style="font-size:12px;color:var(--fg-2);line-height:1.55;">Task complexity, frequency, predictability, context of use, information type. Who are the users and how do they work?</div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">11.4%</div>
+        <div class="algo-factor-name">Task complexity</div>
+        <div class="algo-factor-desc">Simple tasks suit voice or automation. Complex ones need screens or AI. Rabbit R1 got this wrong.</div>
       </div>
-      <div style="background:var(--surface);padding:1.5rem 1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;color:var(--fg-3);letter-spacing:0.10em;text-transform:uppercase;margin-bottom:8px;">Information</div>
-        <div style="font-size:14px;font-weight:500;color:var(--fg);margin-bottom:6px;">Risk factors</div>
-        <div style="font-size:12px;color:var(--fg-2);line-height:1.55;">Error consequence, control preference, user demographics, exploration mode. What happens if something goes wrong?</div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">9.5%</div>
+        <div class="algo-factor-name">Frequency of use</div>
+        <div class="algo-factor-desc">High-frequency tasks demand zero friction. Clippy interrupted users who needed full control.</div>
       </div>
-      <div style="background:var(--surface);padding:1.5rem 1.25rem;">
-        <div style="font-family:'JetBrains Mono',monospace;font-size:9px;font-weight:500;color:var(--fg-3);letter-spacing:0.10em;text-transform:uppercase;margin-bottom:8px;">Data</div>
-        <div style="font-size:14px;font-weight:500;color:var(--fg);margin-bottom:6px;">Constraints</div>
-        <div style="font-size:12px;color:var(--fg-2);line-height:1.55;">Product type, existing solutions, interaction initiation, geography. Hard limits that constrain viable interface types.</div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">9.5%</div>
+        <div class="algo-factor-name">Predictability</div>
+        <div class="algo-factor-desc">Predictable tasks can be automated. Unpredictable ones require user control. Humane AI Pin missed this.</div>
       </div>
-    </div>
-    <div style="margin-top:1rem;padding:1rem 1.5rem;background:var(--surface);border:0.5px solid var(--border);border-radius:var(--radius);border-left:3px solid var(--accent);">
-      <p style="font-size:13px;color:var(--fg-2);line-height:1.6;">Built on the DIKW hierarchy established by Ackoff (1989). Values first, context second, risk third, hard constraints last. Each layer informs the next. The report shows the reasoning behind every flag.</p>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">9.5%</div>
+        <div class="algo-factor-name">Context of use</div>
+        <div class="algo-factor-desc">The physical environment constrains what works. Google Glass contradicted the social norms of its context.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">9.5%</div>
+        <div class="algo-factor-name">Information type</div>
+        <div class="algo-factor-desc">Structured data maps to screens. Unstructured queries map to AI. Mismatch creates cognitive overhead.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">7.6%</div>
+        <div class="algo-factor-name">User demographics</div>
+        <div class="algo-factor-desc">Age, proficiency, accessibility needs constrain viable types. AR/VR has high cognitive requirements.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">4.8%</div>
+        <div class="algo-factor-name">Exploration mode</div>
+        <div class="algo-factor-desc">Browsing favors visual. Targeted retrieval favors AI or voice. Mismatch drives abandonment.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">4.8%</div>
+        <div class="algo-factor-name">Error consequence</div>
+        <div class="algo-factor-desc">Medical, financial, legal errors need explicit confirmation. This factor can override all others.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">2.9%</div>
+        <div class="algo-factor-name">Control preference</div>
+        <div class="algo-factor-desc">Manual control vs automation. Captures culture, trust in systems, and regulatory audit needs.</div>
+      </div>
+      <div class="algo-factor">
+        <div class="algo-factor-weight">1.9%</div>
+        <div class="algo-factor-name">Geography</div>
+        <div class="algo-factor-desc">GDPR and EU AI Act restrict AI interfaces in high-risk sectors. Flags compliance risks before a line of code is written.</div>
+      </div>
+      <div class="algo-factor">
+        <div style="margin-bottom:6px;"><span class="badge">DIKW methodology</span></div>
+        <div class="algo-factor-name">Built on Ackoff (1989)</div>
+        <div class="algo-factor-desc" style="margin-top:4px;">Values first, data second, information third, wisdom last.</div>
+      </div>
     </div>
   </div>
 </section>
@@ -763,7 +726,7 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
 ══════════════════════════════════════════ -->
 <section id="open">
   <div class="container">
-    <div class="section-label">11 What this research contributes</div>
+    <div class="section-label">09 What this research contributes</div>
     <div style="display:grid;grid-template-columns:1fr 1fr;gap:2rem;align-items:end;margin-bottom:1.5rem;">
       <h2 style="margin-bottom:0;">Four contributions.<br><em>One open platform.</em></h2>
       <p class="lead" style="font-size:0.95rem;">Built to be shared. A commercial tool belongs to whoever builds it. An open-source tool belongs to the community.</p>
@@ -804,7 +767,7 @@ table.ev tr:nth-child(even) td{background:var(--surface-2);}
 <script>
 // Active nav on scroll
 (function(){
-  var ids = ['hero','voices','gap','cases','numbers','framework','method','evidence','tool','journey','architecture','algorithm','open'];
+  var ids = ['hero','gap','cases','numbers','framework','method','evidence','tool','algorithm','open'];
   var links = document.querySelectorAll('.nav-link');
   var obs = new IntersectionObserver(function(entries){
     entries.forEach(function(e){
