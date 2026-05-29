@@ -1,0 +1,257 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="680" viewBox="0 0 680 620" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif">
+<rect width="680" height="620" fill="#ffffff"/>
+
+<!-- ══ TITLE ROW ══ -->
+<text x="24" y="22" font-size="13" font-weight="500" fill="#2C2C2A">NEXUS · User Journey Map</text>
+<text x="24" y="36" font-size="8" fill="#888780">Ana García · Product Manager · Healthtech · End-to-end journey</text>
+
+<!-- ══ PHASE HEADERS ══ -->
+<!-- Phase columns: x = 24, 157, 290, 423, 556 — width 119px each, gap 14px -->
+
+<!-- Phase 1 — Trigger -->
+<rect x="24" y="44" width="119" height="22" rx="4" fill="#FCEBEB" stroke="#E24B4A" stroke-width="0.5"/>
+<text x="83" y="59" font-size="8" font-weight="500" fill="#A32D2D" text-anchor="middle">01 · Trigger</text>
+
+<!-- Phase 2 — Discovery -->
+<rect x="151" y="44" width="119" height="22" rx="4" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text x="210" y="59" font-size="8" font-weight="500" fill="#633806" text-anchor="middle">02 · Discovery</text>
+
+<!-- Phase 3 — Assessment -->
+<rect x="278" y="44" width="119" height="22" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="337" y="59" font-size="8" font-weight="500" fill="#26215C" text-anchor="middle">03 · Assessment</text>
+
+<!-- Phase 4 — Interpretation -->
+<rect x="405" y="44" width="119" height="22" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="464" y="59" font-size="8" font-weight="500" fill="#04342C" text-anchor="middle">04 · Interpretation</text>
+
+<!-- Phase 5 — Decision -->
+<rect x="532" y="44" width="124" height="22" rx="4" fill="#1D9E75" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="594" y="59" font-size="8" font-weight="500" fill="#ffffff" text-anchor="middle">05 · Decision</text>
+
+<!-- ══ ROW LABELS (left gutter) ══ -->
+<!-- Actions: y=78, Thoughts: y=150, Emotions: y=222, Touchpoints: y=314, Pain/Gain: y=392 -->
+
+<!-- ── ROW 1: ACTIONS ── -->
+<text x="8" y="88" font-size="7" font-weight="500" fill="#888780" transform="rotate(-90,8,120)">Actions</text>
+<line x1="20" y1="72" x2="660" y2="72" stroke="#D3D1C7" stroke-width="0.5"/>
+
+<!-- Phase 1 actions -->
+<rect x="24" y="76" width="119" height="66" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="32" y="91" font-size="7.5" fill="#2C2C2A">Team meets to discuss</text>
+<text x="32" y="102" font-size="7.5" fill="#2C2C2A">interface strategy</text>
+<text x="32" y="116" font-size="7.5" fill="#5F5E5A">HiPPO pushes for AR/VR.</text>
+<text x="32" y="127" font-size="7.5" fill="#5F5E5A">Ana has doubts but</text>
+<text x="32" y="138" font-size="7.5" fill="#5F5E5A">no evidence to push back.</text>
+
+<!-- Phase 2 actions -->
+<rect x="151" y="76" width="119" height="66" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="159" y="91" font-size="7.5" fill="#2C2C2A">Searches for decision</text>
+<text x="159" y="102" font-size="7.5" fill="#2C2C2A">frameworks online</text>
+<text x="159" y="116" font-size="7.5" fill="#5F5E5A">Finds NEXUS. Reads the</text>
+<text x="159" y="127" font-size="7.5" fill="#5F5E5A">minisite. Understands</text>
+<text x="159" y="138" font-size="7.5" fill="#5F5E5A">input → output in 2 min.</text>
+
+<!-- Phase 3 actions -->
+<rect x="278" y="76" width="119" height="66" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="286" y="91" font-size="7.5" fill="#2C2C2A">Ranks values (Control</text>
+<text x="286" y="102" font-size="7.5" fill="#2C2C2A">first). Answers 9 Qs.</text>
+<text x="286" y="116" font-size="7.5" fill="#5F5E5A">Completes assessment</text>
+<text x="286" y="127" font-size="7.5" fill="#5F5E5A">in 10 minutes.</text>
+<text x="286" y="138" font-size="7.5" fill="#5F5E5A">Downloads PDF report.</text>
+
+<!-- Phase 4 actions -->
+<rect x="405" y="76" width="119" height="66" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="413" y="91" font-size="7.5" fill="#2C2C2A">Reads recommendation:</text>
+<text x="413" y="102" font-size="7.5" fill="#2C2C2A">Screen + AI Vectorial.</text>
+<text x="413" y="116" font-size="7.5" fill="#5F5E5A">Reviews red flags for</text>
+<text x="413" y="127" font-size="7.5" fill="#5F5E5A">AR/VR. Reads regulatory</text>
+<text x="413" y="138" font-size="7.5" fill="#5F5E5A">impact (EU AI Act).</text>
+
+<!-- Phase 5 actions -->
+<rect x="532" y="76" width="124" height="66" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="540" y="91" font-size="7.5" fill="#2C2C2A">Presents report to team.</text>
+<text x="540" y="102" font-size="7.5" fill="#2C2C2A">HiPPO challenges AR/VR.</text>
+<text x="540" y="116" font-size="7.5" fill="#5F5E5A">Ana shows evidence.</text>
+<text x="540" y="127" font-size="7.5" fill="#5F5E5A">Team aligns on Screen.</text>
+<text x="540" y="138" font-size="7.5" fill="#5F5E5A">Decision made in 1 hour.</text>
+
+<!-- ── ROW 2: THOUGHTS / QUOTES ── -->
+<line x1="20" y1="148" x2="660" y2="148" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="8" y="172" font-size="7" font-weight="500" fill="#888780" transform="rotate(-90,8,195)">Thoughts</text>
+
+<rect x="24" y="152" width="119" height="52" rx="4" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="83" y="166" font-size="7.5" fill="#993C1D" text-anchor="middle" font-style="italic">"Everyone has an opinion.</text>
+<text x="83" y="177" font-size="7.5" fill="#993C1D" text-anchor="middle" font-style="italic">Nobody has a framework.</text>
+<text x="83" y="188" font-size="7.5" fill="#993C1D" text-anchor="middle" font-style="italic">We're going to ship</text>
+<text x="83" y="199" font-size="7.5" fill="#993C1D" text-anchor="middle" font-style="italic">the wrong thing."</text>
+
+<rect x="151" y="152" width="119" height="52" rx="4" fill="#FAEEDA" stroke="#BA7517" stroke-width="0.5"/>
+<text x="210" y="166" font-size="7.5" fill="#633806" text-anchor="middle" font-style="italic">"This actually explains</text>
+<text x="210" y="177" font-size="7.5" fill="#633806" text-anchor="middle" font-style="italic">the output before I</text>
+<text x="210" y="188" font-size="7.5" fill="#633806" text-anchor="middle" font-style="italic">even start. That's</text>
+<text x="210" y="199" font-size="7.5" fill="#633806" text-anchor="middle" font-style="italic">different."</text>
+
+<rect x="278" y="152" width="119" height="52" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="337" y="166" font-size="7.5" fill="#26215C" text-anchor="middle" font-style="italic">"The values step is</text>
+<text x="337" y="177" font-size="7.5" fill="#26215C" text-anchor="middle" font-style="italic">smart — I'd never</text>
+<text x="337" y="188" font-size="7.5" fill="#26215C" text-anchor="middle" font-style="italic">thought about ranking</text>
+<text x="337" y="199" font-size="7.5" fill="#26215C" text-anchor="middle" font-style="italic">them explicitly."</text>
+
+<rect x="405" y="152" width="119" height="52" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="464" y="166" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">"The AR/VR red flags</text>
+<text x="464" y="177" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">are exactly what I</text>
+<text x="464" y="188" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">felt but couldn't</text>
+<text x="464" y="199" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">articulate."</text>
+
+<rect x="532" y="152" width="124" height="52" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="1"/>
+<text x="594" y="166" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">"I walked in with</text>
+<text x="594" y="177" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">evidence. Nobody</text>
+<text x="594" y="188" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">could dismiss it</text>
+<text x="594" y="199" font-size="7.5" fill="#085041" text-anchor="middle" font-style="italic">with just an opinion."</text>
+
+<!-- ── ROW 3: EMOTION CURVE ── -->
+<line x1="20" y1="210" x2="660" y2="210" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="8" y="245" font-size="7" font-weight="500" fill="#888780" transform="rotate(-90,8,268)">Emotion</text>
+
+<!-- Emotion axis labels -->
+<text x="22" y="224" font-size="6.5" fill="#1D9E75">high</text>
+<text x="22" y="298" font-size="6.5" fill="#E24B4A">low</text>
+
+<!-- Neutral line -->
+<line x1="40" y1="260" x2="660" y2="260" stroke="#D3D1C7" stroke-width="0.5" stroke-dasharray="2 2"/>
+
+<!-- Emotion curve path -->
+<!-- Points: Phase1=frustrated(290), Discovery=curious(245), Assessment=focused(240), Interpretation=relieved(228), Decision=confident(218) -->
+<!-- x midpoints: 83, 210, 337, 464, 594 -->
+<path d="M83,290 C130,290 165,245 210,245 C255,245 290,242 337,240 C384,238 420,228 464,225 C510,222 550,218 594,218"
+      fill="none" stroke="#1D9E75" stroke-width="2" stroke-linecap="round"/>
+
+<!-- Emotion dots -->
+<circle cx="83"  cy="290" r="4" fill="#E24B4A" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="210" cy="245" r="4" fill="#BA7517" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="337" cy="240" r="4" fill="#7F77DD" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="464" cy="225" r="4" fill="#1D9E75" stroke="#ffffff" stroke-width="1.5"/>
+<circle cx="594" cy="218" r="4" fill="#1D9E75" stroke="#ffffff" stroke-width="1.5"/>
+
+<!-- Emotion labels -->
+<text x="83"  y="304" font-size="7" fill="#E24B4A" text-anchor="middle">frustrated</text>
+<text x="210" cy="245" font-size="7" fill="#BA7517" text-anchor="middle" y="238">curious</text>
+<text x="337" cy="240" font-size="7" fill="#7F77DD" text-anchor="middle" y="232">focused</text>
+<text x="464" cy="225" font-size="7" fill="#1D9E75" text-anchor="middle" y="218">relieved</text>
+<text x="594" cy="218" font-size="7" fill="#1D9E75" text-anchor="middle" y="211">confident</text>
+
+<!-- ── ROW 4: TOUCHPOINTS ── -->
+<line x1="20" y1="314" x2="660" y2="314" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="8" y="340" font-size="7" font-weight="500" fill="#888780" transform="rotate(-90,8,360)">Touchpoints</text>
+
+<rect x="24" y="318" width="119" height="30" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="83" y="331" font-size="7.5" fill="#5F5E5A" text-anchor="middle">Team meeting</text>
+<text x="83" y="342" font-size="7" fill="#888780" text-anchor="middle">Slack · Notion docs</text>
+
+<rect x="151" y="318" width="119" height="30" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="210" y="331" font-size="7.5" fill="#5F5E5A" text-anchor="middle">NEXUS minisite</text>
+<text x="210" y="342" font-size="7" fill="#888780" text-anchor="middle">Hero · How it works</text>
+
+<rect x="278" y="318" width="119" height="30" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="337" y="331" font-size="7.5" fill="#26215C" text-anchor="middle">NEXUS prototype</text>
+<text x="337" y="342" font-size="7" fill="#534AB7" text-anchor="middle">Values drag · 9 questions</text>
+
+<rect x="405" y="318" width="119" height="30" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="464" y="331" font-size="7.5" fill="#26215C" text-anchor="middle">Results dashboard</text>
+<text x="464" y="342" font-size="7" fill="#534AB7" text-anchor="middle">PDF report · Red flags</text>
+
+<rect x="532" y="318" width="124" height="30" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="594" y="331" font-size="7.5" fill="#085041" text-anchor="middle">Stakeholder meeting</text>
+<text x="594" y="342" font-size="7" fill="#0F6E56" text-anchor="middle">PDF · Shared link</text>
+
+<!-- ── ROW 5: PAIN POINTS & GAINS ── -->
+<line x1="20" y1="354" x2="660" y2="354" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="8" y="375" font-size="7" font-weight="500" fill="#E24B4A" transform="rotate(-90,8,390)">Pain</text>
+
+<!-- Pain points -->
+<rect x="24" y="358" width="119" height="40" rx="4" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="32" y="371" font-size="7" fill="#993C1D">No shared framework</text>
+<text x="32" y="382" font-size="7" fill="#993C1D">HiPPO dominates meeting</text>
+<text x="32" y="393" font-size="7" fill="#993C1D">No evidence to push back</text>
+
+<rect x="151" y="358" width="119" height="40" rx="4" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="159" y="371" font-size="7" fill="#993C1D">Hard to find good tools</text>
+<text x="159" y="382" font-size="7" fill="#993C1D">Skeptical of complexity</text>
+<text x="159" y="393" font-size="7" fill="#993C1D">Time pressure</text>
+
+<rect x="278" y="358" width="119" height="40" rx="4" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="286" y="371" font-size="7" fill="#993C1D">Uncertain if answering</text>
+<text x="286" y="382" font-size="7" fill="#993C1D">correctly</text>
+<text x="286" y="393" font-size="7" fill="#993C1D">Values ranking is new</text>
+
+<rect x="405" y="358" width="119" height="40" rx="4" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="413" y="371" font-size="7" fill="#993C1D">Report is dense</text>
+<text x="413" y="382" font-size="7" fill="#993C1D">Regulatory terms</text>
+<text x="413" y="393" font-size="7" fill="#993C1D">unfamiliar</text>
+
+<rect x="532" y="358" width="124" height="40" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="540" y="371" font-size="7" fill="#888780">no pain points</text>
+<text x="540" y="382" font-size="7" fill="#888780">at this stage</text>
+
+<!-- ── ROW 6: GAINS ── -->
+<line x1="20" y1="404" x2="660" y2="404" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="8" y="425" font-size="7" font-weight="500" fill="#1D9E75" transform="rotate(-90,8,440)">Gains</text>
+
+<rect x="24" y="408" width="119" height="40" rx="4" fill="#f9f9f8" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="32" y="421" font-size="7" fill="#888780">at this stage,</text>
+<text x="32" y="432" font-size="7" fill="#888780">only frustration</text>
+
+<rect x="151" y="408" width="119" height="40" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="159" y="421" font-size="7" fill="#085041">Clear value prop</text>
+<text x="159" y="432" font-size="7" fill="#085041">Output understood fast</text>
+<text x="159" y="443" font-size="7" fill="#085041">Free and open source</text>
+
+<rect x="278" y="408" width="119" height="40" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="286" y="421" font-size="7" fill="#085041">Structured process</text>
+<text x="286" y="432" font-size="7" fill="#085041">Fast (10 min)</text>
+<text x="286" y="443" font-size="7" fill="#085041">PDF at the end</text>
+
+<rect x="405" y="408" width="119" height="40" rx="4" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="413" y="421" font-size="7" fill="#085041">Red flags validated gut</text>
+<text x="413" y="432" font-size="7" fill="#085041">Evidence is citable</text>
+<text x="413" y="443" font-size="7" fill="#085041">Shareable report</text>
+
+<rect x="532" y="408" width="124" height="40" rx="4" fill="#1D9E75" stroke="#0F6E56" stroke-width="0.5"/>
+<text x="540" y="421" font-size="7" fill="#ffffff">HiPPO overruled</text>
+<text x="540" y="432" font-size="7" fill="#ffffff">Team aligned fast</text>
+<text x="540" y="443" font-size="7" fill="#ffffff">Confidence to decide</text>
+
+<!-- ── OPPORTUNITIES ── -->
+<line x1="20" y1="454" x2="660" y2="454" stroke="#D3D1C7" stroke-width="0.5"/>
+<text x="24" y="469" font-size="8" font-weight="500" fill="#2C2C2A">Design opportunities</text>
+
+<rect x="24" y="474" width="185" height="30" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="32" y="487" font-size="7.5" font-weight="500" fill="#26215C">Phase 1 → 2</text>
+<text x="32" y="498" font-size="7" fill="#534AB7">SEO and word-of-mouth from designers</text>
+
+<rect x="220" y="474" width="185" height="30" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="228" y="487" font-size="7.5" font-weight="500" fill="#26215C">Phase 3 tooltip</text>
+<text x="228" y="498" font-size="7" fill="#534AB7">Inline explanations reduce uncertainty</text>
+
+<rect x="416" y="474" width="240" height="30" rx="4" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="424" y="487" font-size="7.5" font-weight="500" fill="#26215C">Phase 4 → 5 shareability</text>
+<text x="424" y="498" font-size="7" fill="#534AB7">One-click share link for boardroom use</text>
+
+<!-- ── LEGEND ── -->
+<line x1="20" y1="514" x2="660" y2="514" stroke="#D3D1C7" stroke-width="0.5"/>
+<circle cx="30" cy="526" r="4" fill="#E24B4A" stroke="#ffffff" stroke-width="1"/>
+<text x="40" y="529" font-size="7.5" fill="#5F5E5A">Frustrated</text>
+<circle cx="110" cy="526" r="4" fill="#BA7517" stroke="#ffffff" stroke-width="1"/>
+<text x="120" y="529" font-size="7.5" fill="#5F5E5A">Curious</text>
+<circle cx="178" cy="526" r="4" fill="#7F77DD" stroke="#ffffff" stroke-width="1"/>
+<text x="188" y="529" font-size="7.5" fill="#5F5E5A">Focused</text>
+<circle cx="250" cy="526" r="4" fill="#1D9E75" stroke="#ffffff" stroke-width="1"/>
+<text x="260" y="529" font-size="7.5" fill="#5F5E5A">Relieved / Confident</text>
+<rect x="370" y="521" width="10" height="10" rx="2" fill="#fff8f8" stroke="#F0997B" stroke-width="0.5"/>
+<text x="386" y="529" font-size="7.5" fill="#5F5E5A">Pain point</text>
+<rect x="448" y="521" width="10" height="10" rx="2" fill="#E1F5EE" stroke="#1D9E75" stroke-width="0.5"/>
+<text x="464" y="529" font-size="7.5" fill="#5F5E5A">Gain / opportunity</text>
+<rect x="554" y="521" width="10" height="10" rx="2" fill="#EEEDFE" stroke="#7F77DD" stroke-width="0.5"/>
+<text x="570" y="529" font-size="7.5" fill="#5F5E5A">NEXUS touchpoint</text>
+
+</svg>
