@@ -18,25 +18,31 @@
 
 <script type="application/json" id="speaker-notes">
 [
-"I want to start with something one of the fifteen professionals I interviewed told me. Eleven years designing products across some of the largest consultancies in Latin America. He said: 'I research. I substantiate. And I let go. The decision — whether they listen to me or not — belongs to someone else.' That is not a personal failure. That is a structural problem. And NEXUS is built to address it.",
+"I want to start with something one of the fifteen professionals I interviewed told me. Eleven years designing products across some of the largest consultancies in Latin America. He said: 'I research. I substantiate. And I let go. The decision, whether they listen to me or not, belongs to someone else.' That is not a personal failure. That is a structural problem. And NEXUS is built to address it.",
+
+"I built something called NEXUS. You give it an interface decision you have already made. It gives you back a structured report, built from evidence, not a verdict. Checked against five documented, public cases, scoped for a master's thesis rather than an industrial system.",
+
+"Across fifteen expert interviews, UX designers, technical leads, quality engineers, project managers, not one described a systematic process for choosing an interface type. This is not a personal failing. It is a structural gap.",
 
 "I'm [name]. Over the next ten minutes: the problem, the framework, the evidence, and a live look at the tool.",
 
-"Every methodology assumes you already know what kind of interface you are building. Design Thinking, User-Centered Design, HCD — all of them start after the decision has been made. Nobody helps you make it. That is the gap this research confirms.",
+"Every methodology I reviewed assumes you already know what kind of interface you are building. They guide refinement: improving it, fitting it to users, testing it. None of them help you choose the type itself. That is the gap this research confirms.",
 
 "These five products had the budget, the team, the engineering. None of them failed because the technology broke. All of them chose the wrong interface type for the context. That decision cost hundreds of millions in documented losses.",
 
-"And it is not isolated. Estrada at MIT documented in 2025 that 95% of generative AI pilots fail to deliver measurable impact. RAND found in 2024 that 80% of AI projects never reach real use — twice the rate of conventional software — and that 84% of those failures trace to leadership decisions, not engineering. The bottleneck is the decision.",
+"And it is not isolated. Estrada at MIT documented in 2025 that 95% of generative AI pilots fail to deliver measurable impact. RAND found in 2024 that 80% of AI projects never reach real use, twice the rate of conventional software, and that 84% of those failures trace to leadership decisions, not engineering. The bottleneck is the decision. No systemic tool checks a decision like this against the published evidence and documented precedent. That places this work inside retrospective, after-action analysis, applied here to one decision: interface type.",
 
-"NEXUS addresses it in four stages, grounded in the DIKW hierarchy established by Ackoff in 1989. First, values — the organisation ranks what it stands for. That ranking is the primary filter. Second, context — fifteen questions about users, frequency, environment, consequences. Third, pattern matching against the five documented failures. Fourth, a report. Not a verdict. The designer reads it and decides.",
+"NEXUS addresses it in four stages, grounded in the DIKW hierarchy established by Ackoff in 1989. First, values: the organisation ranks what it stands for. That ranking is the primary filter. Second, context: fifteen questions about users, frequency, environment, consequences. Third, pattern matching against the five documented failures. Fourth, a report. Not a verdict. The designer reads it and decides.",
 
-"Three phases of research. First, we built the foundation: a literature review confirmed no framework existed for this specific decision, and fifteen practitioner interviews produced the values taxonomy. Second, we tested it retrospectively against the five failures using only pre-launch information — could the framework have seen what went wrong? Third, we validated it as a working tool with the same fifteen practitioners.",
+"Three phases of research. First, we built the foundation: a literature review confirmed no framework existed for this specific decision, and fifteen practitioner interviews produced the values taxonomy. Second, we tested it retrospectively against the five failures using only pre-launch information. Could the framework have seen what went wrong? Third, we validated it as a working tool with the same fifteen practitioners.",
 
 "82% of documented failure factors detected across all five cases. The validation target was 70%, based on the threshold Landis and Koch established in 1977 for substantial agreement in decision support research. We exceeded it. One thing practitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder discussions. That is exactly what we built.",
 
-"This is NEXUS. Fifteen minutes, no installation. Open source under MIT license. Let me show it. [Switch to browser: values ranking, two questions, report output. 90 seconds.]",
+"This is NEXUS. Fifteen minutes, no installation. Open source under MIT license. Let me show it. [Switch to browser: values ranking, two questions, report output. State that the inputs are evidence-grounded without justifying each one individually. 90 seconds.]",
 
 "Four contributions. The primary one is methodological: the first replicable protocol for this decision, grounded in DIKW. The others follow from it. For practice: evidence designers can use to hold their ground. For the community: open infrastructure that outlives this defense. And as a position: it informs. It does not decide.",
+
+"Before I close, this is what all of that looks like in motion.",
 
 "Thank you. Questions welcome."
 ]
@@ -547,7 +553,7 @@
     </div>
     <div class="hook-layout">
       <div class="hook-text">
-        <h1 class="display" style="font-size:112px;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
+        <h1 class="display" style="font-size:84px;line-height:1.02;letter-spacing:-0.035em;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
         <p class="body-lg" style="max-width:900px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name:<br>the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
         <p class="body-lg" style="max-width:900px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
       </div>
@@ -559,11 +565,27 @@
   </section>
 
 
+  <!-- ─────────────── 01a THE REVEAL ─────────────── -->
+  <section data-label="01a The reveal">
+    <div class="slide-head">
+      <div class="eyebrow">What I built</div>
+      <h2 class="title">Give it a decision.<br>Get back <em>evidence.</em></h2>
+    </div>
+    <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;">
+      <img src="nexus-box.png" alt="A design decision flows into NEXUS, shown as a dashed wireframe box, and returns a structured, evidence-based report." style="max-width:1100px;width:100%;" />
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;width:100%;max-width:1100px;text-align:center;">
+        <span class="small">Your decision</span>
+        <span class="small" style="color:var(--accent);font-weight:600;">NEXUS</span>
+        <span class="small">A structured report</span>
+      </div>
+      <p class="small">Checked against five documented, public cases. Scoped for a master's thesis, not an industrial system.</p>
+    </div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
+  </section>
+
+
   <!-- ─────────────── 01b THE REAL PROBLEM ─────────────── -->
   <section data-label="01b The real problem">
-    <button class="play-icon-btn" id="openVideoBtn" title="Watch demo video" aria-label="Watch demo video">
-      <svg width="22" height="22" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
-    </button>
     <div class="slide-head" style="margin-bottom:24px;">
       <div class="eyebrow">The gap in practice</div>
       <h2 class="title">Fifteen professionals.<br><em>Zero systematic frameworks.</em></h2>
@@ -576,13 +598,13 @@
         <div class="pull-quote" style="font-size:26px;line-height:1.45;">"You grab the template you like the most. There is no way to say which interface type suits the project better."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Senior Fullstack Developer · 10 yrs experience</span></div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>03</span></div>
   </section>
 
 
   <!-- ─────────────── 02 TITLE ─────────────── -->
   <section data-label="02 Title" class="slide-title">
-    <span style="position:absolute;top:40px;right:120px;font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);letter-spacing:0.15em;text-transform:uppercase;z-index:10;">03</span>
+    <span style="position:absolute;top:40px;right:120px;font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);letter-spacing:0.15em;text-transform:uppercase;z-index:10;">04</span>
     <div class="brand">
       <span class="wordmark">Master's Thesis Defense · 2026</span>
       <span class="wordmark-sub"></span>
@@ -627,36 +649,22 @@
         <div class="fw-list">
           <div class="fw-row">
             <div>
-              <div class="fw-name">Design Thinking</div>
-              <div class="fw-desc">How to improve a product once you know what it is</div>
-            </div>
-            <span class="fw-status has">Exists</span>
-          </div>
-          <div class="fw-row">
-            <div>
-              <div class="fw-name">User-Centered Design</div>
-              <div class="fw-desc">How to make a product fit its users</div>
-            </div>
-            <span class="fw-status has">Exists</span>
-          </div>
-          <div class="fw-row">
-            <div>
-              <div class="fw-name">HCD / UX methods</div>
-              <div class="fw-desc">How to test and refine an interface</div>
+              <div class="fw-name">Refining a chosen interface</div>
+              <div class="fw-desc">Improving it, fitting it to users, testing and iterating</div>
             </div>
             <span class="fw-status has">Exists</span>
           </div>
           <div class="fw-row missing">
             <div>
               <div class="fw-name">Choosing the interface type</div>
-              <div class="fw-desc">Screen · voice · wearable · AI · spatial — which one?</div>
+              <div class="fw-desc">Screen · voice · wearable · AI · spatial: which one?</div>
             </div>
             <span class="fw-status missing">Missing</span>
           </div>
         </div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>04</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>05</span></div>
   </section>
 
 
@@ -673,35 +681,35 @@
         <div class="case-name">Google Glass</div>
         <div class="case-year">2013</div>
         <div class="case-fail">Values mismatch</div>
-        <div class="case-desc">Spatial interface forced onto everyday social contexts. Rejected on privacy, not technology.</div>
+        <div class="case-desc">Rejected on privacy, not technology.</div>
       </div>
       <div class="case-card">
         <div class="case-name">Humane AI Pin</div>
         <div class="case-year">2024</div>
         <div class="case-fail">Latency + redundancy</div>
-        <div class="case-desc">Screenless wearable with 5–10s delays. Smartphones already solved this.</div>
+        <div class="case-desc">5 to 10 second response delays.</div>
       </div>
       <div class="case-card">
         <div class="case-name">Rabbit R1</div>
         <div class="case-year">2024</div>
         <div class="case-fail">Value proposition</div>
-        <div class="case-desc">Dedicated AI hardware with no answer to: "why not just use my phone?"</div>
+        <div class="case-desc">"Why not just use my phone?"</div>
       </div>
       <div class="case-card">
         <div class="case-name">Fire Phone</div>
         <div class="case-year">2014</div>
         <div class="case-fail">Task mismatch</div>
-        <div class="case-desc">3D spatial UI on a phone where no daily task required it. $170M writedown.</div>
+        <div class="case-desc">$170M writedown. No task required.</div>
       </div>
       <div class="case-card">
         <div class="case-name">Clippy</div>
         <div class="case-year">2001</div>
         <div class="case-fail">Interaction initiation</div>
-        <div class="case-desc">System interrupted users who needed full control. Users demanded removal.</div>
+        <div class="case-desc">Interrupted users. They demanded removal.</div>
       </div>
     </div>
     <p class="body" style="margin-top:28px;color:var(--ink-2);">Millions in combined documented losses across just five cases. Only the numbers companies disclosed.</p>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>05</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>06</span></div>
   </section>
 
 
@@ -729,7 +737,7 @@
       </div>
     </div>
     <div class="pull-quote" style="margin-top:56px;">The bottleneck is the decision. Not the technology.</div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>06</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>07</span></div>
   </section>
 
 
@@ -780,7 +788,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>07</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>08</span></div>
   </section>
 
 
@@ -797,7 +805,7 @@
           <span class="phase-tag">Construction</span>
         </div>
         <div class="phase-t">Built from the literature</div>
-        <div class="phase-d">Literature confirmed the gap. Fifteen practitioner interviews produced the values taxonomy and framework structure.</div>
+        <div class="phase-d">Literature confirmed the gap. Interviews built the values taxonomy.</div>
         <div class="phase-foot">
           <span class="phase-metric">15</span>
           <span class="phase-metric-l">practitioners interviewed<br>UX designers · technical leads · quality engineers · project managers</span>
@@ -809,7 +817,7 @@
           <span class="phase-tag">Retrospective</span>
         </div>
         <div class="phase-t">Tested against history</div>
-        <div class="phase-d">Applied to the five failures using only pre-launch public information. Could the framework have seen what went wrong?</div>
+        <div class="phase-d">Applied to five failures, pre-launch information only.</div>
         <div class="phase-foot">
           <span class="phase-metric">5</span>
           <span class="phase-metric-l">cases<br>pre-launch data only</span>
@@ -821,14 +829,14 @@
           <span class="phase-tag">Proof of concept</span>
         </div>
         <div class="phase-t">Validated with practitioners</div>
-        <div class="phase-d">NEXUS built and validated with the same fifteen practitioners. Works in practice, not only on paper, and produced the usability data on the next slide.</div>
+        <div class="phase-d">Built and validated with the same fifteen practitioners.</div>
         <div class="phase-foot">
           <span class="phase-metric">15</span>
           <span class="phase-metric-l">participants<br>tool session</span>
         </div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>08</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>09</span></div>
   </section>
 
 
@@ -876,7 +884,7 @@
         </table>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>09</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>10</span></div>
   </section>
 
 
@@ -913,7 +921,7 @@
         </div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>10</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>11</span></div>
   </section>
 
 
@@ -946,7 +954,17 @@
         <div class="contrib-d">Structure in service of human judgment, not instead of it.</div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>11</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>12</span></div>
+  </section>
+
+
+  <!-- ─────────────── 10b VIDEO RECAP ─────────────── -->
+  <section data-label="10b Video recap" style="align-items:center;justify-content:center;">
+    <button class="play-icon-btn" id="openVideoBtn" title="Watch demo video" aria-label="Watch demo video" style="position:static;width:96px;height:96px;margin-bottom:40px;">
+      <svg width="30" height="30" viewBox="0 0 24 24" fill="currentColor"><polygon points="5 3 19 12 5 21 5 3"/></svg>
+    </button>
+    <h2 class="title" style="text-align:center;">Under a minute.<br><em>Everything you just heard, in motion.</em></h2>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>13</span></div>
   </section>
 
 
