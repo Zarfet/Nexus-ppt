@@ -1,57 +1,147 @@
 # NEXUS Defense — Speaker Notes
 
-## 01 Opening question
+Full script for all 24 slides (main deck + backup).
 
-I want to start with something one of the fifteen professionals I interviewed told me. Eleven years designing products across some of the largest consultancies in Latin America. He said: 'I research. I substantiate. And I let go. The decision, whether they listen to me or not, belongs to someone else.' That is not a personal failure. That is a structural problem. And NEXUS is built to address it.
+---
 
-## 02 The reveal (What I built)
+## 01 — Hook
 
-I built something called NEXUS. You give it an interface decision you have already made. It gives you back a structured report, built from evidence, not a verdict. Checked against five documented, public cases, scoped for a master's thesis rather than an industrial system.
+Has your design recommendation ever been overruled? [Pause.] Because someone more senior had a different opinion. You are not alone. Every person in this room who has worked in a team has felt this. That pattern has a name: the HiPPO effect, documented by McAfee and Brynjolfsson in 2012. NEXUS gives designers a structured argument that holds its ground in the room.
 
-## 03 The real problem
+---
 
-Across fifteen expert interviews, UX designers, technical leads, quality engineers, project managers, not one described a systematic process for choosing an interface type. This is not a personal failing. It is a structural gap.
+## 02 — What I built
 
-## 04 Title
+I built something called NEXUS. You put in an interface decision you are about to make. It gives you back a structured report, built from evidence. Not a verdict. A tool that informs. The designer still decides.
 
-I'm [name]. Over the next ten minutes: the problem, the framework, the evidence, and a live look at the tool.
+---
 
-## 05 The gap
+## 03 — Fifteen professionals
 
-Every methodology I reviewed assumes you already know what kind of interface you are building. They guide refinement: improving it, fitting it to users, testing it. None of them help you choose the type itself. That is the gap this research confirms.
+Fifteen interviews. UX designers, tech leads, project managers, quality engineers. Not one described a systematic process for choosing an interface type. One of them put it plainly: I research, I substantiate, and I let go. The decision belongs to someone else. That is not a personal failure. It is a structural gap.
 
-## 06 The cost
+---
 
-These five products had the budget, the team, the engineering. None of them failed because the technology broke. All of them chose the wrong interface type for the context. That decision cost hundreds of millions in documented losses.
+## 04 — About me
 
-## 07 The bottleneck
+I am Ilverzon Zarate. Over the next fifteen minutes: the problem, the gap, the framework, the evidence, and a live look at the tool.
 
-And it is not isolated. Estrada at MIT documented in 2025 that 95% of generative AI pilots fail to deliver measurable impact. RAND found in 2024 that 80% of AI projects never reach real use, twice the rate of conventional software, and that 84% of those failures trace to leadership decisions, not engineering. The bottleneck is the decision. No systemic tool checks a decision like this against the published evidence and documented precedent. That places this work inside retrospective, after-action analysis, applied here to one decision: interface type.
+---
 
-## 08 The framework
+## 05 — The gap in frameworks
 
-NEXUS addresses it in four stages, grounded in the DIKW hierarchy established by Ackoff in 1989. First, values: the organisation ranks what it stands for. That ranking is the primary filter. Second, context: fifteen questions about users, frequency, environment, consequences. Third, pattern matching against the five documented failures. Fourth, a report. Not a verdict. The designer reads it and decides.
+Every framework I reviewed assumes you already know what interface type you are building. They guide how to refine it, test it, fit it to users. None of them help you choose the type itself. That is the gap this research confirms.
 
-## 09 The method
+---
 
-Three phases of research. First, we built the foundation: a literature review confirmed no framework existed for this specific decision, and fifteen practitioner interviews produced the values taxonomy. Second, we tested it retrospectively against the five failures using only pre-launch information. Could the framework have seen what went wrong? Third, we validated it as a working tool with the same fifteen practitioners.
+## 06 — The cost of wrong decisions
 
-## 10 Validation
+These five products had the budget, the team, and the technology. None of them failed because the engineering broke. All of them chose the wrong interface type for the context. Hundreds of millions in documented losses.
 
-82% of documented failure factors detected across all five cases. The validation target was 70%, based on the threshold Landis and Koch established in 1977 for substantial agreement in decision support research. We exceeded it. One thing practitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder discussions. That is exactly what we built.
+---
 
-## 11 The tool — demo
+## 07 — The bottleneck
 
-This is NEXUS. Fifteen minutes, no installation. Open source under MIT license. Let me show it. [Switch to browser: values ranking, two questions, report output. State that the inputs are evidence-grounded without justifying each one individually. 90 seconds.]
+This is not isolated. Estrada at MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact. RAND found in 2024 that 84% of AI project failures trace to leadership decisions, not engineering. The bottleneck is the decision. No tool exists that checks this decision against documented precedent. That is where NEXUS operates.
 
-## 12 Contributions
+---
 
-Four contributions. The primary one is methodological: the first replicable protocol for this decision, grounded in DIKW. The others follow from it. For practice: evidence designers can use to hold their ground. For the community: open infrastructure that outlives this defense. And as a position: it informs. It does not decide.
+## 08 — The framework (four stages)
 
-## 13 Video recap
+NEXUS works in four stages, grounded in the DIKW hierarchy Ackoff established in 1989. First, values: the organisation ranks what it stands for. That ranking is the primary filter. Second, context: fifteen questions about users, frequency, and consequences. Third, pattern matching against five documented failures. Fourth, a report. Not a verdict. The designer reads it and decides.
+
+---
+
+## 09 — DIKW layers
+
+The fifteen questions are not arbitrary. Wisdom layer first: values ranking, before any technical question. Knowledge layer: context factors, who uses the product and how. Information layer: risk factors, what happens if something goes wrong. Data layer last: hard constraints that limit which interface types are viable. The order cannot be reversed.
+
+---
+
+## 10 — Research method
+
+Three phases of evidence. First, a literature review confirmed no framework existed for this decision, and fifteen interviews produced the values taxonomy. Second, retrospective testing against five failures using only pre-launch data. Third, validation with the same fifteen practitioners as usability testers.
+
+---
+
+## 11 — Validation results
+
+82% of documented failure factors detected across all five cases. The threshold was 70%, based on the Landis and Koch criterion from 1977 for substantial agreement in decision support research. We exceeded it. Practitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder conversations.
+
+---
+
+## 12 — Journey map (Ana)
+
+Meet Ana. Product manager in healthtech. AR/VR is being pushed in a meeting by someone senior, with no evidence. She has doubts and no framework to push back. She runs NEXUS in ten minutes. The report flags the same risks she felt but could not articulate. She walks back into that meeting with a PDF. The HiPPO is still in the room. But now so is the evidence.
+
+---
+
+## 13 — Live demo
+
+This is NEXUS. No installation. Open source under MIT license. [Switch to browser: values ranking, two questions, report output. 90 seconds.]
+
+---
+
+## 14 — Contributions
+
+Four contributions. Primary: the first replicable protocol for this decision, grounded in DIKW. For practice: evidence designers can use to hold their ground. For the community: open infrastructure that outlives this defense. And as a position: it informs. It does not decide.
+
+---
+
+## 15 — Process in motion
 
 Before I close, this is what all of that looks like in motion.
 
-## 14 Thank you
+---
+
+## 16 — Thank you
 
 Thank you. Questions welcome.
+
+---
+
+## B1 — Why DIKW
+
+DIKW is the only framework that explicitly separates what we know from why it matters. Other frameworks optimize process or predict adoption after the fact. None of them address the prior question: what interface type should we be building at all. DIKW does. And it is the only one that places values above technical criteria, which is exactly what this decision requires.
+
+---
+
+## B2 — Case selection
+
+Five criteria: public documentation, pre-launch data available, commercial failure confirmed, interface type mismatch as primary cause, diverse enough to cover multiple categories. These five meet all five criteria. The selection is bounded, not arbitrary.
+
+---
+
+## B3 — Generalizability
+
+Recurrent across the corpus, not universal. That distinction matters. The six patterns appeared in more than one case under similar contextual conditions. They are signals, not laws. The framework flags them. The designer interprets them.
+
+---
+
+## B4 — Scoring algorithm
+
+Four steps. Each answer is scored on a fixed scale. Scores are weighted by DIKW layer, with Wisdom weighted highest. Weights are adjusted by context modifiers from the product context questions. Scores are aggregated per interface type and ranked.
+
+---
+
+## B5 — Tie handling
+
+A tie is not a failure. It means two interface types are genuinely comparable given the inputs. The report surfaces both with their full profiles and flags which contextual factors are pushing them apart. The designer uses that to make the call.
+
+---
+
+## B6 — Governance
+
+Three mechanisms. Community contributions via GitHub pull requests, reviewed against the existing evidence base. Academic updates when new documented cases meet the selection criteria. And a governance model that prevents single-actor capture of the framework.
+
+---
+
+## B7 — TFM scope
+
+Deliberately bounded. One primary methodological contribution, three subordinate ones. The scope is one decision, one context, one validation cycle. Field validation across organisations is the explicit next step. It is not a gap in this work.
+
+---
+
+## B8 — Information Architecture
+
+Every step is visible. Values ranking goes in at the top. Nine assessment questions feed a weighted scoring engine. Each of the five interface types receives a score. Red flag detection cross-checks the top recommendation against the values the organisation ranked highest. If there is a conflict, a warning is added. The designer sees the reasoning behind every flag, not just the conclusion.
