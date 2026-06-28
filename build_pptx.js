@@ -105,7 +105,44 @@ function addPullQuote(slide, quote, attribution, x, y, w, h) {
 }
 
 // ════════════════════════════════════════════════
-// S02 — The real problem
+// S02 — What I built (The reveal)
+// ════════════════════════════════════════════════
+{
+  const slide = pres.addSlide();
+  slide.background = { color: C.bg };
+  addEyebrow(slide, "What I built");
+
+  slide.addText([
+    { text: "Give it a decision.\nGet back ", options: { color: C.ink } },
+    { text: "evidence.", options: { color: C.accent } },
+  ], { x: 0.5, y: 0.65, w: 9, h: 1.0, fontSize: 28, fontFace: "Calibri", bold: true, charSpacing: -1, lineSpacingMultiple: 1.05, margin: 0 });
+
+  // Three-column flow
+  const cols = [
+    { label: "Your decision", color: C.ink2, accent: false },
+    { label: "NEXUS", color: C.accent, accent: true },
+    { label: "A structured report", color: C.ink2, accent: false },
+  ];
+  const cW = 2.6; const cX0 = 1.2;
+  cols.forEach((c, i) => {
+    const cx = cX0 + i * (cW + 0.6);
+    slide.addShape(pres.shapes.RECTANGLE, { x: cx, y: 1.85, w: cW, h: 2.2, fill: { color: C.surface }, line: { color: C.border, width: 0.5 }, rectRadius: 0.1 });
+    slide.addText(c.label, { x: cx, y: 2.7, w: cW, h: 0.5, fontSize: c.accent ? 18 : 14, fontFace: "Calibri", bold: c.accent, color: c.color, align: "center", margin: 0 });
+    if (i < 2) {
+      slide.addText("→", { x: cx + cW + 0.1, y: 2.75, w: 0.5, h: 0.4, fontSize: 18, color: C.ink3, align: "center", margin: 0 });
+    }
+  });
+
+  slide.addText("Checked against five documented, public cases. Scoped for a master's thesis, not an industrial system.", {
+    x: 0.5, y: 4.4, w: 9, h: 0.5, fontSize: 9, color: C.ink3, fontFace: "Calibri", align: "center", margin: 0,
+  });
+
+  addSlug(slide, "02");
+  slide.addNotes("I built something called NEXUS. You put in an interface decision you are about to make. It gives you back a structured report, built from evidence. Not a verdict. A tool that informs. The designer still decides.");
+}
+
+// ════════════════════════════════════════════════
+// S03 — The real problem
 // ════════════════════════════════════════════════
 {
   const slide = pres.addSlide();
@@ -376,6 +413,42 @@ function addPullQuote(slide, quote, attribution, x, y, w, h) {
 }
 
 // ════════════════════════════════════════════════
+// S09b — DIKW layers
+// ════════════════════════════════════════════════
+{
+  const slide = pres.addSlide();
+  slide.background = { color: C.bg };
+  addEyebrow(slide, "The framework · DIKW structure");
+
+  slide.addText([
+    { text: "15 questions,\n", options: { color: C.ink } },
+    { text: "four DIKW layers.", options: { color: C.accent } },
+  ], { x: 0.5, y: 0.65, w: 9, h: 1.0, fontSize: 28, fontFace: "Calibri", bold: true, charSpacing: -1, lineSpacingMultiple: 1.05, margin: 0 });
+
+  slide.addText("Each question maps to a layer of the DIKW hierarchy established by Ackoff in 1989. The framework cannot be short-circuited: values are always evaluated before any technical question.", {
+    x: 0.5, y: 1.72, w: 9, h: 0.45, fontSize: 10, color: C.ink2, fontFace: "Calibri", margin: 0,
+  });
+
+  const layers = [
+    { label: "Wisdom", title: "Values ranking", body: "What does your organisation actually stand for? Primary filter. Evaluated before any technical question.", accent: true },
+    { label: "Knowledge", title: "Context factors", body: "Task complexity, frequency, predictability, context of use, information type. Who are the users and how do they work?", accent: false },
+    { label: "Information", title: "Risk factors", body: "Error consequence, control preference, user demographics, exploration mode. What happens if something goes wrong?", accent: false },
+    { label: "Data", title: "Constraints", body: "Product type, existing solutions, interaction initiation, geography. Hard limits that constrain viable interface types.", accent: false },
+  ];
+  const lW = 2.15; const lX0 = 0.5; const gap = 0.1;
+  layers.forEach((l, i) => {
+    const lx = lX0 + i * (lW + gap);
+    slide.addShape(pres.shapes.RECTANGLE, { x: lx, y: 2.3, w: lW, h: 2.8, fill: { color: l.accent ? "EEF2FF" : C.surface }, line: { color: l.accent ? C.accent : C.border, width: l.accent ? 1.5 : 0.5 }, rectRadius: 0.08 });
+    slide.addText(l.label.toUpperCase(), { x: lx + 0.15, y: 2.42, w: lW - 0.3, h: 0.25, fontSize: 8, fontFace: "Courier New", bold: true, color: l.accent ? C.accent : C.ink3, charSpacing: 2, margin: 0 });
+    slide.addText(l.title, { x: lx + 0.15, y: 2.72, w: lW - 0.3, h: 0.4, fontSize: 13, fontFace: "Calibri", bold: true, color: C.ink, margin: 0 });
+    slide.addText(l.body, { x: lx + 0.15, y: 3.18, w: lW - 0.3, h: 1.75, fontSize: 9, fontFace: "Calibri", color: C.ink2, valign: "top", margin: 0 });
+  });
+
+  addSlug(slide, "09");
+  slide.addNotes("The fifteen questions are not arbitrary. Wisdom layer first: values ranking, before any technical question. Knowledge layer: context factors, who uses the product and how. Information layer: risk factors, what happens if something goes wrong. Data layer last: hard constraints that limit which interface types are viable. The order cannot be reversed.");
+}
+
+// ════════════════════════════════════════════════
 // S08 — Research method
 // ════════════════════════════════════════════════
 {
@@ -502,6 +575,43 @@ function addPullQuote(slide, quote, attribution, x, y, w, h) {
 }
 
 // ════════════════════════════════════════════════
+// S11b — Journey map (Ana)
+// ════════════════════════════════════════════════
+{
+  const slide = pres.addSlide();
+  slide.background = { color: C.bg };
+  addEyebrow(slide, "Who uses it · Under what conditions");
+
+  slide.addText([
+    { text: "From HiPPO pressure\n", options: { color: C.ink } },
+    { text: "to evidence-backed decision.", options: { color: C.accent } },
+  ], { x: 0.5, y: 0.65, w: 9, h: 1.0, fontSize: 28, fontFace: "Calibri", bold: true, charSpacing: -1, lineSpacingMultiple: 1.05, margin: 0 });
+
+  slide.addText("Ana, a product manager in healthtech, walks into a meeting where AR/VR is being pushed without evidence. This is what happens next.\n\nEmotion goes from frustrated to confident. The HiPPO is still in the room. But now so is the evidence.", {
+    x: 0.5, y: 1.8, w: 3.5, h: 1.6, fontSize: 10, color: C.ink2, fontFace: "Calibri", valign: "top", margin: 0,
+  });
+
+  const stages = [
+    { n: "01", label: "Trigger", desc: "Team meets. HiPPO pushes AR/VR. Ana has doubts but no evidence." },
+    { n: "02", label: "Discovery", desc: "Searches for frameworks. Finds NEXUS. Understands it in 2 min." },
+    { n: "03", label: "Assessment", desc: "Ranks values (Control first). Answers 9 questions. 10 minutes." },
+    { n: "04", label: "Interpretation", desc: "Reads recommendation: Screen + AI. Reviews AR/VR red flags." },
+    { n: "05", label: "Decision", desc: "Presents report. Team aligns on Screen. Decision in 1 hour." },
+  ];
+  const sW = 1.72; const sX0 = 4.2;
+  stages.forEach((s, i) => {
+    const sx = sX0 + i * (sW + 0.06);
+    const isLast = i === stages.length - 1;
+    slide.addShape(pres.shapes.RECTANGLE, { x: sx, y: 1.8, w: sW, h: 3.2, fill: { color: isLast ? C.accent : C.surface }, line: { color: isLast ? C.accent : C.border, width: 0.5 }, rectRadius: 0.07 });
+    slide.addText(s.n + " — " + s.label, { x: sx + 0.1, y: 1.9, w: sW - 0.2, h: 0.3, fontSize: 8, fontFace: "Courier New", bold: true, color: isLast ? "FFFFFF" : C.accent, charSpacing: 1, margin: 0 });
+    slide.addText(s.desc, { x: sx + 0.1, y: 2.28, w: sW - 0.2, h: 2.5, fontSize: 8.5, fontFace: "Calibri", color: isLast ? "FFFFFF" : C.ink2, valign: "top", margin: 0 });
+  });
+
+  addSlug(slide, "12");
+  slide.addNotes("Meet Ana. Product manager in healthtech. AR/VR is being pushed in a meeting by someone senior, with no evidence. She has doubts and no framework to push back. She runs NEXUS in ten minutes. The report flags the same risks she felt but could not articulate. She walks back into that meeting with a PDF. The HiPPO is still in the room. But now so is the evidence.");
+}
+
+// ════════════════════════════════════════════════
 // S10 — Demo
 // ════════════════════════════════════════════════
 {
@@ -586,6 +696,26 @@ function addPullQuote(slide, quote, attribution, x, y, w, h) {
 
   addSlug(slide, "11");
   slide.addNotes("Four contributions. Primary: the first replicable protocol for this decision, grounded in DIKW. For practice: evidence designers can use to hold their ground. For the community: open infrastructure that outlives this defense. And as a position: it informs. It does not decide.");
+}
+
+// ════════════════════════════════════════════════
+// S14b — Process in motion (slide 15)
+// ════════════════════════════════════════════════
+{
+  const slide = pres.addSlide();
+  slide.background = { color: C.bg };
+
+  slide.addText([
+    { text: "Under a minute.\n", options: { color: C.ink } },
+    { text: "Everything you just heard, in motion.", options: { color: C.accent } },
+  ], { x: 1, y: 1.8, w: 8, h: 1.4, fontSize: 32, fontFace: "Calibri", bold: true, charSpacing: -1.5, lineSpacingMultiple: 1.1, align: "center", margin: 0 });
+
+  slide.addText("[ Video: nexus_process.gif ]", {
+    x: 2.5, y: 3.4, w: 5, h: 0.5, fontSize: 10, color: C.ink3, fontFace: "Courier New", align: "center", margin: 0,
+  });
+
+  addSlug(slide, "15");
+  slide.addNotes("Before I close, this is what all of that looks like in motion.");
 }
 
 // ════════════════════════════════════════════════
@@ -953,6 +1083,47 @@ function addPullQuote(slide, quote, attribution, x, y, w, h) {
   slide.addNotes("Deliberately bounded. One primary methodological contribution, three subordinate ones. The scope is one decision, one context, one validation cycle. Field validation across organisations is the explicit next step. It is not a gap in this work.");
 }
 
+
+// ════════════════════════════════════════════════
+// B8 — Information Architecture
+// ════════════════════════════════════════════════
+{
+  const slide = pres.addSlide();
+  slide.background = { color: C.bg };
+  addEyebrow(slide, "Backup · Architecture");
+
+  slide.addText([
+    { text: "Input to output.\n", options: { color: C.ink } },
+    { text: "Every step transparent.", options: { color: C.accent } },
+  ], { x: 0.5, y: 0.65, w: 9, h: 1.0, fontSize: 28, fontFace: "Calibri", bold: true, charSpacing: -1, lineSpacingMultiple: 1.05, margin: 0 });
+
+  const steps = [
+    { label: "Values ranking", desc: "Organisation ranks what it stands for. Primary filter — evaluated before all else." },
+    { label: "9 Assessment questions", desc: "Context · risk · constraints. Mapped to DIKW layer. Order cannot be reversed." },
+    { label: "Weighted scoring engine", desc: "Each answer scored on fixed scale. Weights by DIKW layer (Wisdom highest)." },
+    { label: "5 Interface type scores", desc: "Screen · Voice · AR/VR · Conversational AI · Automation. Ranked by compatibility." },
+    { label: "Red flag detection", desc: "Cross-checks top recommendation against top-ranked values. Conflicts surface as warnings." },
+    { label: "Structured report", desc: "Alignments, tensions, precedents. Designer reads it. Designer decides." },
+  ];
+
+  steps.forEach((s, i) => {
+    const row = Math.floor(i / 3);
+    const col = i % 3;
+    const sx = 0.5 + col * 3.1;
+    const sy = 1.85 + row * 1.5;
+    slide.addShape(pres.shapes.RECTANGLE, { x: sx, y: sy, w: 2.95, h: 1.3, fill: { color: C.surface }, line: { color: C.border, width: 0.5 }, rectRadius: 0.08 });
+    slide.addText(`${String(i + 1).padStart(2, "0")} — ${s.label}`, { x: sx + 0.15, y: sy + 0.1, w: 2.65, h: 0.28, fontSize: 9, fontFace: "Courier New", bold: true, color: C.accent, margin: 0 });
+    slide.addText(s.desc, { x: sx + 0.15, y: sy + 0.42, w: 2.65, h: 0.76, fontSize: 9, fontFace: "Calibri", color: C.ink2, valign: "top", margin: 0 });
+    if (i < 5) {
+      const arrowX = (col === 2) ? sx + 1.47 : sx + 2.95 + 0.02;
+      const arrowY = (col === 2) ? sy + 1.3 + 0.05 : sy + 0.57;
+      slide.addText(col === 2 ? "↓" : "→", { x: arrowX, y: arrowY, w: 0.25, h: 0.25, fontSize: 12, color: C.ink3, align: "center", margin: 0 });
+    }
+  });
+
+  addSlug(slide, "B8");
+  slide.addNotes("Every step is visible. Values ranking goes in at the top. Nine assessment questions feed a weighted scoring engine. Each of the five interface types receives a score. Red flag detection cross-checks the top recommendation against the values the organisation ranked highest. If there is a conflict, a warning is added. The designer sees the reasoning behind every flag, not just the conclusion.");
+}
 
 // ── Write file ────────────────────────────────
 pres.writeFile({ fileName: "/Users/zarfet/TFM_MVP/Nexus_ppt/NEXUS_Defense.pptx" })
