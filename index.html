@@ -3215,5 +3215,50 @@
 })();
 </script>
 
+<!-- Sub-step keyboard navigation: → opens lightbox on lightbox slides, second → closes + advances -->
+<script>
+(function(){
+  var SLIDE_LIGHTBOX = {
+    '12 User Journey Map':        'svgLightboxJourney',
+    '14b Process in motion':      'gifLightbox',
+    '15 Video recap':             'videoModal',
+    'B8 Information Architecture':'svgLightboxIA'
+  };
+
+  document.addEventListener('keydown', function(e){
+    if(e.key !== 'ArrowRight' && e.key !== ' ') return;
+
+    var activeSlide = document.querySelector('[data-deck-active]');
+    if(!activeSlide) return;
+
+    var label = activeSlide.getAttribute('data-label');
+    var lbId  = SLIDE_LIGHTBOX[label];
+    if(!lbId) return;
+
+    var lb = document.getElementById(lbId);
+    if(!lb) return;
+
+    if(!lb.classList.contains('open')){
+      if(lbId === 'videoModal'){
+        var openBtn = document.getElementById('openVideoBtn');
+        if(openBtn) openBtn.click();
+      } else {
+        lb.classList.add('open');
+      }
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    } else {
+      if(lbId === 'videoModal'){
+        var closeBtn = document.getElementById('closeVideoBtn');
+        if(closeBtn) closeBtn.click();
+      } else {
+        lb.classList.remove('open');
+      }
+      // let the event propagate so deck-stage advances to the next slide
+    }
+  }, true); // capture phase — runs before deck-stage's bubble-phase listener
+})();
+</script>
+
 </body>
 </html>
