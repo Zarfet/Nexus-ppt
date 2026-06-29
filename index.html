@@ -3189,9 +3189,9 @@
     overlay.classList.add('open');
     document.body.style.overflow='hidden';
     video.play();
-    // If the page itself is in fullscreen, put the video in fullscreen too
-    if(document.fullscreenElement && document.fullscreenElement !== video){
-      (video.requestFullscreen||video.webkitRequestFullscreen||video.mozRequestFullScreen).call(video);
+    // Always put the video element in fullscreen when the modal opens
+    if(document.fullscreenElement !== video){
+      (video.requestFullscreen||video.webkitRequestFullscreen||video.mozRequestFullScreen).call(video).catch(function(){});
     }
   }
   function closeModal(){
@@ -3340,6 +3340,15 @@
       document.querySelectorAll('.reveal-hidden.revealed, [data-step-post].revealed').forEach(function(el) {
         el.classList.remove('revealed');
       });
+      // Close video modal and reset if open
+      var vm = document.getElementById('videoModal');
+      var vid = document.getElementById('nexusVideo');
+      if (vm && vm.classList.contains('open')) {
+        if (document.fullscreenElement === vid) document.exitFullscreen();
+        vm.classList.remove('open');
+        document.body.style.overflow = '';
+      }
+      if (vid) { vid.pause(); vid.currentTime = 0; }
     });
   }
 })();
