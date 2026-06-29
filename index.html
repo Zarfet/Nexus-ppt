@@ -555,6 +555,19 @@
   .brand-stripe .dot{width:10px;height:10px;background:var(--accent);border-radius:50%;animation:pulse 2s infinite;}
   @keyframes pulse{0%,100%{opacity:1}50%{opacity:0.35}}
 
+  /* Progressive reveal steps */
+  .reveal-hidden{
+    opacity:0;
+    transform:translateY(10px);
+    transition:opacity 0.35s ease, transform 0.35s ease;
+    pointer-events:none;
+  }
+  .reveal-hidden.revealed{
+    opacity:1;
+    transform:translateY(0);
+    pointer-events:auto;
+  }
+
   /* framework two-col image */
   .fig-note{
     margin-top:24px;
@@ -575,8 +588,8 @@
     <div class="hook-layout">
       <div class="hook-text">
         <h1 class="display" style="font-size:84px;line-height:1.02;letter-spacing:-0.035em;">Has your design<br>recommendation<br>ever been <em>overruled?</em></h1>
-        <p class="body-lg" style="max-width:900px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name:<br>the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
-        <p class="body-lg" style="max-width:900px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
+        <p class="body-lg reveal-hidden" data-step="1" style="max-width:900px;font-size:36px;">Because someone more senior had a different opinion.<br>That pattern has a name:<br>the <b style="color:var(--ink);font-weight:600;">HiPPO effect</b> <span class="mono" style="font-size:24px;color:var(--ink-3);">(McAfee &amp; Brynjolfsson, 2012)</span>.</p>
+        <p class="body-lg reveal-hidden" data-step="2" style="max-width:900px;font-size:36px;color:var(--ink);font-weight:500;">NEXUS gives designers a structured argument that holds its ground in the room.</p>
       </div>
       <div class="hook-hippo">
         <img src="hippo.png" alt="HiPPO mascot" />
@@ -593,13 +606,15 @@
       <h2 class="title">Give it a decision.<br>Get back <em>evidence.</em></h2>
     </div>
     <div style="flex:1;display:flex;flex-direction:column;align-items:center;justify-content:center;gap:24px;">
-      <img src="nexus-box.png" alt="A design decision flows into NEXUS, shown as a dashed wireframe box, and returns a structured, evidence-based report." onclick="document.getElementById('imgLightboxNexusBox').classList.add('open')" style="max-width:1100px;width:100%;cursor:zoom-in;" />
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;width:100%;max-width:1100px;text-align:center;">
-        <span class="small">Your decision</span>
-        <span class="small" style="color:var(--accent);font-weight:600;">NEXUS</span>
-        <span class="small">A structured report</span>
+      <div class="reveal-hidden" data-step="1" style="display:flex;flex-direction:column;align-items:center;gap:24px;width:100%;">
+        <img src="nexus-box.png" alt="A design decision flows into NEXUS, shown as a dashed wireframe box, and returns a structured, evidence-based report." onclick="document.getElementById('imgLightboxNexusBox').classList.add('open')" style="max-width:1100px;width:100%;cursor:zoom-in;" />
+        <div style="display:grid;grid-template-columns:1fr 1fr 1fr;width:100%;max-width:1100px;text-align:center;">
+          <span class="small">Your decision</span>
+          <span class="small" style="color:var(--accent);font-weight:600;">NEXUS</span>
+          <span class="small">A structured report</span>
+        </div>
       </div>
-      <p class="small">Checked against five documented, public cases. Scoped for a master's thesis, not an industrial system.</p>
+      <p class="small reveal-hidden" data-step="2">Checked against five documented, public cases. Scoped for a master's thesis, not an industrial system.</p>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
   </section>
@@ -612,8 +627,8 @@
       <h2 class="title">Fifteen professionals.<br><em>Zero systematic frameworks.</em></h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:32px;">
-      <p class="body-lg" style="max-width:1400px;">Across fifteen expert interviews: UX designers, technical leads, quality engineers, project managers, not one described a systematic process for choosing an interface type.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+      <p class="body-lg reveal-hidden" data-step="1" style="max-width:1400px;">Across fifteen expert interviews: UX designers, technical leads, quality engineers, project managers, not one described a systematic process for choosing an interface type.</p>
+      <div class="reveal-hidden" data-step="2" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
         <div class="pull-quote" style="font-size:26px;line-height:1.45;">"Decisions here are not grounded in evidence. It is much more authoritarian than evidence-based."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">UX/Digital Designer<br>15 yrs experience</span></div>
         <div class="pull-quote" style="font-size:26px;line-height:1.45;">"Basically, what prevents me from presenting a structured proposal to the client is the client themselves."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Delivery Project Manager<br>8 yrs experience</span></div>
         <div class="pull-quote" style="font-size:26px;line-height:1.45;">"You grab the template you like the most. There is no way to say which interface type suits the project better."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Senior Fullstack Developer<br>10 yrs experience</span></div>
@@ -635,10 +650,10 @@
       <div class="brand-stripe" style="margin-bottom:36px;">
         <span class="dot"></span> Beyond Intuition:
       </div>
-      <h1 class="display">A Designer's Framework for<br><em>Interface Type Selection</em></h1>
+      <h1 class="display reveal-hidden" data-step="1">A Designer's Framework for<br><em>Interface Type Selection</em></h1>
     </div>
 
-    <div class="title-meta">
+    <div class="title-meta reveal-hidden" data-step="2">
       <div class="block">
         <span>Author</span>
         <b>ZARATE Ilverzon</b>
@@ -663,11 +678,11 @@
     </div>
     <div class="two-col narrow-left">
       <div class="col" style="justify-content:center;gap:28px;">
-        <p class="body-lg">Every design methodology assumes you have already chosen what kind of interface to build.</p>
-        <p class="body-lg" style="color:var(--ink);font-weight:500;">None of them help you make that choice.</p>
+        <p class="body-lg reveal-hidden" data-step="1">Every design methodology assumes you have already chosen what kind of interface to build.</p>
+        <p class="body-lg reveal-hidden" data-step="2" style="color:var(--ink);font-weight:500;">None of them help you make that choice.</p>
       </div>
       <div class="col">
-        <div class="fw-list">
+        <div class="fw-list reveal-hidden" data-step="1">
           <div class="fw-row">
             <div>
               <div class="fw-name">Refining a chosen interface</div>
@@ -675,7 +690,7 @@
             </div>
             <span class="fw-status has">Exists</span>
           </div>
-          <div class="fw-row missing">
+          <div class="fw-row missing reveal-hidden" data-step="2">
             <div>
               <div class="fw-name">Choosing the interface type</div>
               <div class="fw-desc">Screen · voice · wearable · AI · spatial: which one?</div>
@@ -697,7 +712,7 @@
         <h2 class="title">Right technology.<br><em>Wrong interface type.</em></h2>
       </div>
     </div>
-    <div class="cases-strip">
+    <div class="cases-strip reveal-hidden" data-step="1">
       <div class="case-card">
         <div class="case-name">Google Glass</div>
         <div class="case-year">2013</div>
@@ -729,7 +744,7 @@
         <div class="case-desc">Interrupted users. They demanded removal.</div>
       </div>
     </div>
-    <p class="body" style="margin-top:28px;color:var(--ink-2);">Millions in combined documented losses across just five cases. Only the numbers companies disclosed.</p>
+    <p class="body reveal-hidden" data-step="2" style="margin-top:28px;color:var(--ink-2);">Millions in combined documented losses across just five cases. Only the numbers companies disclosed.</p>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>06</span></div>
   </section>
 
@@ -741,23 +756,23 @@
       <h2 class="title">The failure is not technical.<br><em>It is structural.</em></h2>
     </div>
     <div class="stats-row">
-      <div class="stat">
+      <div class="stat reveal-hidden" data-step="1">
         <div class="stat-num" style="color:var(--accent);">95<span style="font-size:120px;">%</span></div>
         <div class="stat-desc" style="color:var(--ink-2);">of generative AI pilots fail to deliver measurable impact.</div>
         <div class="stat-source" style="color:var(--ink-3);">MIT NANDA · 2025</div>
       </div>
-      <div class="stat">
+      <div class="stat reveal-hidden" data-step="2">
         <div class="stat-num" style="color:var(--accent);">80<span style="font-size:120px;">%</span></div>
         <div class="stat-desc" style="color:var(--ink-2);">of AI projects never reach real use, twice conventional IT.</div>
         <div class="stat-source" style="color:var(--ink-3);">RAND Corporation · 2024</div>
       </div>
-      <div class="stat">
+      <div class="stat reveal-hidden" data-step="3">
         <div class="stat-num" style="color:var(--accent);">84<span style="font-size:120px;">%</span></div>
         <div class="stat-desc" style="color:var(--ink-2);">of those failures trace to leadership decisions, not engineering.</div>
         <div class="stat-source" style="color:var(--ink-3);">RAND Corporation · 2024</div>
       </div>
     </div>
-    <div class="pull-quote" style="margin-top:56px;">The bottleneck is the decision. Not the technology.</div>
+    <div class="pull-quote reveal-hidden" data-step="4" style="margin-top:56px;">The bottleneck is the decision. Not the technology.</div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>07</span></div>
   </section>
 
@@ -770,14 +785,14 @@
           <div class="eyebrow">The framework</div>
           <h2 class="title">A structured<br>conversation,<br>in <em>four stages.</em></h2>
         </div>
-        <p class="body-lg">The decision that happens before the first mockup. Made explicit, documented, and defensible.</p>
-        <div style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:28px 36px;">
+        <p class="body-lg reveal-hidden" data-step="1">The decision that happens before the first mockup. Made explicit, documented, and defensible.</p>
+        <div class="reveal-hidden" data-step="1" style="background:var(--accent-soft);border:1px solid var(--accent-bd);border-radius:14px;padding:28px 36px;">
           <div class="mono" style="font-size:24px;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;font-weight:600;margin-bottom:10px;">Core principle</div>
           <div style="font-size:28px;color:var(--ink);line-height:1.35;font-weight:500;letter-spacing:-0.01em;">Values come first.<br>Before any technical question.</div>
         </div>
       </div>
       <div class="col">
-        <div class="steps">
+        <div class="steps reveal-hidden" data-step="2">
           <div class="step first">
             <div class="step-n">01 —</div>
             <div>
@@ -785,21 +800,21 @@
               <div class="step-d">Rank what the organisation stands for. That ranking is the primary filter.</div>
             </div>
           </div>
-          <div class="step">
+          <div class="step reveal-hidden" data-step="3">
             <div class="step-n">02 —</div>
             <div>
               <div class="step-t">Context</div>
               <div class="step-d">Fifteen questions: users, frequency, environment, consequence of failure.</div>
             </div>
           </div>
-          <div class="step">
+          <div class="step reveal-hidden" data-step="4">
             <div class="step-n">03 —</div>
             <div>
               <div class="step-t">Patterns</div>
               <div class="step-d">Does this resemble any of the five documented failures? The framework flags it.</div>
             </div>
           </div>
-          <div class="step">
+          <div class="step reveal-hidden" data-step="5">
             <div class="step-n">04 —</div>
             <div>
               <div class="step-t">Report</div>
@@ -820,24 +835,24 @@
       <h2 class="title">15 questions,<br><em>four DIKW layers.</em></h2>
     </div>
     <div style="display:flex;flex-direction:column;gap:16px;">
-      <p class="body-lg" style="max-width:1400px;">Each question maps to a layer of the DIKW hierarchy established by Ackoff in 1989. The framework cannot be short-circuited: values are always evaluated before any technical question.</p>
-      <div style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;flex:1;min-height:0;">
+      <p class="body-lg reveal-hidden" data-step="1" style="max-width:1400px;">Each question maps to a layer of the DIKW hierarchy established by Ackoff in 1989. The framework cannot be short-circuited: values are always evaluated before any technical question.</p>
+      <div class="reveal-hidden" data-step="2" style="display:grid;grid-template-columns:1fr 1fr 1fr 1fr;gap:1px;background:var(--border);border:1px solid var(--border);border-radius:14px;overflow:hidden;flex:1;min-height:0;">
         <div style="background:var(--accent-soft);border-left:5px solid var(--accent);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.14em;color:var(--accent);text-transform:uppercase;font-weight:600;">Wisdom</div>
           <div style="font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;">Values ranking</div>
           <p class="body" style="color:var(--ink-2);">What does your organisation actually stand for? Primary filter. Evaluated before any technical question.</p>
         </div>
-        <div style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
+        <div class="reveal-hidden" data-step="3" style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.14em;color:var(--ink-3);text-transform:uppercase;font-weight:600;">Knowledge</div>
           <div style="font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;">Context factors</div>
           <p class="body" style="color:var(--ink-2);">Task complexity, frequency, predictability, context of use, information type. Who are the users and how do they work?</p>
         </div>
-        <div style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
+        <div class="reveal-hidden" data-step="4" style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.14em;color:var(--ink-3);text-transform:uppercase;font-weight:600;">Information</div>
           <div style="font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;">Risk factors</div>
           <p class="body" style="color:var(--ink-2);">Error consequence, control preference, user demographics, exploration mode. What happens if something goes wrong?</p>
         </div>
-        <div style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
+        <div class="reveal-hidden" data-step="5" style="background:var(--surface);padding:40px 36px;display:flex;flex-direction:column;gap:16px;">
           <div class="mono" style="font-size:22px;letter-spacing:0.14em;color:var(--ink-3);text-transform:uppercase;font-weight:600;">Data</div>
           <div style="font-size:28px;font-weight:600;color:var(--ink);letter-spacing:-0.01em;">Constraints</div>
           <p class="body" style="color:var(--ink-2);">Product type, existing solutions, interaction initiation, geography. Hard limits that constrain viable interface types.</p>
@@ -855,7 +870,7 @@
       <h2 class="title">Three phases.<br><em>Three kinds of evidence.</em></h2>
     </div>
     <div class="phase-grid">
-      <div class="phase">
+      <div class="phase reveal-hidden" data-step="1">
         <div class="phase-top">
           <span class="phase-n">PHASE 01</span>
           <span class="phase-tag">Construction</span>
@@ -867,7 +882,7 @@
           <span class="phase-metric-l">practitioners interviewed<br>UX designers · technical leads · quality engineers · project managers</span>
         </div>
       </div>
-      <div class="phase">
+      <div class="phase reveal-hidden" data-step="2">
         <div class="phase-top">
           <span class="phase-n">PHASE 02</span>
           <span class="phase-tag">Retrospective</span>
@@ -879,7 +894,7 @@
           <span class="phase-metric-l">cases<br>pre-launch data only</span>
         </div>
       </div>
-      <div class="phase" style="background:var(--accent-soft);border-color:var(--accent-bd);">
+      <div class="phase reveal-hidden" data-step="3" style="background:var(--accent-soft);border-color:var(--accent-bd);">
         <div class="phase-top">
           <span class="phase-n">PHASE 03</span>
           <span class="phase-tag">Proof of concept</span>
@@ -902,11 +917,11 @@
       <div class="eyebrow">Validation</div>
       <div style="display:grid;grid-template-columns:1fr 1fr;gap:60px;align-items:end;">
         <h2 class="title" style="margin:0;">Did it see<br>what went <em>wrong?</em></h2>
-        <p class="body-lg" style="align-self:end;margin:0;">Applied to each product using only pre-launch public information.</p>
+        <p class="body-lg reveal-hidden" data-step="2" style="align-self:end;margin:0;">Applied to each product using only pre-launch public information.</p>
       </div>
     </div>
     <div class="two-col" style="gap:56px;">
-      <div class="col" style="gap:20px;">
+      <div class="col reveal-hidden" data-step="1" style="gap:20px;">
         <div class="metric">
           <div class="metric-num">82<span style="font-size:56px;">%</span></div>
           <div>
@@ -925,7 +940,7 @@
           </div>
         </div>
       </div>
-      <div class="col" style="gap:20px;">
+      <div class="col reveal-hidden" data-step="2" style="gap:20px;">
         <table class="validate">
           <thead>
             <tr><th>Product</th><th>What went wrong</th><th style="text-align:center;">Caught?</th></tr>
@@ -952,10 +967,10 @@
     </div>
     <div style="flex:1;display:flex;gap:64px;min-height:0;align-items:flex-start;padding-bottom:80px;">
       <div style="flex:0 0 380px;display:flex;flex-direction:column;justify-content:center;gap:28px;">
-        <p class="body-lg">Ana, a product manager in healthtech, walks into a meeting where AR/VR is being pushed without evidence. This is what happens next.</p>
-        <p class="body" style="color:var(--ink-2);">Emotion goes from frustrated to confident. The HiPPO is still in the room. But now so is the evidence.</p>
+        <p class="body-lg reveal-hidden" data-step="1">Ana, a product manager in healthtech, walks into a meeting where AR/VR is being pushed without evidence. This is what happens next.</p>
+        <p class="body reveal-hidden" data-step-post="1" style="color:var(--ink-2);">Emotion goes from frustrated to confident. The HiPPO is still in the room. But now so is the evidence.</p>
       </div>
-      <div onclick="document.getElementById('svgLightboxJourney').classList.add('open')" style="flex:1;min-height:0;max-height:520px;position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;align-items:flex-start;justify-content:center;padding:32px;cursor:zoom-in;">
+      <div class="reveal-hidden" data-step="2" onclick="document.getElementById('svgLightboxJourney').classList.add('open')" style="flex:1;min-height:0;max-height:520px;position:relative;background:var(--surface);border:1px solid var(--border);border-radius:14px;overflow:hidden;display:flex;align-items:flex-start;justify-content:center;padding:32px;cursor:zoom-in;">
         <div style="position:absolute;bottom:0;left:0;right:0;height:80px;background:linear-gradient(to top,var(--surface) 0%,transparent 100%);z-index:2;border-radius:0 0 14px 14px;pointer-events:none;"></div>
         <svg xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 680 541" font-family="-apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif" style="width:100%;height:auto;max-height:100%;display:block;">
     <rect x="0" y="0" width="680" height="620" style="fill:white;"/>
@@ -1453,7 +1468,7 @@
       <h2 class="title">NEXUS in the browser.<br><em>Live demo.</em></h2>
     </div>
     <div class="demo-wrap" style="padding-bottom:80px;">
-      <div class="col" style="gap:32px;">
+      <div class="col reveal-hidden" data-step="1" style="gap:32px;">
         <p class="body-lg">Fifteen minutes, no installation.<br>A guided conversation about values, context, and constraints.<br>Ending in a report, not an answer.</p>
         <a class="url-card" href="https://nexus-flame-delta.vercel.app" target="_blank" rel="noopener">
           <span class="dot"></span>nexus-flame-delta.vercel.app
@@ -1464,20 +1479,20 @@
           <li>github.com/Zarfet/reason-road</li>
         </ul>
       </div>
-      <div class="demo-cue">
+      <div class="demo-cue reveal-hidden" data-step="2">
         <div class="cue-row">
           <div class="cue-label">Input</div>
           <div class="cue-text">Rank five values.<span class="sub">Control · accessibility · sustainability · efficiency · joy.</span></div>
         </div>
-        <div class="cue-row">
+        <div class="cue-row reveal-hidden" data-step="3">
           <div class="cue-label">Then</div>
           <div class="cue-text">Answer 15 context questions.<span class="sub">Users · frequency · environment · consequence of failure.</span></div>
         </div>
-        <div class="cue-row">
+        <div class="cue-row reveal-hidden" data-step="4">
           <div class="cue-label">Output</div>
           <div class="cue-text">A structured report.<span class="sub">Type alignment · tensions · relevant historical precedents.</span></div>
         </div>
-        <div class="cue-row">
+        <div class="cue-row reveal-hidden" data-step="5">
           <div class="cue-label">Position</div>
           <div class="cue-text" style="color:var(--accent);">It informs. <em style="font-style:normal;">You</em> decide.</div>
         </div>
@@ -1493,24 +1508,24 @@
       <div class="eyebrow">Contributions</div>
       <h2 class="title">Four contributions.<br><em>One open platform.</em></h2>
     </div>
-    <div class="contrib-grid">
+    <div class="contrib-grid reveal-hidden" data-step="1">
       <div class="contrib-card">
         <div class="contrib-label">For the field</div>
         <div class="contrib-t">A replicable method</div>
         <div class="contrib-d">First application of DIKW to interface type selection. Extensible to new types, contexts, and failures not yet documented.</div>
       </div>
-      <div class="contrib-card">
+      <div class="contrib-card reveal-hidden" data-step="2">
         <div class="contrib-label">For practice</div>
         <div class="contrib-t">Evidence to defend good decisions</div>
         <div class="contrib-d">A structured argument for designers. Makes judgment visible, documented, and harder to override by opinion alone, including the HiPPO's.</div>
       </div>
-      <div class="contrib-card" style="padding-bottom:80px;">
+      <div class="contrib-card reveal-hidden" data-step="3" style="padding-bottom:80px;">
         <div class="contrib-label">For the community</div>
         <div class="contrib-t">Infrastructure that outlives the defense</div>
         <div class="contrib-d">MIT-licensed. Open to all. The research does not end here.</div>
         <div style="flex:1;min-height:32px;"></div>
       </div>
-      <div class="contrib-card position" style="padding-bottom:80px;">
+      <div class="contrib-card position reveal-hidden" data-step="4" style="padding-bottom:80px;">
         <div class="contrib-label">As a position</div>
         <div class="contrib-t">"It informs. It does not decide."</div>
         <div class="contrib-d">Structure in service of human judgment, not instead of it.</div>
@@ -3215,7 +3230,7 @@
 })();
 </script>
 
-<!-- Sub-step keyboard navigation: → opens lightbox on lightbox slides, second → closes + advances -->
+<!-- Sub-step navigation: progressive reveal + lightbox open/close before deck advances -->
 <script>
 (function(){
   var SLIDE_LIGHTBOX = {
@@ -3225,38 +3240,105 @@
     'B8 Information Architecture':'svgLightboxIA'
   };
 
-  document.addEventListener('keydown', function(e){
-    if(e.key !== 'ArrowRight' && e.key !== ' ') return;
+  // Tracks slides whose lightbox cycle is fully complete (opened + closed + post-reveals done)
+  var lightboxDone = new Set();
 
-    var activeSlide = document.querySelector('[data-deck-active]');
-    if(!activeSlide) return;
+  function isInteractive(el) {
+    while (el && el.tagName !== 'DECK-STAGE') {
+      var tag = el.tagName;
+      if (tag === 'BUTTON' || tag === 'A' || tag === 'INPUT' || tag === 'VIDEO') return true;
+      if (el.getAttribute('onclick') || el.style.cursor === 'zoom-in') return true;
+      el = el.parentElement;
+    }
+    return false;
+  }
 
-    var label = activeSlide.getAttribute('data-label');
-    var lbId  = SLIDE_LIGHTBOX[label];
-    if(!lbId) return;
+  function revealNextStep(slide) {
+    var pending = Array.from(slide.querySelectorAll('.reveal-hidden:not(.revealed):not([data-step-post])'));
+    if (!pending.length) return false;
+    var minStep = pending.reduce(function(min, el) {
+      var s = parseInt(el.getAttribute('data-step'), 10) || 0;
+      return s < min ? s : min;
+    }, Infinity);
+    pending.forEach(function(el) {
+      if ((parseInt(el.getAttribute('data-step'), 10) || 0) === minStep) {
+        el.classList.add('revealed');
+      }
+    });
+    return true;
+  }
 
+  // Opens or closes the lightbox. Returns true if advance should be blocked.
+  // When closing: also triggers any remaining reveals; if more reveals fired, blocks advance.
+  function handleLightbox(label, activeSlide) {
+    var lbId = SLIDE_LIGHTBOX[label];
+    if (!lbId) return false;
     var lb = document.getElementById(lbId);
-    if(!lb) return;
-
-    if(!lb.classList.contains('open')){
-      if(lbId === 'videoModal'){
+    if (!lb) return false;
+    if (!lb.classList.contains('open')) {
+      // Open
+      if (lbId === 'videoModal') {
         var openBtn = document.getElementById('openVideoBtn');
-        if(openBtn) openBtn.click();
+        if (openBtn) openBtn.click();
       } else {
         lb.classList.add('open');
       }
-      e.stopImmediatePropagation();
-      e.preventDefault();
+      return true;
     } else {
-      if(lbId === 'videoModal'){
+      // Close
+      if (lbId === 'videoModal') {
         var closeBtn = document.getElementById('closeVideoBtn');
-        if(closeBtn) closeBtn.click();
+        if (closeBtn) closeBtn.click();
       } else {
         lb.classList.remove('open');
       }
-      // let the event propagate so deck-stage advances to the next slide
+      // After closing, reveal any post-lightbox elements (data-step-post) and remaining steps
+      var postEls = activeSlide ? Array.from(activeSlide.querySelectorAll('.reveal-hidden:not(.revealed)[data-step-post]')) : [];
+      postEls.forEach(function(el) { el.classList.add('revealed'); });
+      var hasMore = postEls.length > 0 || (activeSlide && revealNextStep(activeSlide));
+      lightboxDone.add(label); // always mark cycle complete after closing
+      return hasMore; // block advance only if content was revealed
     }
-  }, true); // capture phase — runs before deck-stage's bubble-phase listener
+  }
+
+  function handleAdvance(e) {
+    var activeSlide = document.querySelector('[data-deck-active]');
+    if (!activeSlide) return;
+    var label = activeSlide.getAttribute('data-label');
+
+    if (revealNextStep(activeSlide)) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+      return;
+    }
+
+    if (!lightboxDone.has(label) && handleLightbox(label, activeSlide)) {
+      e.stopImmediatePropagation();
+      e.preventDefault();
+    }
+  }
+
+  document.addEventListener('keydown', function(e) {
+    if (e.key !== 'ArrowRight' && e.key !== ' ') return;
+    handleAdvance(e);
+  }, true);
+
+  document.addEventListener('click', function(e) {
+    if (isInteractive(e.target)) return;
+    var activeSlide = document.querySelector('[data-deck-active]');
+    if (!activeSlide || !activeSlide.contains(e.target)) return;
+    handleAdvance(e);
+  }, true);
+
+  var deck = document.querySelector('deck-stage');
+  if (deck) {
+    deck.addEventListener('slidechange', function() {
+      lightboxDone.clear();
+      document.querySelectorAll('.reveal-hidden.revealed, [data-step-post].revealed').forEach(function(el) {
+        el.classList.remove('revealed');
+      });
+    });
+  }
 })();
 </script>
 
