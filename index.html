@@ -22,13 +22,13 @@
 
 "Fifteen interviews. UX designers, tech leads, project managers, quality engineers. Not one described a systematic process for choosing an interface type. One of them put it plainly: I research, I substantiate, and I let go. The decision belongs to someone else. That is not a personal failure. It is a structural gap.",
 
-"Every methodology I reviewed assumes you already know what interface type you are building. They guide how to refine it, test it, fit it to users. None of them help you choose the type itself. That is the gap this research confirms.",
+"Every methodology reviewed in this research assumes you already know what interface type you are building. They guide how to refine it, test it, fit it to users. None of them help you choose the type itself. That is the gap this research confirms.",
 
 "These five products had the budget, the team, and the technology. None of them failed because the engineering broke. All of them chose the wrong interface type for the context. Hundreds of millions in documented losses.",
 
 "This is not isolated. Estrada at MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact. RAND found in 2024 that 84% of AI project failures trace to leadership decisions, not engineering. The bottleneck is the decision. No tool exists that checks this decision against documented precedent. That is where NEXUS operates.",
 
-"I am Ilverzon Zarate. Over the next fifteen minutes: the problem, the gap, the framework, the evidence, and a live look at the tool.",
+"I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection. Over the next minutes I will walk you through the problem, the gap, the framework, the evidence, and a live look at the tool.",
 
 "I built something called NEXUS. You put in an interface decision you are about to make. It gives you back a structured report, built from evidence. Not a verdict. A tool that informs. The designer still decides.",
 
@@ -46,7 +46,7 @@
 
 "Four contributions. The primary one is the first replicable protocol for this decision, grounded in DIKW. For practice: evidence designers can use to hold their ground. For the community: open infrastructure that outlives this defense. And as a position: it informs. It does not decide.",
 
-"Before I close, this is what all of that looks like in motion.",
+"Before closing, this is what all of that looks like in motion.",
 
 "Thank you. Questions welcome.",
 
@@ -3326,6 +3326,79 @@
       if (vid) { vid.pause(); vid.currentTime = 0; }
     });
   }
+})();
+</script>
+
+<!-- Presenter notes view + broadcast sync -->
+<script>
+(function(){
+  var notes = (function(){
+    var el = document.getElementById('speaker-notes');
+    try { return el ? JSON.parse(el.textContent) : []; } catch(e){ return []; }
+  })();
+
+  var channel = new BroadcastChannel('nexus-presenter');
+  var isNotes = location.search.includes('notes');
+
+  if (isNotes) {
+    // ── NOTES WINDOW ──────────────────────────────────────
+    document.body.innerHTML = '';
+    document.documentElement.style.cssText = 'margin:0;padding:0;height:100%;';
+    document.body.style.cssText = 'margin:0;padding:0;height:100%;background:#111;color:#fff;font-family:system-ui,sans-serif;display:flex;flex-direction:column;';
+
+    var header = document.createElement('div');
+    header.style.cssText = 'padding:12px 24px;background:#1a1a1a;border-bottom:1px solid #333;display:flex;align-items:center;gap:16px;flex-shrink:0;';
+    header.innerHTML = '<span style="font-size:13px;color:#888;letter-spacing:0.1em;text-transform:uppercase;">Speaker Notes</span><span id="slide-counter" style="font-size:13px;color:#555;margin-left:auto;"></span>';
+    document.body.appendChild(header);
+
+    var noteEl = document.createElement('div');
+    noteEl.id = 'note-text';
+    noteEl.style.cssText = 'flex:1;padding:40px 48px;font-size:22px;line-height:1.7;color:#e8e8e8;overflow-y:auto;';
+    noteEl.textContent = 'Waiting for presentation…';
+    document.body.appendChild(noteEl);
+
+    var nextEl = document.createElement('div');
+    nextEl.style.cssText = 'padding:20px 48px;border-top:1px solid #222;font-size:14px;color:#555;flex-shrink:0;';
+    nextEl.innerHTML = '<span style="text-transform:uppercase;letter-spacing:0.08em;font-size:11px;color:#444;">Next →</span><br><span id="next-note"></span>';
+    document.body.appendChild(nextEl);
+
+    function update(idx) {
+      var counter = document.getElementById('slide-counter');
+      var note = document.getElementById('note-text');
+      var next = document.getElementById('next-note');
+      if (counter) counter.textContent = 'Slide ' + (idx + 1);
+      if (note) note.textContent = notes[idx] || '—';
+      if (next) next.textContent = notes[idx + 1] || '—';
+    }
+
+    channel.onmessage = function(e) {
+      if (e.data && typeof e.data.slide === 'number') update(e.data.slide);
+    };
+
+    return; // don't run presenter broadcast logic in notes window
+  }
+
+  // ── MAIN PRESENTATION WINDOW ──────────────────────────
+  function broadcastSlide(idx) {
+    channel.postMessage({ slide: idx });
+  }
+
+  var deck = document.querySelector('deck-stage');
+  if (deck) {
+    deck.addEventListener('slidechange', function() {
+      var slides = Array.from(document.querySelectorAll('[data-label]'));
+      var active = document.querySelector('[data-deck-active]');
+      var idx = slides.indexOf(active);
+      if (idx >= 0) broadcastSlide(idx);
+    });
+  }
+
+  // P key → open notes window
+  document.addEventListener('keydown', function(e) {
+    if (e.key === 'p' || e.key === 'P') {
+      window.open(location.href.split('?')[0] + '?notes', 'nexus-notes', 'width=700,height=500');
+    }
+  });
 })();
 </script>
 
