@@ -250,27 +250,29 @@
 
   /* ── Cases strip ── */
   .cases-strip{
-    display:grid;grid-template-columns:repeat(5,1fr);gap:1px;
-    background:var(--border);
-    border:1px solid var(--border);
-    border-radius:14px;overflow:hidden;
+    display:grid;grid-template-columns:repeat(5,1fr);gap:16px;
   }
   .case-card{
     background:var(--surface);
-    padding:44px 32px;
+    border:1px solid var(--border);
+    border-radius:14px;
+    overflow:hidden;
+    padding:0;
     display:flex;flex-direction:column;
   }
-  .case-name{font-size:30px;font-weight:700;color:var(--ink);letter-spacing:-0.015em;}
-  .case-year{font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);margin-top:6px;letter-spacing:0.08em;}
+  .case-img{width:100%;aspect-ratio:1/1;object-fit:cover;display:block;flex-shrink:0;}
+  .case-body{padding:20px 24px 28px;display:flex;flex-direction:column;flex:1;}
+  .case-name{font-size:22px;font-weight:700;color:var(--ink);letter-spacing:-0.015em;}
+  .case-year{font-family:'JetBrains Mono',monospace;font-size:18px;color:var(--ink-3);margin-top:4px;letter-spacing:0.08em;}
   .case-fail{
-    margin-top:28px;
+    margin-top:16px;
     font-family:'JetBrains Mono',monospace;
-    font-size:24px;font-weight:500;color:var(--accent);
+    font-size:16px;font-weight:500;color:var(--accent);
     letter-spacing:0.06em;text-transform:uppercase;
-    padding-bottom:16px;border-bottom:1px solid var(--border);
-    min-height:80px;display:flex;align-items:flex-start;
+    padding-bottom:12px;border-bottom:1px solid var(--border);
+    display:flex;align-items:flex-start;
   }
-  .case-desc{font-size:24px;color:var(--ink-2);margin-top:20px;line-height:1.5;flex:1;}
+  .case-desc{font-size:18px;color:var(--ink-2);margin-top:12px;line-height:1.5;flex:1;}
 
   .big-fig{
     font-family:'JetBrains Mono',monospace;
@@ -712,34 +714,49 @@
     </div>
     <div class="cases-strip reveal-hidden" data-step="1">
       <div class="case-card">
-        <div class="case-name">Google Glass</div>
-        <div class="case-year">2013</div>
-        <div class="case-fail">Values mismatch</div>
-        <div class="case-desc">Rejected on privacy, not technology.</div>
+        <img src="01 Google Glass.png" alt="Google Glass" class="case-img" />
+        <div class="case-body">
+          <div class="case-name">Google Glass</div>
+          <div class="case-year">2013</div>
+          <div class="case-fail">Values mismatch</div>
+          <div class="case-desc">Rejected on privacy, not technology.</div>
+        </div>
       </div>
       <div class="case-card">
-        <div class="case-name">Humane AI Pin</div>
-        <div class="case-year">2024</div>
-        <div class="case-fail">Latency + redundancy</div>
-        <div class="case-desc">5 to 10 second response delays.</div>
+        <img src="02 Human AI.png" alt="Humane AI Pin" class="case-img" />
+        <div class="case-body">
+          <div class="case-name">Humane AI Pin</div>
+          <div class="case-year">2024</div>
+          <div class="case-fail">Latency + redundancy</div>
+          <div class="case-desc">5 to 10 second response delays.</div>
+        </div>
       </div>
       <div class="case-card">
-        <div class="case-name">Rabbit R1</div>
-        <div class="case-year">2024</div>
-        <div class="case-fail">Value proposition</div>
-        <div class="case-desc">"Why not just use my phone?"</div>
+        <img src="03 Rabbit R1.png" alt="Rabbit R1" class="case-img" />
+        <div class="case-body">
+          <div class="case-name">Rabbit R1</div>
+          <div class="case-year">2024</div>
+          <div class="case-fail">Value proposition</div>
+          <div class="case-desc">"Why not just use my phone?"</div>
+        </div>
       </div>
       <div class="case-card">
-        <div class="case-name">Fire Phone</div>
-        <div class="case-year">2014</div>
-        <div class="case-fail">Task mismatch</div>
-        <div class="case-desc">$170M writedown. No task required.</div>
+        <img src="04 Fire Phone.png" alt="Fire Phone" class="case-img" />
+        <div class="case-body">
+          <div class="case-name">Fire Phone</div>
+          <div class="case-year">2014</div>
+          <div class="case-fail">Task mismatch</div>
+          <div class="case-desc">$170M writedown. No task required.</div>
+        </div>
       </div>
       <div class="case-card">
-        <div class="case-name">Clippy</div>
-        <div class="case-year">2001</div>
-        <div class="case-fail">Interaction initiation</div>
-        <div class="case-desc">Interrupted users. They demanded removal.</div>
+        <img src="05 Clippy.png" alt="Clippy" class="case-img" />
+        <div class="case-body">
+          <div class="case-name">Clippy</div>
+          <div class="case-year">2001</div>
+          <div class="case-fail">Interaction initiation</div>
+          <div class="case-desc">Interrupted users. They demanded removal.</div>
+        </div>
       </div>
     </div>
     <p class="body reveal-hidden" data-step="2" style="margin-top:28px;color:var(--ink-2);">Millions in combined documented losses across just five cases. Only the numbers companies disclosed.</p>
