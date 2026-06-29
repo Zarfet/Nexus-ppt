@@ -3185,22 +3185,32 @@
   var fsBtn    = document.getElementById('fullscreenBtn');
   var fsExp    = document.getElementById('fsIconExpand');
   var fsCol    = document.getElementById('fsIconCollapse');
-  function openModal(){ overlay.classList.add('open'); document.body.style.overflow='hidden'; }
+  function openModal(){
+    overlay.classList.add('open');
+    document.body.style.overflow='hidden';
+    video.play();
+    // If the page itself is in fullscreen, put the video in fullscreen too
+    if(document.fullscreenElement && document.fullscreenElement !== video){
+      (video.requestFullscreen||video.webkitRequestFullscreen||video.mozRequestFullScreen).call(video);
+    }
+  }
   function closeModal(){
-    if(document.fullscreenElement) document.exitFullscreen();
+    // Only exit fullscreen if the video (not the page) is the fullscreen element
+    if(document.fullscreenElement === video) document.exitFullscreen();
     overlay.classList.remove('open');
     video.pause();
     document.body.style.overflow='';
   }
   function toggleFs(){
-    if(!document.fullscreenElement){
+    if(document.fullscreenElement !== video){
       (video.requestFullscreen||video.webkitRequestFullscreen||video.mozRequestFullScreen).call(video);
     } else {
       (document.exitFullscreen||document.webkitExitFullscreen||document.mozCancelFullScreen).call(document);
     }
   }
   document.addEventListener('fullscreenchange', function(){
-    var inFs = !!document.fullscreenElement;
+    // Only reflect video fullscreen state in the icon, ignore page fullscreen
+    var inFs = document.fullscreenElement === video;
     fsExp.style.display = inFs ? 'none' : '';
     fsCol.style.display = inFs ? ''     : 'none';
   });
