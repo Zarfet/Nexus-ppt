@@ -3330,7 +3330,6 @@
 })();
 </script>
 
-<script src="/api/config"></script>
 <!-- Presenter notes view + broadcast sync -->
 <script>
 (function(){
@@ -3349,13 +3348,6 @@
       try { onMessage(JSON.parse(e.data)); } catch(_) {}
     };
     ws.onclose = function() { setTimeout(function(){ connectWS(onMessage); }, 2000); };
-  }
-
-  function loadScript(src, cb) {
-    var s = document.createElement('script');
-    s.src = src;
-    s.onload = cb;
-    document.head.appendChild(s);
   }
 
   if (isNotes) {
@@ -3393,16 +3385,6 @@
       if (typeof data.slide === 'number') update(data.slide);
     });
 
-    if (window.__PUSHER_KEY__) {
-      loadScript('https://js.pusher.com/8.2/pusher.min.js', function() {
-        var pusher = new Pusher(window.__PUSHER_KEY__, { cluster: window.__PUSHER_CLUSTER__ });
-        var channel = pusher.subscribe('nexus');
-        channel.bind('slide-change', function(data) {
-          if (data && typeof data.slide === 'number') update(data.slide);
-        });
-      });
-    }
-
     return; // don't run presenter broadcast logic in notes window
   }
 
@@ -3411,11 +3393,6 @@
 
   function broadcastSlide(idx) {
     if (ws && ws.readyState === 1) ws.send(JSON.stringify({ slide: idx }));
-    fetch('/api/broadcast', {
-      method: 'POST',
-      headers: { 'Content-Type': 'application/json' },
-      body: JSON.stringify({ slide: idx })
-    }).catch(function(){});
   }
 
   var deck = document.querySelector('deck-stage');
