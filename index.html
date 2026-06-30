@@ -3315,15 +3315,16 @@
       document.querySelectorAll('.reveal-hidden.revealed, [data-step-post].revealed').forEach(function(el) {
         el.classList.remove('revealed');
       });
-      // Close video modal and reset if open
-      var vm = document.getElementById('videoModal');
+      // Close all lightboxes and modals
+      document.querySelectorAll('.vmodal-overlay.open').forEach(function(el) {
+        el.classList.remove('open');
+      });
       var vid = document.getElementById('nexusVideo');
-      if (vm && vm.classList.contains('open')) {
+      if (vid) {
         if (document.fullscreenElement === vid) document.exitFullscreen();
-        vm.classList.remove('open');
-        document.body.style.overflow = '';
+        vid.pause(); vid.currentTime = 0;
       }
-      if (vid) { vid.pause(); vid.currentTime = 0; }
+      document.body.style.overflow = '';
     });
   }
 })();
