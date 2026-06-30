@@ -20,13 +20,13 @@
 [
 "Has your design recommendation ever been overruled?\nBecause someone more senior had a different opinion.\nYou are not alone.\nEvery person in this room who has worked in a team has felt this.\nThat pattern has a name: the HiPPO effect, documented by McAfee and Brynjolfsson in 2012.",
 
-"Fifteen interviews. UX designers, tech leads, project managers, quality engineers.\nNot one described a systematic process for choosing an interface type.\nOne of them put it plainly: I research, I substantiate, and I let go.\nThe decision belongs to someone else.\nThat is not a personal failure. It is a structural gap.",
+"Fifteen interviews, from junior designers to senior product managers.\nNot one of them described a systematic process for choosing an interface type.\nIf experience alone solved this, the most senior people would have a method. They do not.\nThat is not a personal failure. It is a structural gap.",
 
 "Every methodology reviewed in this research assumes you already know what interface type you are building.\nThey guide how to refine it, test it, fit it to users.\nNone of them help you choose the type itself.\nThat is the gap this research confirms.",
 
-"These five products had the budget, the team, and the technology.\nNone of them failed because the engineering broke.\nAll of them chose the wrong interface type for the context.\nHundreds of millions in documented losses.",
+"These five products had the budget, the team, and the technology.\nNone of them failed because the engineering broke.\nFive different companies, five different eras, the same blind spot.\nHundreds of millions in documented losses.",
 
-"This is not isolated.\nEstrada at MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact.\nRAND found in 2024 that 84% of AI project failures trace to leadership decisions, not engineering.\nThe bottleneck is the decision.\nNo tool exists that checks this decision against documented precedent.",
+"This is not isolated. These numbers come from MIT and RAND, not from this research.\nThe failures keep tracing back to the same point: not the technology, the decision before it.\nNo tool exists that checks that decision against documented precedent.",
 
 "I am Ilverzon Zarate.\nThis is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.\nOver the next minutes I will walk you through the problem, the gap, the framework, the evidence, and a live look at the tool.",
 
@@ -36,11 +36,11 @@
 
 "The fifteen questions are not arbitrary.\nWisdom layer first: values ranking, before any technical question.\nKnowledge layer: who uses the product and how.\nInformation layer: what happens if something goes wrong.\nData layer last: hard constraints that limit which interface types are viable.\nThe order cannot be reversed.",
 
-"Three phases of evidence.\nFirst, a literature review across papers confirmed no framework existed for this decision.\nFifteen interviews produced the values taxonomy.\nSecond, retrospective testing against five documented failures using only pre-launch public information.\nThird, usability validation with the same fifteen practitioners.",
+"Three phases of evidence.\nFirst, a literature review across papers confirmed no framework existed for this decision.\nFifteen interviews produced the values taxonomy.\nSecond, retrospective testing against five documented failures using only pre-launch public information.\nThe framework was also tested against five successful products, to confirm it does not raise false alarms. You will see both sets in the live demo.\nThird, usability validation with the same fifteen practitioners.",
 
-"82% of documented failure factors detected across all five cases.\nThe threshold was 70%, based on Landis and Koch 1977, the standard for substantial agreement in decision support research.\nWe exceeded it.\nPractitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder conversations.",
+"Eighty-two percent, and every one of the five cases passed individually, not just the average.\nPractitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder conversations.",
 
-"Meet Ana. Product manager in healthtech.\nAR/VR is being pushed in a meeting by someone senior, with no evidence.\nShe has doubts and no framework to push back.\nShe runs NEXUS. The report flags the same risks she felt but could not articulate.\nShe walks back into that meeting with a PDF.\nThe HiPPO is still in the room. But now so is the evidence.",
+"This is Ana. A composite of patterns we saw across the fifteen interviews, not one person.\nThe diagram walks through her full journey, from the meeting where she had no evidence, to the moment she had a PDF.\nWhat I want you to notice is the curve at the bottom: frustrated to confident, in under an hour.\nThe HiPPO is still in the room. But now so is the evidence.",
 
 "This is NEXUS.",
 
@@ -64,7 +64,7 @@
 
 "This is a master's thesis, deliberately bounded.\nOne primary contribution: the replicable retrospective validation protocol and values-first filtering method.\nThe field can build on that independently of the platform.\nThree subordinate contributions: the first DIKW application to interface selection, NEXUS as proof of concept, and the open-source governance model.\nField validation across organisations is the explicit next step.\nIt is not a gap in this work.",
 
-"Every step is visible.\nValues ranking goes in at the top.\nFifteen assessment questions feed a weighted scoring engine.\nEach of the five interface types receives a score.\nRed flag detection cross-checks the top recommendation against the values the organisation ranked highest.\nIf there is a conflict, a warning is added.\nThe designer sees the reasoning behind every flag, not just the conclusion."
+"This is the part most AI tools hide. Every step here is visible, nothing is a black box.\nThe diagram shows why a flag fired, not just that it fired.\nThat traceability is what makes the report defensible in a room full of stakeholders."
 ]
 </script>
 
@@ -605,10 +605,10 @@
     </div>
     <div style="display:flex;flex-direction:column;gap:32px;">
       <p class="body-lg reveal-hidden" data-step="1" style="max-width:1400px;">Across fifteen expert interviews: UX designers, technical leads, quality engineers, project managers, not one described a systematic process for choosing an interface type.</p>
-      <div class="reveal-hidden" data-step="2" style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
-        <div class="pull-quote" style="font-size:26px;line-height:1.45;">"Decisions here are not grounded in evidence. It is much more authoritarian than evidence-based."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">UX/Digital Designer<br>15 yrs experience</span></div>
-        <div class="pull-quote" style="font-size:26px;line-height:1.45;">"Basically, what prevents me from presenting a structured proposal to the client is the client themselves."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Delivery Project Manager<br>8 yrs experience</span></div>
-        <div class="pull-quote" style="font-size:26px;line-height:1.45;">"You grab the template you like the most. There is no way to say which interface type suits the project better."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Senior Fullstack Developer<br>10 yrs experience</span></div>
+      <div style="display:grid;grid-template-columns:1fr 1fr 1fr;gap:24px;">
+        <div class="pull-quote reveal-hidden" data-step="2" style="font-size:26px;line-height:1.45;">"Decisions here are not grounded in evidence. It is much more authoritarian than evidence-based."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">UX/Digital Designer<br>15 yrs experience</span></div>
+        <div class="pull-quote reveal-hidden" data-step="3" style="font-size:26px;line-height:1.45;">"Basically, what prevents me from presenting a structured proposal to the client is the client themselves."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Delivery Project Manager<br>8 yrs experience</span></div>
+        <div class="pull-quote reveal-hidden" data-step="4" style="font-size:26px;line-height:1.45;">"You grab the template you like the most. There is no way to say which interface type suits the project better."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Senior Fullstack Developer<br>10 yrs experience</span></div>
       </div>
     </div>
     <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
