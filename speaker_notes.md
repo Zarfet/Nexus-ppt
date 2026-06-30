@@ -16,10 +16,9 @@ That pattern has a name: the HiPPO effect, documented by McAfee and Brynjolfsson
 
 ## 02 — The real problem
 
-Fifteen interviews. UX designers, tech leads, project managers, quality engineers.
-Not one described a systematic process for choosing an interface type.
-One of them put it plainly: I research, I substantiate, and I let go.
-The decision belongs to someone else.
+Fifteen interviews, from junior designers to senior product managers.
+Not one of them described a systematic process for choosing an interface type.
+If experience alone solved this, the most senior people would have a method. They do not.
 That is not a personal failure. It is a structural gap.
 
 ---
@@ -37,18 +36,16 @@ That is the gap this research confirms.
 
 These five products had the budget, the team, and the technology.
 None of them failed because the engineering broke.
-All of them chose the wrong interface type for the context.
+Five different companies, five different eras, the same blind spot.
 Hundreds of millions in documented losses.
 
 ---
 
 ## 05 — The bottleneck
 
-This is not isolated.
-Estrada at MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact.
-RAND found in 2024 that 84% of AI project failures trace to leadership decisions, not engineering.
-The bottleneck is the decision.
-No tool exists that checks this decision against documented precedent.
+This is not isolated. These numbers come from MIT and RAND, not from this research.
+The failures keep tracing back to the same point: not the technology, the decision before it.
+No tool exists that checks that decision against documented precedent.
 
 ---
 
@@ -99,26 +96,23 @@ Three phases of evidence.
 First, a literature review across papers confirmed no framework existed for this decision.
 Fifteen interviews produced the values taxonomy.
 Second, retrospective testing against five documented failures using only pre-launch public information.
+The framework was also tested against five successful products, to confirm it does not raise false alarms. You will see both sets in the live demo.
 Third, usability validation with the same fifteen practitioners.
 
 ---
 
 ## 11 — Validation
 
-82% of documented failure factors detected across all five cases.
-The threshold was 70%, based on Landis and Koch 1977, the standard for substantial agreement in decision support research.
-We exceeded it.
+Eighty-two percent, and every one of the five cases passed individually, not just the average.
 Practitioners told us consistently: the red flags are not prohibitions. They are ammunition for stakeholder conversations.
 
 ---
 
 ## 12 — User Journey Map
 
-Meet Ana. Product manager in healthtech.
-AR/VR is being pushed in a meeting by someone senior, with no evidence.
-She has doubts and no framework to push back.
-She runs NEXUS. The report flags the same risks she felt but could not articulate.
-She walks back into that meeting with a PDF.
+This is Ana. A composite of patterns we saw across the fifteen interviews, not one person.
+The diagram walks through her full journey, from the meeting where she had no evidence, to the moment she had a PDF.
+What I want you to notice is the curve at the bottom: frustrated to confident, in under an hour.
 The HiPPO is still in the room. But now so is the evidence.
 
 ---
@@ -225,10 +219,6 @@ It is not a gap in this work.
 
 ## B8 — Information Architecture
 
-Every step is visible.
-Values ranking goes in at the top.
-Fifteen assessment questions feed a weighted scoring engine.
-Each of the five interface types receives a score.
-Red flag detection cross-checks the top recommendation against the values the organisation ranked highest.
-If there is a conflict, a warning is added.
-The designer sees the reasoning behind every flag, not just the conclusion.
+This is the part most AI tools hide. Every step here is visible, nothing is a black box.
+The diagram shows why a flag fired, not just that it fired.
+That traceability is what makes the report defensible in a room full of stakeholders.
