@@ -1,8 +1,0 @@
-{
-  "type": "module",
-  "dependencies": {
-    "pptxgenjs": "^4.0.1",
-    "pusher": "^5.3.4",
-    "ws": "^8.21.0"
-  }
-}
