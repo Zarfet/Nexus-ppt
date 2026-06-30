@@ -3339,16 +3339,7 @@
   })();
 
   var isNotes = location.search.includes('notes');
-  var ws;
-
-  function connectWS(onMessage) {
-    var wsUrl = 'ws://' + location.hostname + ':' + location.port;
-    ws = new WebSocket(wsUrl);
-    ws.onmessage = function(e) {
-      try { onMessage(JSON.parse(e.data)); } catch(_) {}
-    };
-    ws.onclose = function() { setTimeout(function(){ connectWS(onMessage); }, 2000); };
-  }
+  var channel = new BroadcastChannel('nexus-presenter');
 
   if (isNotes) {
     // ── NOTES WINDOW ──────────────────────────────────────
@@ -3381,18 +3372,16 @@
       if (next) next.textContent = notes[idx + 1] || '—';
     }
 
-    connectWS(function(data) {
-      if (typeof data.slide === 'number') update(data.slide);
-    });
+    channel.onmessage = function(e) {
+      if (e.data && typeof e.data.slide === 'number') update(e.data.slide);
+    };
 
     return; // don't run presenter broadcast logic in notes window
   }
 
   // ── MAIN PRESENTATION WINDOW ──────────────────────────
-  connectWS(function() {});
-
   function broadcastSlide(idx) {
-    if (ws && ws.readyState === 1) ws.send(JSON.stringify({ slide: idx }));
+    channel.postMessage({ slide: idx });
   }
 
   var deck = document.querySelector('deck-stage');
