@@ -3330,6 +3330,7 @@
 </script>
 
 <!-- Presenter notes view + broadcast sync -->
+<script src="/api/config"></script>
 <script>
 (function(){
   var notes = (function(){
@@ -3337,8 +3338,9 @@
     try { return el ? JSON.parse(el.textContent) : []; } catch(e){ return []; }
   })();
 
-  var channel = new BroadcastChannel('nexus-presenter');
   var isNotes = location.search.includes('notes');
+  var PUSHER_KEY = window.__PUSHER_KEY__ || '';
+  var PUSHER_CLUSTER = window.__PUSHER_CLUSTER__ || 'eu';
 
   if (isNotes) {
     // ── NOTES WINDOW ──────────────────────────────────────
@@ -3371,16 +3373,27 @@
       if (next) next.textContent = notes[idx + 1] || '—';
     }
 
-    channel.onmessage = function(e) {
-      if (e.data && typeof e.data.slide === 'number') update(e.data.slide);
+    var script = document.createElement('script');
+    script.src = 'https://js.pusher.com/8.4/pusher.min.js';
+    script.onload = function() {
+      var pusher = new Pusher(PUSHER_KEY, { cluster: PUSHER_CLUSTER });
+      var channel = pusher.subscribe('nexus');
+      channel.bind('slide-change', function(data) {
+        if (typeof data.slide === 'number') update(data.slide);
+      });
     };
+    document.head.appendChild(script);
 
     return; // don't run presenter broadcast logic in notes window
   }
 
   // ── MAIN PRESENTATION WINDOW ──────────────────────────
   function broadcastSlide(idx) {
-    channel.postMessage({ slide: idx });
+    fetch('/api/broadcast', {
+      method: 'POST',
+      headers: { 'Content-Type': 'application/json' },
+      body: JSON.stringify({ slide: idx })
+    }).catch(function() {});
   }
 
   var deck = document.querySelector('deck-stage');
