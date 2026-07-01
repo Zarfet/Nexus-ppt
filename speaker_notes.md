@@ -9,10 +9,10 @@ Full script for all 24 slides (main deck + backup).
 
 Has your design recommendation ever been overruled?
 [NEXT]
-Because someone more senior had a different opinion.
 You are not alone.
-Every person in this room who has worked in a team has felt this.
-That pattern has a name: the HiPPO effect, documented by McAfee and Brynjolfsson in 2012.
+Often it comes down to who is most senior in the room, or who gets paid the most.
+That pattern has a name: the HiPPO effect. Highest Paid Person's Opinion.
+McAfee and Brynjolfsson documented it in 2012. But every designer in this room has felt it.
 
 ---
 
