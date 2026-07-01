@@ -22,10 +22,10 @@ Fifteen interviews, from junior designers to senior product managers.
 [NEXT]
 Not one of them described a systematic process for choosing an interface type.
 If experience alone solved this, the most senior people would have a method. They do not.
+[NEXT]
+[NEXT]
+[NEXT]
 That is not a personal failure. It is a structural gap.
-[NEXT]
-[NEXT]
-[NEXT]
 
 ---
 
@@ -66,9 +66,8 @@ No tool exists that checks that decision against documented precedent.
 
 ## 06 — Title
 
-I am Ilverzon Zarate.
-This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.
-Over the next minutes I will walk you through the problem, the gap, the framework, the evidence, and a live look at the tool.
+I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.
+You just saw the problem. Over the next minutes I will show you what I built to address it.
 
 ---
 
@@ -76,8 +75,8 @@ Over the next minutes I will walk you through the problem, the gap, the framewor
 
 I built NEXUS.
 [NEXT]
-You put in an interface decision you are about to make.
-NEXUS processes it.
+You put in your project information and the interface decision you are facing: screen, voice, invisible automation, AI-driven, or spatial computing.
+NEXUS processes it through your values, context factors, and documented failure patterns from the research.
 It gives you back a structured report, built from evidence.
 Not a verdict. A tool that informs.
 The designer still decides.
@@ -158,7 +157,33 @@ The HiPPO is still in the room. But now so is the evidence.
 
 ## 13 — The tool — demo
 
-This is NEXUS.
+This is NEXUS. No installation. Open source.
+[NEXT]
+The demo has three scenario sets:
+Five products that failed. Five that succeeded. And Ana's case.
+Each preloads real answers so you can trace what inputs generate what output.
+[NEXT]
+Ana's scenario: a PM pressured to use AR/VR for chronic patient monitoring.
+Values ranked first: User Control number one, Accessibility number two.
+That ranking filters everything before any technical question is asked.
+Each of the fifteen questions has a tooltip explaining why the framework asks it.
+Before results, the system flags internal contradictions:
+Accessibility ranked second, but the proposed interface excludes the primary user group.
+[NEXT]
+Four result tabs.
+Analysis explains why each interface type scores the way it does: what speaks for it, what speaks against it. The designer reads the reasoning and decides.
+Implementation flags AR/VR as contraindicated across five dimensions:
+Control violation, accessibility exclusion, regulatory conflict with GDPR Article 9 and EU AI Act, context mismatch, and hardware dependency.
+Every flag traces back to a documented pattern from the research. Not an external AI.
+[NEXT]
+Research shows where your product sits in documented history.
+Products that used the same interface type and succeeded. Products that used it and failed.
+Real academic papers from Google Scholar in real time. Every source verifiable.
+[NEXT]
+Actions generates two PDFs.
+Technical report for the team.
+Executive brief for the HiPPO: the recommendation, the critical flags, and the evidence. One page.
+Ana walks in with a document. Flags detected. Evidence nobody can dismiss with just an opinion.
 
 ---
 
@@ -171,8 +196,10 @@ The primary one: a documented process to choose an interface type before buildin
 For practice: a structured argument designers can use when someone more senior overrules without evidence.
 [NEXT]
 For the community: free, no installation needed. Anyone can use it, update it, improve it, and adapt it to their own context.
+The corpus is bounded by what exists today. The platform is open precisely so the evidence can grow and new interface types can be added as technology evolves.
 [NEXT]
-And as a position: it informs. It does not decide. Structure in service of human judgment, not instead of it.
+And as a position: it informs. It does not decide.
+The next time someone overrules your recommendation, you will have evidence. Not just an opinion.
 
 ---
 
@@ -213,10 +240,10 @@ These five meet all four criteria. The selection is bounded, not arbitrary.
 
 The honest answer is: recurrent across the corpus, not universal.
 That distinction matters.
-The six patterns appeared in more than one case under similar contextual conditions across 27 years and five interface types.
-That is enough to structure a pre-selection checklist.
-All cases are Western and high-budget.
-Other contexts may surface different patterns. The framework is designed to expand through community contribution.
+Six categories appeared across all five cases: value contradictions, safety mismatches, demographic misalignments, regulatory conflicts, sustainability conflicts, and adoption risks.
+Recurrent across 27 years and five interface types. Enough to structure a pre-selection checklist.
+All cases are Western and high-budget. Other contexts may surface different patterns.
+The framework is designed to expand through community contribution.
 
 ---
 
@@ -242,7 +269,7 @@ This is the informs, not decides principle in practice.
 
 ## B6 — Governance
 
-Year one: I maintain quality while community pull requests are reviewed against the evidence base.
+Year one: quality maintained while community pull requests are reviewed against the evidence base.
 Year two: a contributor council governs and domain-specific forks are enabled.
 Year three: full community control with a plugin architecture for swappable components.
 MIT license means anyone can use, modify, and extend it today. No permission required.
