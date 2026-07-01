@@ -43,11 +43,10 @@ That is the gap this research confirms.
 ## 04 — The cost
 
 [NEXT]
-These five products had the budget, the team, and the technology.
-None of them failed because the engineering broke.
-Five different companies, five different eras, the same blind spot.
+Five companies. Five eras. The same decision made wrong.
+The technology was ready. The interface type was not.
 [NEXT]
-Hundreds of millions in documented losses.
+Hundreds of millions in documented losses. Only what companies disclosed.
 
 ---
 
@@ -55,12 +54,13 @@ Hundreds of millions in documented losses.
 
 This is not isolated.
 [NEXT]
+MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact. Most never change how people actually work.
 [NEXT]
+RAND found in 2024 that 80% of AI projects never reach real use. Twice the failure rate of conventional software.
 [NEXT]
-These numbers come from MIT and RAND, not from this research.
-The failures keep tracing back to the same point: not the technology, the decision before it.
+And 84% of those failures trace to leadership decisions, not engineering. The technology worked. The decision before it did not.
 [NEXT]
-No tool exists that checks that decision against documented precedent.
+The bottleneck is the decision. And nobody has a structured way to make it.
 
 ---
 
@@ -88,12 +88,14 @@ The designer still decides.
 [NEXT]
 NEXUS works in four stages. The decision that happens before the first mockup.
 [NEXT]
-First, values: the organisation ranks what it stands for.
-That ranking is the primary filter.
+First, values. Not features, not users. Values.
+Because the same interface type can be right for one organisation and wrong for another with identical users.
 [NEXT]
 Second, context: fifteen questions about users, frequency, and consequences.
+Who uses it, how often, and what happens if it fails.
 [NEXT]
-Third, pattern matching against five documented failures.
+Third, pattern matching. Does this resemble a documented failure?
+The framework flags it before you build.
 [NEXT]
 Fourth, a report. Not a verdict.
 The designer reads it and decides.
@@ -104,16 +106,18 @@ The designer reads it and decides.
 
 The fifteen questions are not arbitrary.
 [NEXT]
-Each question maps to a layer of the DIKW hierarchy established by Ackoff in 1989. The order cannot be short-circuited.
+They follow the DIKW hierarchy Ackoff established in 1989.
+The order cannot be reversed because each layer depends on the one above.
+Without values, context has no filter. Without context, constraints have no meaning.
 [NEXT]
-Wisdom layer first: values ranking, before any technical question.
+Wisdom first: what does this organisation actually stand for?
+That ranking eliminates interface types before any technical question is asked.
 [NEXT]
-Knowledge layer: who uses the product and how.
+Knowledge: who uses this and how? The human context before the technical one.
 [NEXT]
-Information layer: what happens if something goes wrong.
+Information: what happens if something goes wrong? Risk before constraints.
 [NEXT]
-Data layer last: hard constraints that limit which interface types are viable.
-The order cannot be reversed.
+Data last: hard limits. What is technically impossible given everything above.
 
 ---
 
@@ -121,36 +125,54 @@ The order cannot be reversed.
 
 Three phases of evidence.
 [NEXT]
-First, a literature review across papers confirmed no framework existed for this decision.
-Fifteen interviews produced the values taxonomy.
+First, literature and field research. From the papers reviewed, no framework existed for this specific decision.
+If the gap was not confirmed in the literature, building NEXUS would be solving a problem nobody had.
+Fifteen interviews confirmed the same gap in practice. Nielsen found that five users surface 85% of usability issues. We used fifteen, across roles and seniority levels, to avoid bias from a single perspective.
 [NEXT]
-Second, retrospective testing against five documented failures using only pre-launch public information.
-The framework was also tested against five successful products, to confirm it does not raise false alarms. You will see both sets in the live demo.
+Second, retrospective testing against five documented failures. Five cases, each meeting strict selection criteria: commercial impact, documentation quality, temporal coverage, and interface type diversity.
+Only public information available before launch. No knowing the ending before testing.
+The framework was also tested against five successful products, to confirm it does not generate false alarms.
 [NEXT]
 Third, usability validation with the same fifteen practitioners.
+The people who confirmed the gap also tested the solution.
+That closes the loop between the problem and the evidence.
 
 ---
 
 ## 11 — Validation
 
 [NEXT]
-70% is the minimum for results reliable enough to inform real decisions, per Landis and Koch 1977. We hit 82%.
+We hit 82%. The minimum for substantial agreement per Landis and Koch 1977 is 70%.
+The framework detected what those teams missed, using only public information available before launch.
 [NEXT]
-Every case passed individually, not just the average.
-The red flags detected are not prohibitions. They are ammunition for stakeholder conversations.
+70% of practitioners agreed with the framework recommendation over their own initial judgment.
+That means the tool adds value beyond what experience alone provides.
+[NEXT]
+And it is not just accurate. Practitioners found it usable under real conditions.
+[NEXT]
+The table shows each case individually. Every one passed.
+That is the argument you did not have before, now documented and citable.
 
 ---
 
 ## 12 — User Journey Map
 
 [NEXT]
-This is Ana. A composite of patterns we saw across the fifteen interviews, not one person.
+Meet Ana. Product manager in healthtech.
+A composite of the exact situation fifteen practitioners described:
+a decision being made by seniority, not evidence.
 [NEXT]
-The diagram walks through her full journey.
+This is her user journey map. Five phases.
 [NEXT]
-From the meeting where she had no evidence, to the moment she had a PDF.
-What I want you to notice is the curve at the bottom: frustrated to confident, in under an hour.
+Trigger: AR/VR pushed by someone senior, no evidence.
+Discovery: she finds NEXUS.
+Assessment: values ranked, fifteen questions, contradictions flagged.
+Interpretation: the red flags name what she already felt but could not articulate.
+Decision: team aligns in one hour.
 [NEXT]
+Notice the curve at the bottom: frustrated at the trigger, confident at the decision.
+[NEXT]
+She walks back into that meeting with a PDF.
 The HiPPO is still in the room. But now so is the evidence.
 
 ---
@@ -191,7 +213,7 @@ Ana walks in with a document. Flags detected. Evidence nobody can dismiss with j
 
 Four contributions.
 [NEXT]
-The primary one: a documented process to choose an interface type before building anything. Replicable by any designer, with or without the platform.
+The primary one: a documented process to choose an interface type before building anything. NEXUS makes it accessible, but the method stands independently of the tool.
 [NEXT]
 For practice: a structured argument designers can use when someone more senior overrules without evidence.
 [NEXT]
@@ -219,19 +241,24 @@ Thank you. Questions welcome.
 
 The question is not which framework is more elegant.
 The question is which one addresses the decision designers actually face before the first mockup.
+
 Other frameworks optimize how you design once the type is chosen, or predict adoption after the fact.
 None of them address what type to build at all.
-DIKW does. And it is the only one that places values above technical criteria, which is exactly what this decision requires.
+
+DIKW does.
+And it is the only one that places values above technical criteria, which is exactly what this decision requires.
 
 ---
 
 ## B2 — Case selection
 
 Four criteria guided the selection.
+
 Commercial impact: minimum investment or significant market withdrawal.
 Documentation quality: multiple independent sources including press, company communications, and academic papers.
 Temporal coverage: cases span from 1997 to 2024 across all five interface types.
 Interface type diversity: one case per category, preventing skew from repeated failures in one type.
+
 These five meet all four criteria. The selection is bounded, not arbitrary.
 
 ---
@@ -240,9 +267,16 @@ These five meet all four criteria. The selection is bounded, not arbitrary.
 
 The honest answer is: recurrent across the corpus, not universal.
 That distinction matters.
-Six categories appeared across all five cases: value contradictions, safety mismatches, demographic misalignments, regulatory conflicts, sustainability conflicts, and adoption risks.
-Recurrent across 27 years and five interface types. Enough to structure a pre-selection checklist.
-All cases are Western and high-budget. Other contexts may surface different patterns.
+
+Six categories appeared across all five cases:
+Value contradictions, safety mismatches, demographic misalignments,
+regulatory conflicts, sustainability conflicts, and adoption risks.
+
+Recurrent across 27 years and five interface types.
+Enough to structure a pre-selection checklist.
+
+All cases are Western and high-budget.
+Other contexts may surface different patterns.
 The framework is designed to expand through community contribution.
 
 ---
@@ -251,7 +285,10 @@ The framework is designed to expand through community contribution.
 
 The full process runs across 16 steps.
 The first 15 are the assessment questions, grouped by DIKW layer.
-Step 16 is a consistency review: before the report generates, the tool checks for contradictions in your answers and flags them so you can correct them.
+
+Step 16 is a consistency review: before the report generates,
+the tool checks for contradictions in your answers and flags them so you can correct them.
+
 Then scores aggregate per interface type and rank.
 The designer sees alignments and tensions, not just a number.
 
@@ -261,8 +298,11 @@ The designer sees alignments and tensions, not just a number.
 
 A tie is not a failure.
 It means two interface types are genuinely comparable given the inputs.
-The report surfaces both side by side: red flags and alignments compared directly.
+
+The report surfaces both side by side:
+Red flags and alignments compared directly.
 The designer sees the specific tensions pushing them apart and makes the call.
+
 This is the informs, not decides principle in practice.
 
 ---
@@ -272,16 +312,24 @@ This is the informs, not decides principle in practice.
 Year one: quality maintained while community pull requests are reviewed against the evidence base.
 Year two: a contributor council governs and domain-specific forks are enabled.
 Year three: full community control with a plugin architecture for swappable components.
-MIT license means anyone can use, modify, and extend it today. No permission required.
+
+MIT license means anyone can use, modify, and extend it today.
+No permission required.
 
 ---
 
 ## B7 — TFM scope
 
 This is a master's thesis, deliberately bounded.
+
 One primary contribution: the replicable retrospective validation protocol and values-first filtering method.
 The field can build on that independently of the platform.
-Three subordinate contributions: the first DIKW application to interface selection, NEXUS as proof of concept, and the open-source governance model.
+
+Three subordinate contributions:
+The first DIKW application to interface selection.
+NEXUS as proof of concept.
+The open-source governance model.
+
 Field validation across organisations is the explicit next step.
 It is not a gap in this work.
 
@@ -289,6 +337,8 @@ It is not a gap in this work.
 
 ## B8 — Information Architecture
 
-This is the part most AI tools hide. Every step here is visible, nothing is a black box.
+This is the part most AI tools hide.
+Every step here is visible, nothing is a black box.
+
 The diagram shows why a flag fired, not just that it fired.
 That traceability is what makes the report defensible in a room full of stakeholders.
