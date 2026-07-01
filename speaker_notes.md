@@ -195,15 +195,20 @@ Each of the fifteen questions has a tooltip explaining why the framework asks it
 Before results, the system flags internal contradictions:
 Accessibility ranked second, but the proposed interface excludes the primary user group.
 [NEXT]
+The recommended strategy appears first.
+Traditional Screen as primary, with its confidence score.
+The gap between primary and secondary determines strength: Ana gets a strong recommendation because the context clearly favors one type over the others.
+Four reasoning bullets explain why: each one traceable to a specific input Ana provided.
+[NEXT]
 Four result tabs.
 Analysis explains why each interface type scores the way it does: what speaks for it, what speaks against it. The designer reads the reasoning and decides.
-Implementation flags AR/VR as contraindicated across five dimensions:
+Impact flags AR/VR as contraindicated across five dimensions:
 Control violation, accessibility exclusion, regulatory conflict with GDPR Article 9 and EU AI Act, context mismatch, and hardware dependency.
-Every flag traces back to a documented pattern from the research. Not an external AI.
+Every flag traces back to a documented pattern from the research.
 [NEXT]
 Research shows where your product sits in documented history.
-Products that used the same interface type and succeeded. Products that used it and failed.
-Real academic papers from Google Scholar in real time. Every source verifiable.
+Similar product cases: real world case studies of products that used similar interface types, separated into successes and failures.
+Supporting research: academic papers from Google Scholar in real time. Every source verifiable.
 [NEXT]
 Actions generates two PDFs.
 Technical report for the team.
