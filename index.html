@@ -3394,10 +3394,13 @@
     });
   }
 
-  // P key → open notes window
+  // P key → open notes window and immediately broadcast current slide
   document.addEventListener('keydown', function(e) {
     if (e.key === 'p' || e.key === 'P') {
       window.open(location.href.split('?')[0] + '?notes', 'nexus-notes', 'width=700,height=500');
+      var slides = Array.from(document.querySelectorAll('[data-label]'));
+      var idx = slides.indexOf(document.querySelector('[data-deck-active]'));
+      if (idx >= 0) setTimeout(function(){ broadcastSlide(idx); }, 300);
     }
   });
 })();
