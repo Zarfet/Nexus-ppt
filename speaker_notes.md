@@ -18,13 +18,14 @@ McAfee and Brynjolfsson documented it in 2012. But every designer in this room h
 
 ## 02 — The real problem
 
-Fifteen interviews, from junior designers to senior product managers.
+Fifteen interviews across roles and seniority levels.
 [NEXT]
-Not one of them described a systematic process for choosing an interface type.
+Not one described a systematic process for choosing an interface type.
 If experience alone solved this, the most senior people would have a method. They do not.
 [NEXT]
 [NEXT]
 [NEXT]
+Different voices. Different roles. The same gap.
 That is not a personal failure. It is a structural gap.
 
 ---
