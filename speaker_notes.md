@@ -187,6 +187,8 @@ Five products that failed. Five that succeeded. And Ana's case.
 Each preloads real answers so you can trace what inputs generate what output.
 [NEXT]
 Ana's scenario: a PM pressured to use AR/VR for chronic patient monitoring.
+She enters her real project context: who the users are, what they do, where they are.
+No mention of AR/VR. No mention of the HiPPO. NEXUS has to find the answer on its own.
 Values ranked first: User Control number one, Accessibility number two.
 That ranking filters everything before any technical question is asked.
 Each of the fifteen questions has a tooltip explaining why the framework asks it.
