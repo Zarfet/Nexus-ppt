@@ -18,6 +18,8 @@
 
 <script type="application/json" id="speaker-notes">
 [
+"Good morning. I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.\nOver the next minutes we will cover the problem, the gap, the framework, the evidence, and what we built to address it.",
+
 "Has your design recommendation ever been overruled?\n[NEXT]\nYou are not alone.\nOften it comes down to who is most senior in the room, or who gets paid the most.\nThat pattern has a name: the HiPPO effect. Highest Paid Person's Opinion.\nMcAfee and Brynjolfsson documented it in 2012. But every designer in this room has felt it.",
 
 "That question led to fifteen interviews across roles and seniority levels.\n[NEXT]\nNot one described a systematic process for choosing an interface type.\nIf experience alone solved this, the most senior people would have a method. They do not.\n[NEXT]\n[NEXT]\n[NEXT]\nDifferent voices. Different roles. The same gap.\nThat is not a personal failure. It is a structural gap.",
@@ -27,8 +29,6 @@
 "[NEXT]\nAnd that gap has consequences.\nFive companies. Five eras. The same decision made wrong.\nThe technology was ready. The interface type was not.\n[NEXT]\nHundreds of millions in documented losses. Only what companies disclosed.",
 
 "This is not isolated.\n[NEXT]\nMIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact. Most never change how people actually work.\n[NEXT]\nRAND found in 2024 that 80% of AI projects never reach real use. Twice the failure rate of conventional software.\n[NEXT]\nAnd 84% of those failures trace to leadership decisions, not engineering. The technology worked. The decision before it did not.\n[NEXT]\nThe bottleneck is the decision. And nobody has a structured way to make it.",
-
-"I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.\nYou just saw the problem. Over the next minutes I will show you what I built to address it.",
 
 "I built NEXUS.\n[NEXT]\nYou put in your project information and the interface decision you are facing: screen, voice, invisible automation, AI-driven, or spatial computing.\nNEXUS processes it through your values, context factors, and documented failure patterns from the research.\nIt gives you back a structured report, built from evidence.\nNot a verdict. A tool that informs.\nThe designer still decides.",
 
@@ -65,6 +65,7 @@
 "This is a master's thesis, deliberately bounded.\n\nOne primary contribution: the replicable retrospective validation protocol and values-first filtering method.\nThe field can build on that independently of the platform.\n\nThree subordinate contributions:\nThe first DIKW application to interface selection.\nNEXUS as proof of concept.\nThe open-source governance model.\n\nField validation across organisations is the explicit next step.\nIt is not a gap in this work.",
 
 "This is the part most AI tools hide.\nEvery step here is visible, nothing is a black box.\n\nThe diagram shows why a flag fired, not just that it fired.\nThat traceability is what makes the report defensible in a room full of stakeholders."
+
 ]
 </script>
 
@@ -583,7 +584,37 @@
 <deck-stage width="1920" height="1080">
 
   <!-- ─────────────── 01 THE HOOK ─────────────── -->
-  <section data-label="01 Opening question">
+
+  <section data-label="01 Title" class="slide-title">
+    <span style="position:absolute;top:40px;right:120px;font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);letter-spacing:0.15em;text-transform:uppercase;z-index:10;">01</span>
+    <div class="brand">
+      <span class="wordmark">Master's Thesis Defense · 2026</span>
+      <span class="wordmark-sub"></span>
+    </div>
+
+    <div class="title-hero">
+      <div class="brand-stripe" style="margin-bottom:36px;">
+        <span class="dot"></span> Beyond Intuition:
+      </div>
+      <h1 class="display">A Designer's Framework for<br><em>Interface Type Selection</em></h1>
+    </div>
+
+    <div class="title-meta">
+      <div class="block">
+        <span>Author</span>
+        <b>ZARATE Ilverzon</b>
+      </div>
+      <div class="block">
+        <span>Director</span>
+        <b>MONGUET, JM</b>
+      </div>
+      <div class="block">
+        <span>Programme</span>
+        <b>Master in Advanced Studies in Design - Barcelona (UPC / UB)</b>
+      </div>
+    </div>
+  </section>
+  <section data-label="02 Opening question">
     <div class="slide-head">
       <div class="eyebrow">Opening question</div>
     </div>
@@ -596,7 +627,7 @@
         <img src="hippo.png" alt="HiPPO mascot" />
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>01</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
   </section>
   <section data-label="03 The real problem">
     <div class="slide-head" style="margin-bottom:32px;">
@@ -611,9 +642,9 @@
         <div class="pull-quote reveal-hidden" data-step="4" style="font-size:26px;line-height:1.45;">"You grab the template you like the most. There is no way to say which interface type suits the project better."<span style="font-family:'JetBrains Mono',monospace;font-size:20px;color:var(--ink-3);display:block;margin-top:12px;">Senior Fullstack Developer<br>10 yrs experience</span></div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>02</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>03</span></div>
   </section>
-  <section data-label="05 The gap">
+  <section data-label="04 The gap">
     <div class="slide-head">
       <div class="eyebrow">The gap</div>
       <h2 class="title">Good tools for <em>how</em> to design.<br>Nothing for <em>what</em> to design.</h2>
@@ -642,9 +673,9 @@
         </div>
       </div>
     </div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>03</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>04</span></div>
   </section>
-  <section data-label="06 The cost">
+  <section data-label="05 The cost">
     <div class="slide-head">
       <div>
         <div class="eyebrow" style="margin-bottom:28px;">What happens without a framework</div>
@@ -699,9 +730,9 @@
       </div>
     </div>
     <p class="body reveal-hidden" data-step="2" style="margin-top:28px;color:var(--ink-2);">Millions in combined documented losses across just five cases. Only the numbers companies disclosed.</p>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>04</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>05</span></div>
   </section>
-  <section data-label="07 The bottleneck">
+  <section data-label="06 The bottleneck">
     <div class="slide-head" style="margin-bottom:24px;">
       <div class="eyebrow">It is not an isolated pattern</div>
       <h2 class="title">The failure is not technical.<br><em>It is structural.</em></h2>
@@ -724,38 +755,9 @@
       </div>
     </div>
     <div class="pull-quote reveal-hidden" data-step="4" style="margin-top:56px;">The bottleneck is the decision. Not the technology.</div>
-    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>05</span></div>
+    <div class="slide-slug"><span><span class="brandlet">NEXUS</span> · Defense</span><span>06</span></div>
   </section>
-  <section data-label="04 Title" class="slide-title">
-    <span style="position:absolute;top:40px;right:120px;font-family:'JetBrains Mono',monospace;font-size:24px;color:var(--ink-3);letter-spacing:0.15em;text-transform:uppercase;z-index:10;">06</span>
-    <div class="brand">
-      <span class="wordmark">Master's Thesis Defense · 2026</span>
-      <span class="wordmark-sub"></span>
-    </div>
-
-    <div class="title-hero">
-      <div class="brand-stripe" style="margin-bottom:36px;">
-        <span class="dot"></span> Beyond Intuition:
-      </div>
-      <h1 class="display">A Designer's Framework for<br><em>Interface Type Selection</em></h1>
-    </div>
-
-    <div class="title-meta">
-      <div class="block">
-        <span>Author</span>
-        <b>ZARATE Ilverzon</b>
-      </div>
-      <div class="block">
-        <span>Director</span>
-        <b>MONGUET, JM</b>
-      </div>
-      <div class="block">
-        <span>Programme</span>
-        <b>Master in Advanced Studies in Design - Barcelona (UPC / UB)</b>
-      </div>
-    </div>
-  </section>
-  <section data-label="02 The reveal">
+  <section data-label="07 The reveal">
     <div class="slide-head">
       <div class="eyebrow">What I built</div>
       <h2 class="title">Give it a decision.<br>Get back <em>evidence.</em></h2>

@@ -5,7 +5,14 @@ Full script for all 24 slides (main deck + backup).
 
 ---
 
-## 01 — Opening question
+## 01 — Title
+
+Good morning. I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.
+Over the next minutes we will cover the problem, the gap, the framework, the evidence, and what we built to address it.
+
+---
+
+## 02 — Opening question
 
 Has your design recommendation ever been overruled?
 [NEXT]
@@ -16,7 +23,7 @@ McAfee and Brynjolfsson documented it in 2012. But every designer in this room h
 
 ---
 
-## 02 — The real problem
+## 03 — The real problem
 
 That question led to fifteen interviews across roles and seniority levels.
 [NEXT]
@@ -30,7 +37,7 @@ That is not a personal failure. It is a structural gap.
 
 ---
 
-## 03 — The gap
+## 04 — The gap
 
 Maybe the answer was already out there.
 Every methodology reviewed in this research assumes you already know what interface type you are building.
@@ -42,7 +49,7 @@ That is the gap this research confirms.
 
 ---
 
-## 04 — The cost
+## 05 — The cost
 
 [NEXT]
 And that gap has consequences.
@@ -53,7 +60,7 @@ Hundreds of millions in documented losses. Only what companies disclosed.
 
 ---
 
-## 05 — The bottleneck
+## 06 — The bottleneck
 
 This is not isolated.
 [NEXT]
@@ -64,13 +71,6 @@ RAND found in 2024 that 80% of AI projects never reach real use. Twice the failu
 And 84% of those failures trace to leadership decisions, not engineering. The technology worked. The decision before it did not.
 [NEXT]
 The bottleneck is the decision. And nobody has a structured way to make it.
-
----
-
-## 06 — Title
-
-I am Ilverzon Zarate. This is my thesis defense: Beyond Intuition, A Designer's Framework for Interface Type Selection.
-You just saw the problem. Over the next minutes I will show you what I built to address it.
 
 ---
 
@@ -354,3 +354,5 @@ Every step here is visible, nothing is a black box.
 
 The diagram shows why a flag fired, not just that it fired.
 That traceability is what makes the report defensible in a room full of stakeholders.
+
+---
