@@ -3316,7 +3316,50 @@
   })();
 
   var isNotes = location.search.includes('notes');
+  var isStudy = location.search.includes('study');
   var channel = new BroadcastChannel('nexus-presenter');
+
+  if (isStudy) {
+    // ── STUDY VIEW — all notes as scrollable document ──────
+    var slideLabels = Array.from(document.querySelectorAll('[data-label]')).map(function(s) { return s.dataset.label; });
+    document.body.innerHTML = '';
+    document.documentElement.style.cssText = 'margin:0;padding:0;';
+    document.body.style.cssText = 'margin:0;padding:0;background:#0f0f0f;color:#e8e8e8;font-family:system-ui,sans-serif;';
+
+    var wrap = document.createElement('div');
+    wrap.style.cssText = 'max-width:720px;margin:0 auto;padding:48px 32px 80px;';
+
+    var h = document.createElement('h1');
+    h.textContent = 'NEXUS — Speaker Notes';
+    h.style.cssText = 'font-size:18px;font-weight:600;letter-spacing:0.1em;text-transform:uppercase;color:#555;margin:0 0 48px;border-bottom:1px solid #222;padding-bottom:16px;';
+    wrap.appendChild(h);
+
+    notes.forEach(function(note, i) {
+      var label = slideLabels[i] || ('Slide ' + (i + 1));
+      var card = document.createElement('div');
+      card.style.cssText = 'margin-bottom:40px;';
+
+      var num = document.createElement('div');
+      num.textContent = label;
+      num.style.cssText = 'font-size:11px;font-weight:600;letter-spacing:0.12em;text-transform:uppercase;color:#444;margin-bottom:10px;';
+      card.appendChild(num);
+
+      var text = document.createElement('div');
+      text.style.cssText = 'font-size:17px;line-height:1.75;color:#ccc;white-space:pre-wrap;border-left:2px solid #222;padding-left:20px;';
+      // highlight [NEXT] cues
+      text.innerHTML = note.replace(/\[NEXT\]/g, '<span style="display:inline-block;font-size:11px;font-weight:700;letter-spacing:0.1em;color:#3563FF;background:#1a2040;padding:2px 8px;border-radius:4px;vertical-align:middle;margin:0 4px;">[NEXT]</span>');
+      card.appendChild(text);
+
+      wrap.appendChild(card);
+
+      var divider = document.createElement('hr');
+      divider.style.cssText = 'border:none;border-top:1px solid #1a1a1a;margin:0 0 40px;';
+      wrap.appendChild(divider);
+    });
+
+    document.body.appendChild(wrap);
+    return;
+  }
 
   if (isNotes) {
     // ── NOTES WINDOW ──────────────────────────────────────
