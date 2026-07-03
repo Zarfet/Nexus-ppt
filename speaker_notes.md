@@ -18,7 +18,7 @@ McAfee and Brynjolfsson documented it in 2012. But every designer in this room h
 
 ## 02 — The real problem
 
-Fifteen interviews across roles and seniority levels.
+That question led to fifteen interviews across roles and seniority levels.
 [NEXT]
 Not one described a systematic process for choosing an interface type.
 If experience alone solved this, the most senior people would have a method. They do not.
@@ -32,6 +32,7 @@ That is not a personal failure. It is a structural gap.
 
 ## 03 — The gap
 
+Maybe the answer was already out there.
 Every methodology reviewed in this research assumes you already know what interface type you are building.
 [NEXT]
 They guide how to refine it, test it, fit it to users.
@@ -44,6 +45,7 @@ That is the gap this research confirms.
 ## 04 — The cost
 
 [NEXT]
+And that gap has consequences.
 Five companies. Five eras. The same decision made wrong.
 The technology was ready. The interface type was not.
 [NEXT]
@@ -86,6 +88,7 @@ The designer still decides.
 
 ## 08 — The framework
 
+Here is how it works.
 [NEXT]
 NEXUS works in four stages. The decision that happens before the first mockup.
 [NEXT]
@@ -124,7 +127,7 @@ Data last: hard limits. What is technically impossible given everything above.
 
 ## 10 — The method
 
-Three phases of evidence.
+Three phases of evidence. This is how we know it works.
 [NEXT]
 First, literature and field research. From the papers reviewed, no framework existed for this specific decision.
 If the gap was not confirmed in the literature, building NEXUS would be solving a problem nobody had.
@@ -158,6 +161,7 @@ That is the argument you did not have before, now documented and citable.
 
 ## 12 — User Journey Map
 
+But numbers alone do not tell the full story.
 [NEXT]
 Meet Ana. Product manager in healthtech.
 A composite of the exact situation fifteen practitioners described:
@@ -219,7 +223,7 @@ Ana walks in with a document. Flags detected. Evidence nobody can dismiss with j
 
 ## 14 — Contributions
 
-Four contributions.
+That is NEXUS in practice. Here is what it contributes.
 [NEXT]
 The primary one: a documented process to choose an interface type before building anything. NEXUS makes it accessible, but the method stands independently of the tool.
 [NEXT]
