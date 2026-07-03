@@ -62,7 +62,7 @@ Hundreds of millions in documented losses. Only what companies disclosed.
 
 ## 06 — The bottleneck
 
-This is not isolated.
+This is not isolated. With the rise of AI, the promise was that everything would get easier.
 [NEXT]
 MIT found in 2025 that 95% of generative AI pilots fail to deliver measurable impact. Most never change how people actually work.
 [NEXT]
@@ -71,6 +71,7 @@ RAND found in 2024 that 80% of AI projects never reach real use. Twice the failu
 And 84% of those failures trace to leadership decisions, not engineering. The technology worked. The decision before it did not.
 [NEXT]
 The bottleneck is the decision. And nobody has a structured way to make it.
+Specifically this one: what to build, before they build it.
 
 ---
 
