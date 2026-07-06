@@ -2,5 +2,9 @@
   "type": "module",
   "dependencies": {
     "ws": "^8.21.0"
+  },
+  "devDependencies": {
+    "pptxgenjs": "^4.0.1",
+    "puppeteer": "^25.3.0"
   }
 }

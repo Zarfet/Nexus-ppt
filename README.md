@@ -7,23 +7,40 @@ Presentation deck for the TFM defense of **NEXUS**: the first replicable protoco
 | File | Purpose |
 |------|---------|
 | `index.html` | Main slide deck (standalone HTML, no build step) |
-| `deck-stage.js` | Slide navigation, keyboard controls, speaker notes overlay |
-| `build_pptx.js` | Script to export the deck as `.pptx` |
-| `NEXUS_Defense.pptx` | Exported PowerPoint version (with embedded speaker notes) |
-| `speaker_notes.md` | Full speaker script — all 24 slides |
-| `Nexus.m4v` | Demo video embedded in slide 01b |
-| `nexus_process.gif` | Process animation used in slide 15 |
-| `uploads/` | Images and assets used in slides |
-| `_scratch/` | Working files and experiments |
+| `deck-stage.js` | Slide navigation, keyboard controls, speaker notes |
+| `speaker_notes.md` | Full speaker script — all 24 slides with `[NEXT]` cues |
+| `NEXUS_Defense.pdf` | Exported PDF backup |
+| `NEXUS_Defense.pptx` | Exported PowerPoint backup |
+| `slides/` | PNG export of all 24 slides (1920×1080) |
+| `server.js` | Local LAN server for same-WiFi phone notes sync |
+| `export_slides.mjs` | Script to regenerate PDF + PNG exports (requires puppeteer) |
+| `export_pptx.cjs` | Script to build PPTX from PNG slides (requires pptxgenjs) |
 
-## Running the deck
+## Viewing the deck
 
-Open `index.html` directly in a browser — no server needed.
+**Hosted**: deployed on Vercel — see repo settings for the live URL.
 
-**Keyboard controls** (handled by `deck-stage.js`):
-- `→` / `Space` — next slide
+**Local** (recommended for presenting with phone notes):
+```bash
+node server.js
+```
+Then open `http://localhost:7788` on the laptop and `http://<LAN-IP>:7788/?notes` on the phone.
+
+## URL modes
+
+| URL | Purpose |
+|-----|---------|
+| `/` | Main presentation |
+| `/?notes` | Synced speaker notes (current + next slide) — open via `P` key |
+| `/?study` | All speaker notes as a scrollable study document |
+
+## Keyboard controls
+
+- `→` / `Space` — next step or slide
 - `←` — previous slide
-- `S` — toggle speaker notes panel
+- `R` — reset to slide 1
+- `P` — open synced speaker notes window
+- `1–9` — jump to slide
 
 ## Slide structure
 
@@ -31,21 +48,21 @@ Open `index.html` directly in a browser — no server needed.
 
 | # | Label | Topic |
 |---|-------|-------|
-| 01 | Hook | HiPPO effect — the structural problem |
-| 02 | What I built | NEXUS overview |
-| 03 | The gap in practice | Fifteen professionals, zero frameworks |
-| 04 | About me | Ilverzon Zarate — 15 min roadmap |
-| 05 | The gap | Frameworks start too late |
-| 06 | The cost | Five documented failures |
-| 07 | The bottleneck | AI failure rates (Estrada 2025, RAND 2024) |
+| 01 | Title | A Designer's Framework for Interface Type Selection |
+| 02 | Opening question | HiPPO effect — the structural problem |
+| 03 | The real problem | Fifteen professionals, zero systematic frameworks |
+| 04 | The gap | Good tools for *how* — nothing for *what* |
+| 05 | The cost | Five documented failures |
+| 06 | The bottleneck | AI failure rates (MIT 2025, RAND 2024) |
+| 07 | The reveal | NEXUS overview |
 | 08 | The framework | Four-stage DIKW process |
 | 09 | DIKW layers | Wisdom → Knowledge → Information → Data |
-| 10 | Research method | Three phases of evidence |
+| 10 | The method | Three phases of evidence |
 | 11 | Validation | 82% detection rate, 70% threshold |
-| 12 | Journey map | Ana — practitioner use case |
-| 13 | Live demo | nexus-flame-delta.vercel.app |
+| 12 | User Journey Map | Ana — practitioner use case |
+| 13 | Live demo | Open live demo CTA |
 | 14 | Contributions | Four contributions, one open platform |
-| 15 | Process in motion | nexus_process.gif |
+| 15 | Video recap | Full walkthrough in one take |
 | 16 | Thank you | Close |
 
 ### Backup slides (Q&A)
@@ -53,21 +70,20 @@ Open `index.html` directly in a browser — no server needed.
 | # | Label | Topic |
 |---|-------|-------|
 | B1 | Why DIKW | vs. Cynefin, AHP, TAM |
-| B2 | Case selection | Five criteria for case inclusion |
+| B2 | Case selection | Criteria for case inclusion |
 | B3 | Generalizability | Recurrent, not universal |
-| B4 | Scoring algorithm | Four-step weighted scoring |
+| B4 | Scoring algorithm | 16-step weighted scoring |
 | B5 | Tie handling | What a tie means and shows |
-| B6 | Governance | Three-mechanism evolution model |
+| B6 | Governance | Three-phase evolution model |
 | B7 | TFM scope | Master's vs. doctoral boundaries |
 | B8 | Information Architecture | Input-to-output flowchart |
 
-## Exporting to PPTX
+## Regenerating exports
 
 ```bash
-node build_pptx.js
+node export_slides.mjs   # regenerates PDF + 24 PNGs (server must be running)
+node export_pptx.cjs     # builds PPTX from slides/
 ```
-
-Output: `NEXUS_Defense.pptx` with speaker notes embedded in each slide.
 
 ## Key research numbers
 
@@ -81,6 +97,6 @@ Output: `NEXUS_Defense.pptx` with speaker notes embedded in each slide.
 ## Context
 
 - **Author**: Ilverzon Zarate
-- **Program**: TFM (Master's Final Project)
-- **Tool**: [nexus-flame-delta.vercel.app](https://nexus-flame-delta.vercel.app) — 15-minute, no-install, open-source framework
+- **Program**: TFM — Master in Advanced Studies in Design, Barcelona (UPC / UB)
+- **Tool**: [nexus-flame-delta.vercel.app](https://nexus-flame-delta.vercel.app)
 - **Source**: [github.com/Zarfet/reason-road](https://github.com/Zarfet/reason-road)
