@@ -15,9 +15,9 @@ Over the next minutes we will cover the problem, the gap, the framework, the evi
 ## 02 — Opening question
 
 Has your design recommendation ever been overruled?
-[NEXT]
 You are not alone.
 Often it comes down to who is most senior in the room, or who gets paid the most.
+[NEXT]
 That pattern has a name: the HiPPO effect. Highest Paid Person's Opinion.
 McAfee and Brynjolfsson documented it in 2012. But every designer in this room has felt it.
 
