@@ -226,7 +226,7 @@ Ana walks in with a document. Flags detected. Evidence nobody can dismiss with j
 
 That is NEXUS in practice. Here is what it contributes.
 [NEXT]
-The primary one: a documented process to choose an interface type before building anything. NEXUS makes it accessible, but the method stands independently of the tool.
+The primary one: a documented process to choose an interface type before building anything. Grounded in evidence, replicable, and now implemented in NEXUS.
 [NEXT]
 For practice: a structured argument designers can use when someone more senior overrules without evidence.
 [NEXT]
