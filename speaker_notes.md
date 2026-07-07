@@ -147,7 +147,7 @@ That closes the loop between the problem and the evidence.
 ## 11 — Validation
 
 [NEXT]
-We hit 82%. The minimum for substantial agreement per Landis and Koch 1977 is 70%.
+We hit 82%. Landis and Koch established in 1977 that 70% is the minimum for results reliable enough to inform real decisions. We exceeded it.
 The framework detected what those teams missed, using only public information available before launch.
 [NEXT]
 70% of practitioners agreed with the framework recommendation over their own initial judgment.
