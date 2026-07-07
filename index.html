@@ -3363,6 +3363,7 @@
 
   if (isNotes) {
     // ── NOTES WINDOW ──────────────────────────────────────
+    var slideLabels = Array.from(document.querySelectorAll('[data-label]')).map(function(s) { return s.dataset.label; });
     document.body.innerHTML = '';
     document.documentElement.style.cssText = 'margin:0;padding:0;height:100%;';
     document.body.style.cssText = 'margin:0;padding:0;height:100%;background:#111;color:#fff;font-family:system-ui,sans-serif;display:flex;flex-direction:column;';
@@ -3389,7 +3390,7 @@
       var next = document.getElementById('next-note');
       if (counter) counter.textContent = 'Slide ' + (idx + 1);
       if (note) note.innerHTML = (notes[idx] || '—').replace(/\n/g, '<br>');
-      if (next) next.textContent = notes[idx + 1] || '—';
+      if (next) next.textContent = slideLabels[idx + 1] || '—';
     }
 
     channel.onmessage = function(e) {
