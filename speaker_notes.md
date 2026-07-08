@@ -135,7 +135,7 @@ If the gap was not confirmed in the literature, building NEXUS would be solving 
 Fifteen interviews confirmed the same gap in practice. Nielsen found that five users surface 85% of usability issues. We used fifteen, across roles and seniority levels, to avoid bias from a single perspective.
 [NEXT]
 Second, retrospective testing against five documented failures. Five cases, each meeting strict selection criteria: commercial impact, documentation quality, temporal coverage, and interface type diversity.
-Pre-launch information only. The framework could not know how the story ended.
+Pre-launch information only. Same information any designer would have had.
 The framework was also tested against five successful products, to confirm it does not generate false alarms.
 [NEXT]
 Third, usability validation with the same fifteen practitioners.
