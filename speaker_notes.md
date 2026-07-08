@@ -147,8 +147,7 @@ That closes the loop between the problem and the evidence.
 ## 11 — Validation
 
 [NEXT]
-We hit 82%. Landis and Koch established in 1977 that 70% is the minimum for results reliable enough to inform real decisions. We exceeded it.
-The framework detected what those teams missed, using only public information available before launch.
+We hit 82%. Landis and Koch established in 1977 that 70% is the minimum for results meaningful enough to inform real decisions. We exceeded it. Same pre-launch information those teams had. NEXUS caught what they missed.
 [NEXT]
 70% of practitioners agreed with the framework recommendation over their own initial judgment.
 That means the tool adds value beyond what experience alone provides.
