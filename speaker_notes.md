@@ -197,7 +197,7 @@ Values ranked first: User Control number one, Accessibility number two.
 That ranking filters everything before any technical question is asked.
 Each of the fifteen questions has a tooltip explaining why the framework asks it.
 Before results, the system flags internal contradictions:
-Accessibility ranked second, but the proposed interface excludes the primary user group.
+mobile context selected, but serious error consequences require a more controlled environment.
 [NEXT]
 The recommended strategy appears first.
 Traditional Screen as primary, with its confidence score.
