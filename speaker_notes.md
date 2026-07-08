@@ -206,9 +206,8 @@ Four reasoning bullets explain why: each one traceable to a specific input Ana p
 [NEXT]
 Four result tabs.
 Analysis explains why each interface type scores the way it does: what speaks for it, what speaks against it. The designer reads the reasoning and decides.
-Impact flags AR/VR as contraindicated across five dimensions:
-Control violation, accessibility exclusion, regulatory conflict with GDPR Article 9 and EU AI Act, context mismatch, and hardware dependency.
-Every flag traces back to a documented pattern from the research.
+Impact surfaces the regulatory consequences. Nine requirements identified for European deployment: GDPR, EU AI Act, data governance, human oversight.
+Every requirement traces back to the actual regulatory text.
 [NEXT]
 Research shows where your product sits in documented history.
 Similar product cases: real world case studies of products that used similar interface types, separated into successes and failures.
