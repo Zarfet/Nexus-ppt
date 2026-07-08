@@ -164,7 +164,7 @@ That is the argument you did not have before, now documented and citable.
 But numbers alone do not tell the full story.
 [NEXT]
 Meet Ana. Product manager in healthtech.
-A composite of the exact situation fifteen practitioners described:
+A mix of situations fifteen practitioners described:
 a decision being made by seniority, not evidence.
 [NEXT]
 This is her user journey map. Five phases.
